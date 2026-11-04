@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/sc_border"
+    app:cardBackgroundColor="@color/sc_white">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="144dp" android:background="@drawable/bg_hero">
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_music"
+                android:importantForAccessibility="no" />
+            <TextView
+                android:id="@+id/servicio_tipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:padding="7dp"
+                android:background="@drawable/bg_badge"
+                android:textSize="11sp"
+                android:textColor="@color/sc_navy" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="14dp"
+                android:text="@string/nota_musical"
+                android:textColor="@color/sc_white"
+                android:textSize="11sp" />
+            <ImageButton
+                android:id="@+id/servicio_abrir"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_avatar"
+                android:padding="12dp"
+                android:src="@drawable/ic_arrow"
+                android:contentDescription="@string/ver_perfil" />
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:id="@+id/servicio_generos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/SC.Eyebrow" />
+            <TextView
+                android:id="@+id/servicio_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/SC.Title"
+                android:textSize="24sp"
+                android:layout_marginTop="6dp" />
+            <TextView
+                android:id="@+id/servicio_ciudad"
+                android:drawableStart="@drawable/ic_location" android:drawablePadding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/SC.Secondary"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/servicio_tarifa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/SC.Body"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/servicio_perfil"
+                style="@style/SC.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ver_perfil"
+                android:layout_marginTop="16dp"
+                app:icon="@drawable/ic_arrow"
+                app:iconGravity="end" />
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/servicio_comparar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/comparar" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

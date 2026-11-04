@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Santa Cecilia</string><string name="lema">MÚSICA QUE NOS CONECTA</string>
+    <string name="explorar_musicos">Explorar músicos</string>
+    <string name="catalogo_subtitulo">Bandas y solistas de la Asociación Musical Santa Cecilia · Ambo</string>
+    <string name="actualizar">Actualizar catálogo</string><string name="catalogo_cargando">Consultando servicios…</string>
+    <string name="catalogo_no_disponible">El catálogo todavía no está disponible. Intenta consultarlo más adelante.</string>
+    <string name="catalogo_vacio">Aquí encontrarás los servicios musicales publicados por la asociación.</string>
+    <string name="catalogo_sin_publicaciones">La asociación aún no tiene servicios publicados.</string>
+    <string name="catalogo_actualizado">Catálogo actualizado.</string>
+    <string name="catalogo_cache">Información guardada anteriormente. No se pudo confirmar su actualización; la disponibilidad debe consultarse en línea.</string>
+    <string name="catalogo_error">No pudimos consultar el catálogo. Revisa tu conexión y vuelve a intentarlo.</string>
+    <string name="catalogo_datos_invalidos">No pudimos actualizar la información. Vuelve a intentarlo más adelante.</string>
+    <string name="catalogo_sin_guardar">Catálogo consultado. No se pudo guardar para consultarlo sin conexión.</string>
+    <string name="banda">Banda musical</string><string name="solista">Solista</string>
+    <string name="a_cotizar">A cotizar</string><string name="tarifa_hora">%1$s por hora</string>
+
+    <string name="mi_cuenta">Mi cuenta</string>
+    <string name="login_titulo">Inicia sesión.</string><string name="login_descripcion">Tu próximo encuentro con la música empieza aquí.</string>
+    <string name="registro_titulo">Crea tu cuenta</string><string name="registro_descripcion">Regístrate como cliente para empezar a contratar servicios musicales.</string>
+    <string name="recuperar_titulo">Recupera tu acceso</string><string name="recuperar_descripcion">Escribe tu correo para recibir un enlace de recuperación.</string>
+    <string name="nombres">Nombres</string><string name="apellidos">Apellidos</string><string name="correo">Correo electrónico</string><string name="password">Contraseña</string>
+    <string name="crear_cuenta">Crear cuenta</string><string name="iniciar_sesion">Iniciar sesión</string><string name="enviar_enlace">Enviar enlace</string>
+    <string name="registro_cliente">Crear una cuenta de cliente</string><string name="olvide_password">Olvidé mi contraseña</string>
+    <string name="aceptar_privacidad">He leído y acepto el aviso de privacidad de Santa Cecilia.</string><string name="aviso_privacidad">Aviso de privacidad</string>
+    <string name="aviso_privacidad_texto">Santa Cecilia utiliza tus nombres, apellidos y correo para identificar y administrar tu cuenta. Tu contraseña se procesa de forma segura en el servidor. En este dispositivo se guardan cifrados los datos mínimos de tu sesión. El catálogo público puede guardarse para consultarlo sin conexión. Puedes cerrar tu sesión desde Mi cuenta.</string>
+    <string name="entendido">Entendido</string><string name="acceso_en_proceso">Procesando acceso</string><string name="cuenta_creada">Cuenta creada. Ya puedes iniciar sesión.</string>
+    <string name="nombre_completo">%1$s %2$s</string><string name="rol_administrador">Administrador</string><string name="rol_director">Director de banda</string><string name="rol_cliente">Cliente</string>
+    <string name="cuenta_verificando">Verificando tu cuenta…</string><string name="cuenta_validada">Cuenta verificada en Santa Cecilia.</string><string name="cuenta_guardada">Información de sesión guardada. La conexión con el servidor aún no se ha confirmado.</string>
+    <string name="actualizar_cuenta">Actualizar mi cuenta</string><string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="sesion_cerrada">Sesión cerrada.</string><string name="sesion_cerrada_local">Sesión cerrada en este dispositivo. No pudimos avisar al servidor.</string>
+    <string name="perfil_servicio">Perfil del servicio</string><string name="detalle_cargando">Consultando el perfil…</string><string name="detalle_actualizado">Información actualizada.</string>
+    <string name="descripcion_no_informada">Descripción por informar.</string><string name="repertorio">Repertorio</string><string name="repertorio_vacio">Este servicio aún no tiene repertorio publicado.</string><string name="actualizar_perfil_servicio">Actualizar perfil</string>
+    <string name="catalogo_permiso_local">Autoriza el acceso a la red local para conectar con Santa Cecilia. Pulsa Actualizar catálogo para continuar.</string>
+    <string name="cuenta_error_guardada">Información de sesión guardada, sin verificar con el servidor.\n\n%1$s</string>
+    <string name="ya_tengo_cuenta">Ya tengo cuenta · Iniciar sesión</string>
+</resources>

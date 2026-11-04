@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pagina_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="19dp"
+        android:paddingBottom="28dp">
+        <TextView
+            android:id="@+id/cuenta_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mi_cuenta"
+            android:textAppearance="@style/SC.Title" />
+        <TextView
+            android:id="@+id/cuenta_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cargando_datos"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="16dp"
+            android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/cuenta_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:contentDescription="@string/cargando_datos" />
+        <LinearLayout
+            android:id="@+id/cuenta_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="21dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:id="@+id/cuenta_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombres"
+                android:textAppearance="@style/SC.Title"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/cuenta_rol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rol"
+                android:textAppearance="@style/SC.Eyebrow"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/cuenta_correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/correo"
+                android:textAppearance="@style/SC.Body"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/cuenta_badge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estado_cuenta"
+                android:textAppearance="@style/SC.Body"
+                android:padding="8dp"
+                android:layout_marginTop="12dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/perfil_contacto"
+                android:textAppearance="@style/SC.Heading"
+                android:layout_marginTop="24dp" />
+            <TextView
+                android:id="@+id/cuenta_telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cuenta_sin_telefono"
+                android:textAppearance="@style/SC.Body"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/cuenta_ciudad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cuenta_sin_ciudad"
+                android:textAppearance="@style/SC.Body"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/cuenta_biografia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cuenta_sin_biografia"
+                android:textAppearance="@style/SC.Secondary"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cuenta_editar" app:icon="@drawable/ic_edit"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editar_perfil"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cuenta_actualizar"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/actualizar_cuenta"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cuenta_salir"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cerrar_sesion"
+            android:layout_marginTop="12dp"
+            android:maxLines="3"
+            app:icon="@drawable/ic_logout" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cuenta_cambiar_estado"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/estado_cuenta"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pagina_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="19dp"
+        android:paddingBottom="28dp">
+        <TextView
+            android:id="@+id/gestion_mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cargando_datos"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="16dp"
+            android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/gestion_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:contentDescription="@string/cargando_datos" />
+        <LinearLayout
+            android:id="@+id/gestion_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/gestion_detalle_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_servicio"
+                android:textAppearance="@style/SC.Title" />
+            <TextView
+                android:id="@+id/gestion_detalle_estado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estado_servicio"
+                android:textAppearance="@style/SC.Body"
+                android:padding="8dp"
+                android:layout_marginTop="12dp" />
+            <TextView
+                android:id="@+id/gestion_detalle_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/informacion"
+                android:textAppearance="@style/SC.Body"
+                android:layout_marginTop="16dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/gestion_editar" app:icon="@drawable/ic_edit"
+                style="@style/SC.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editar_informacion"
+                android:layout_marginTop="12dp"
+                android:maxLines="3" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/gestion_publicacion"
+                style="@style/SC.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/revisar_publicacion"
+                android:layout_marginTop="12dp"
+                android:maxLines="3" />
+            <TextView
+                android:id="@+id/gestion_detalle_tarifa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tarifa"
+                android:textAppearance="@style/SC.Heading"
+                android:layout_marginTop="24dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tarifa_guardada"
+                android:textAppearance="@style/SC.Secondary"
+                android:layout_marginTop="8dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/gestion_tarifa_editar"
+                style="@style/SC.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editar_tarifa"
+                android:layout_marginTop="12dp"
+                android:maxLines="3" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/gestion_agenda" style="@style/SC.Outlined"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/calendario" android:layout_marginTop="12dp"
+                app:icon="@drawable/ic_calendar" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/repertorio"
+                android:textAppearance="@style/SC.Heading"
+                android:layout_marginTop="28dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/gestion_agregar_cancion"
+                style="@style/SC.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/agregar_cancion"
+                android:layout_marginTop="12dp"
+                android:maxLines="3"
+                app:icon="@drawable/ic_plus" />
+            <TextView
+                android:id="@+id/gestion_repertorio_vacio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/repertorio_vacio"
+                android:textAppearance="@style/SC.Secondary"
+                android:layout_marginTop="12dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gestion_canciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gestion_retry"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reintentar"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

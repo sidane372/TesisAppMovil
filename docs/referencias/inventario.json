@@ -1,0 +1,68 @@
+[
+  {
+    "archivo": "C:\\Users\\sidan\\Documents\\TESIS_II\\DIAGRAMA_DE_CLASES\\Diagrama.md",
+    "sha256": "82ba60d6adc86dcc4f7a37803770f10b3e5723ab44f8048a3722e71276ee5b35",
+    "bytes": 34438
+  },
+  {
+    "archivo": "C:\\Users\\sidan\\Documents\\TESIS_II\\PROMT_MAESTRO_ARTIFACK\\Prompt_Maestro_Santa_Cecilia_Android_Actual.md",
+    "sha256": "1284be4acfe5a369dddc582ca22b12cb9c16170fe6616af65bffa5440453802a",
+    "bytes": 81680
+  },
+  {
+    "archivo": "C:\\Users\\sidan\\Documents\\TESIS_II\\REQUERIMIENTOS\\Requerimientos_Santa_Cecilia_Formal.docx",
+    "sha256": "93dbcba9c66a1aeb14bb3f83ec2d0e5d793fb6e8d1c5f1ac2ca18c343233fced",
+    "bytes": 47484
+  },
+  {
+    "archivo": "C:\\Users\\sidan\\Documents\\TESIS_II\\Diagrmas_secuencia_santa_cecilia.md",
+    "sha256": "c2ffcdd91486b548dd6e207b70a9911e92fd402b713461358c16adaab89ca5ed",
+    "bytes": 36237
+  },
+  {
+    "archivo": "C:\\Users\\sidan\\.codex\\attachments\\a41f66d6-7a78-4b9d-8719-6cfafb676933\\Texto pegado.txt",
+    "sha256": "9ea97925fad062f0aabcb15fde493055b6d964faf27437e3374c42a80dd64f57",
+    "bytes": 37142
+  },
+  {
+    "archivo": "C:\\Users\\sidan\\.codex\\attachments\\f9c1d875-1d62-4526-aa6e-b87b2f1ddffa\\Texto pegado.txt",
+    "sha256": "618ddf888706c48df868961b585b98ed684bce2ce9423eed9c70260509633fe2",
+    "bytes": 7106
+  },
+  {
+    "archivo": "C:\\Users\\sidan\\Downloads\\LaboratorioROOM (1).zip",
+    "sha256": "0848d71490079c0357890d8c3872e8442b62645f4db94017f7a6e9a5dbad323c",
+    "bytes": 744953,
+    "inspeccion_etapa": 2,
+    "archivos_inspeccionados": [
+      {
+        "entrada": "LaboratorioROOM/app/build.gradle.kts",
+        "sha256": "9b9d3e902cccbdb26636a6fbdfe1dbd38594d091ad8e5877c175fcd5ffe501ee"
+      },
+      {
+        "entrada": "LaboratorioROOM/app/src/main/java/com/udh/laboratorioroom/AppDatabase.java",
+        "sha256": "7e22710110e60992090bcf66fa4a53985b1bbd36732da41d566a2a6eb26d2189"
+      },
+      {
+        "entrada": "LaboratorioROOM/app/src/main/java/com/udh/laboratorioroom/MainActivity.java",
+        "sha256": "183ff5ada471b5287c8943b01e9d2f4509aa6b05a2855ae95d28705e77dc9eec"
+      },
+      {
+        "entrada": "LaboratorioROOM/app/src/main/java/com/udh/laboratorioroom/Producto.java",
+        "sha256": "ad7a5d8f59e9a06403d2227b1d84d3dbd7afe20adb13a5c5ddf98538e14818e8"
+      },
+      {
+        "entrada": "LaboratorioROOM/app/src/main/java/com/udh/laboratorioroom/ProductoAdapter.java",
+        "sha256": "060c6b232cc9bab8c7dc3d12292f8d04d6dbf605d750a402e358e219b49ef7f6"
+      },
+      {
+        "entrada": "LaboratorioROOM/app/src/main/java/com/udh/laboratorioroom/ProductoDao.java",
+        "sha256": "def9356672f90a89941fd0b91dae6b219f1cc4a934aaabd7b174b20d48d7d3d0"
+      },
+      {
+        "entrada": "LaboratorioROOM/gradle/libs.versions.toml",
+        "sha256": "6a133b2beac70468197e7ec1b284323a609e420ed48abb9d7c5dbcfd5c4f1ef8"
+      }
+    ]
+  }
+]

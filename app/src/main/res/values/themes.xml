@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.SantaCeciliaTesis" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/sc_blue</item>
+        <item name="colorOnPrimary">@color/sc_white</item>
+        <item name="colorPrimaryContainer">@color/sc_menu_selected</item>
+        <item name="colorOnPrimaryContainer">@color/sc_blue</item>
+        <item name="colorSecondary">@color/sc_gold</item>
+        <item name="colorOnSecondary">@color/sc_navy</item>
+        <item name="colorSecondaryContainer">@color/sc_menu_selected</item>
+        <item name="colorOnSecondaryContainer">@color/sc_blue</item>
+        <item name="colorSurface">@color/sc_white</item>
+        <item name="colorOnSurface">@color/sc_navy</item>
+        <item name="colorOnSurfaceVariant">@color/sc_secondary</item>
+        <item name="colorError">@color/sc_error_text</item>
+        <item name="colorOutline">@color/sc_border</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">@color/sc_background</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="materialButtonStyle">@style/SC.Button</item>
+        <item name="textInputStyle">@style/SC.Input</item>
+    </style>
+    <style name="Theme.SantaCeciliaTesis" parent="Base.Theme.SantaCeciliaTesis" />
+    <style name="SC.Title" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/sc_navy</item>
+    </style>
+    <style name="SC.Heading" parent="SC.Title">
+        <item name="android:lineHeight">28sp</item>
+        <item name="lineHeight">28sp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="SC.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/sc_navy</item>
+    </style>
+    <style name="SC.Secondary" parent="SC.Body">
+        <item name="android:textColor">@color/sc_secondary</item>
+    </style>
+    <style name="SC.Eyebrow" parent="SC.Body">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textColor">@color/sc_blue</item>
+    </style>
+    <style name="SC.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">7dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="SC.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">7dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="strokeColor">@color/sc_border</item>
+        <item name="android:textColor">@color/sc_navy</item>
+    </style>
+    <style name="SC.Input" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/input_outline</item>
+        <item name="boxCornerRadiusTopStart">6dp</item>
+        <item name="boxCornerRadiusTopEnd">6dp</item>
+        <item name="boxCornerRadiusBottomStart">6dp</item>
+        <item name="boxCornerRadiusBottomEnd">6dp</item>
+        <item name="boxBackgroundColor">@color/sc_white</item>
+    </style>
+    <style name="SC.NavText" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="SC.Access" parent="ThemeOverlay.Material3">
+        <item name="colorPrimary">@color/sc_blue</item>
+        <item name="colorOutline">@color/sc_access_border</item>
+        <item name="colorSecondary">@color/sc_access_focus</item>
+    </style>
+<style name="SC.InputAccess" parent="SC.Input"><item name="boxStrokeColor">@color/input_access_outline</item></style>
+</resources>

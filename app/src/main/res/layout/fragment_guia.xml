@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pagina_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="19dp"
+        android:paddingBottom="28dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/guia"
+            android:textAppearance="@style/SC.Title" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_asociacion"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="12dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/explorar_musicos"
+            android:textAppearance="@style/SC.Heading"
+            android:layout_marginTop="28dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ayuda_busqueda"
+            android:textAppearance="@style/SC.Body"
+            android:layout_marginTop="8dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/guia_explorar"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/explorar_musicos"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mi_cuenta"
+            android:textAppearance="@style/SC.Heading"
+            android:layout_marginTop="28dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ayuda_cuenta"
+            android:textAppearance="@style/SC.Body"
+            android:layout_marginTop="8dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/guia_cuenta"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mi_cuenta"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/estado_informacion"
+            android:textAppearance="@style/SC.Heading"
+            android:layout_marginTop="28dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ayuda_conexion"
+            android:textAppearance="@style/SC.Body"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/precio_referencial"
+            android:textAppearance="@style/SC.Heading"
+            android:layout_marginTop="28dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ayuda_contratacion"
+            android:textAppearance="@style/SC.Body"
+            android:layout_marginTop="8dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/guia_privacidad"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aviso_privacidad"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/guia_licencias"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/licencias"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

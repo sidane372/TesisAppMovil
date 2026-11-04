@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pagina_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="19dp"
+        android:paddingBottom="28dp">
+        <TextView
+            android:id="@+id/detalle_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cargando_datos"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="16dp"
+            android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/detalle_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:contentDescription="@string/cargando_datos" />
+        <LinearLayout
+            android:id="@+id/detalle_contenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:layout_marginTop="16dp"
+            android:visibility="gone">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="160dp" android:background="@drawable/bg_hero">
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/ic_music"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no" />
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="21dp">
+                <TextView
+                    android:id="@+id/detalle_tipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/banda"
+                    android:textAppearance="@style/SC.Eyebrow" />
+                <TextView
+                    android:id="@+id/detalle_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perfil_servicio"
+                    android:textAppearance="@style/SC.Title"
+                    android:textSize="27sp"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/detalle_generos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/generos"
+                    android:textAppearance="@style/SC.Secondary"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/detalle_ciudad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ciudad"
+                    android:textAppearance="@style/SC.Body"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/detalle_instrumentos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instrumentos"
+                    android:textAppearance="@style/SC.Secondary"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perfil_publicado"
+                    android:textAppearance="@style/SC.Body"
+                    android:textColor="@color/sc_success_text"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/detalle_tabs" app:tabIndicatorHeight="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="scrollable"
+                app:tabGravity="start"
+                app:tabIndicatorColor="@color/sc_blue"
+                app:tabSelectedTextColor="@color/sc_blue"
+                app:tabTextColor="@color/sc_secondary" />
+            <LinearLayout
+                android:id="@+id/detalle_informacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="21dp">
+                <TextView
+                    android:id="@+id/detalle_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/descripcion_no_informada"
+                    android:textAppearance="@style/SC.Body" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/experiencia"
+                    android:textAppearance="@style/SC.Heading"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:id="@+id/detalle_experiencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/por_informar"
+                    android:textAppearance="@style/SC.Body"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tipos_evento"
+                    android:textAppearance="@style/SC.Heading"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:id="@+id/detalle_eventos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/por_informar"
+                    android:textAppearance="@style/SC.Body"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/incluye"
+                    android:textAppearance="@style/SC.Heading"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:id="@+id/detalle_incluye"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/segun_cotizacion"
+                    android:textAppearance="@style/SC.Body"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/detalle_tarifa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tarifa"
+                    android:textAppearance="@style/SC.Heading"
+                    android:layout_marginTop="24dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precio_referencial"
+                    android:textAppearance="@style/SC.Secondary"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/detalle_repertorio_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="21dp"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detalle_repertorio_ayuda"
+                    android:textAppearance="@style/SC.Secondary" />
+                <TextView
+                    android:id="@+id/detalle_repertorio_vacio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/repertorio_vacio"
+                    android:textAppearance="@style/SC.Body"
+                    android:layout_marginTop="16dp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/detalle_canciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detalle_disponibilidad" style="@style/SC.Button"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/disponibilidad" android:layout_marginTop="12dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detalle_actualizar"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/actualizar_perfil_servicio"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

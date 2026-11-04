@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pagina_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="19dp"
+        android:paddingBottom="28dp">
+        <TextView
+            android:id="@+id/inicio_eyebrow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dashboard_cliente_eyebrow"
+            android:textAppearance="@style/SC.Eyebrow" />
+        <TextView
+            android:id="@+id/inicio_saludo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bienvenida_publica"
+            android:textAppearance="@style/SC.Title"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:id="@+id/inicio_contexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/catalogo_subtitulo"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="8dp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_hero"
+            android:layout_marginTop="22dp">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="240dp"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/hero_music"
+                android:importantForAccessibility="no" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="21dp">
+                <TextView
+                    android:id="@+id/hero_uno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hero_cliente_uno"
+                    android:textAppearance="@style/SC.Title"
+                    android:textSize="30sp"
+                    android:textColor="@color/sc_white" />
+                <TextView
+                    android:id="@+id/hero_dos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hero_cliente_dos"
+                    android:textAppearance="@style/SC.Body"
+                    android:textSize="30sp"
+                    android:lineHeight="38sp" app:lineHeight="38sp" android:fontFamily="serif"
+                    app:fontFamily="serif"
+                    android:textStyle="italic"
+                    android:textColor="@color/sc_hero_gold" />
+                <TextView
+                    android:id="@+id/hero_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hero_cliente_descripcion"
+                    android:textAppearance="@style/SC.Body"
+                    android:textColor="@color/sc_white"
+                    android:layout_marginTop="16dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/hero_accion"
+                    style="@style/SC.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/explorar_musicos"
+                    android:layout_marginTop="12dp"
+                    android:maxLines="3"
+                    app:backgroundTint="@color/sc_gold"
+                    android:textColor="@color/sc_navy"
+                    app:icon="@drawable/ic_arrow"
+                    app:iconTint="@color/sc_navy"
+                    app:iconGravity="end" />
+            </LinearLayout>
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="3dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/bg_card">
+                <TextView
+                    android:id="@+id/stat_uno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dato_sin_valor"
+                    android:textSize="24sp"
+                    android:textColor="@color/sc_navy"
+                    android:fontFamily="@font/poppins" />
+                <TextView
+                    android:id="@+id/stat_label_uno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/servicios_publicados"
+                    android:textSize="11sp"
+                    android:textColor="@color/sc_secondary"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="3dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/bg_card">
+                <TextView
+                    android:id="@+id/stat_dos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dato_sin_valor"
+                    android:textSize="24sp"
+                    android:textColor="@color/sc_navy"
+                    android:fontFamily="@font/poppins" />
+                <TextView
+                    android:id="@+id/stat_label_dos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/solicitudes_proceso"
+                    android:textSize="11sp"
+                    android:textColor="@color/sc_secondary"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="3dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/bg_card">
+                <TextView
+                    android:id="@+id/stat_tres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dato_sin_valor"
+                    android:textSize="24sp"
+                    android:textColor="@color/sc_navy"
+                    android:fontFamily="@font/poppins" />
+                <TextView
+                    android:id="@+id/stat_label_tres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contratos_confirmados"
+                    android:textSize="11sp"
+                    android:textColor="@color/sc_secondary"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/inicio_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cargando_datos"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="16dp"
+            android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/inicio_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:contentDescription="@string/cargando_datos" />
+        <LinearLayout
+            android:id="@+id/inicio_admin_acciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/inicio_cuentas"
+                style="@style/SC.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/verificar_cuentas"
+                android:layout_marginTop="12dp"
+                android:maxLines="3" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/inicio_servicios"
+                style="@style/SC.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/revisar_servicios"
+                android:layout_marginTop="12dp"
+                android:maxLines="3" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/inicio_seccion_eyebrow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/talento_tierra"
+            android:textAppearance="@style/SC.Eyebrow"
+            android:layout_marginTop="28dp" />
+        <TextView
+            android:id="@+id/inicio_seccion_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/encuentra_musicos"
+            android:textAppearance="@style/SC.Heading"
+            android:layout_marginTop="8dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/inicio_lista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:id="@+id/inicio_vacio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sin_registros"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="14dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inicio_ver_todos"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ver_todos"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/eventos_titulo"
+            android:textAppearance="@style/SC.Heading"
+            android:layout_marginTop="28dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/eventos_sin_datos"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="12dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inicio_reintentar"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reintentar"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

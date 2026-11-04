@@ -1,0 +1,7 @@
+<resources>
+    <string name="flujo_contexto">CONTRATACIÓN · SANTA CECILIA</string>
+    <string name="solicitudes">Solicitudes</string>
+    <string name="contratos">Contratos</string>
+    <string name="calendario">Calendario</string>
+    <string name="disponibilidad">Disponibilidad y solicitud</string>
+</resources>

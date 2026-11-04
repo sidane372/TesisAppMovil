@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_titulo"
+        style="@style/SC.Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/titulo_cancion">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:inputType="textCapSentences"
+            android:maxLength="140"
+            android:minLines="1"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_genero"
+        style="@style/SC.Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/genero">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_genero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:inputType="textCapSentences"
+            android:maxLength="80"
+            android:minLines="1"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_descripcion"
+        style="@style/SC.Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/descripcion_cancion">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="500"
+            android:minLines="4"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_duracion"
+        style="@style/SC.Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/duracion_cancion">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_duracion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:inputType="number"
+            android:maxLength="5"
+            android:minLines="1"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_orden"
+        style="@style/SC.Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/orden_cancion">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_orden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:inputType="number"
+            android:maxLength="8"
+            android:minLines="1"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

@@ -1,0 +1,75 @@
+{
+  "fecha_corte": "2026-11-03",
+  "zona_presentacion": "America/Lima",
+  "resultado_gradle": "BUILD SUCCESSFUL",
+  "pruebas_jvm": [
+    {
+      "suite": "com.example.santaceciliatesis.data.remote.ApiConfigTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "testCases": [
+        "rejectsCredentials",
+        "emptyConfigDoesNotInventBackend",
+        "normalizesTrailingSlash",
+        "rejectsQuery",
+        "noRequestWithoutBackend",
+        "rejectsCleartext",
+        "rejectsForeignEndpoint",
+        "rejectsFragment"
+      ],
+      "source": "app/build/test-results/testDebugUnitTest/TEST-com.example.santaceciliatesis.data.remote.ApiConfigTest.xml",
+      "sha256": "0cbfdd8f4573b65cc23882bbf63ce96cff2281f34a29431ce713e028a412cf92"
+    },
+    {
+      "suite": "com.example.santaceciliatesis.util.MoneyUtilsTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "testCases": [
+        "includesTwoDecimalPlaces",
+        "preservesCentPrecision",
+        "handlesOneCent"
+      ],
+      "source": "app/build/test-results/testDebugUnitTest/TEST-com.example.santaceciliatesis.util.MoneyUtilsTest.xml",
+      "sha256": "1bb836a73780e14a3afbebb0d8455dfa25aad9d1ebce21ca33e1cf1a5c79c88b"
+    }
+  ],
+  "lint": {
+    "errors": 0,
+    "warnings": 1,
+    "warningId": "AndroidGradlePluginVersion"
+  },
+  "instrumentadas": {
+    "compiladas": 6,
+    "ejecutadas": 0,
+    "motivo": "adb devices sin dispositivos conectados"
+  },
+  "artefactos": [
+    {
+      "ruta": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 16137351,
+      "sha256": "25d4ad3b9dd19161c0905674c48af6b38542409f6a670d25d0ff855b5bd4eac5"
+    },
+    {
+      "ruta": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "bytes": 1809783,
+      "sha256": "729ad46af6c563dde1fd755a1edacf6675cb3d1a834e16de0541a1ca5b2bba6d"
+    },
+    {
+      "ruta": "app/schemas/com.example.santaceciliatesis.data.local.AppDatabase/1.json",
+      "bytes": 1770,
+      "sha256": "a61af4a65230a8bbd40a9908c80e1df9f337febd4faacab41e5f06217a5ba265"
+    },
+    {
+      "ruta": "app/build/reports/lint-results-debug.txt",
+      "bytes": 684,
+      "sha256": "f09bba8a65bf45f14c8cc6f73d23fa52e979132e7c4a6122e4521207a2722e90"
+    },
+    {
+      "ruta": "docs/pruebas/local/gradle-verificacion.log",
+      "bytes": 5168,
+      "sha256": "c328b54b36e2a3ff144e68fee2c4d2e2286c44fc2a07d088a1cbdc3fe63aca2b"
+    }
+  ]
+}

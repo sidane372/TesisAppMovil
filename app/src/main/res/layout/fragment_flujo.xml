@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flujo_scroll" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="19dp">
+        <TextView android:id="@+id/flujo_eyebrow" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/flujo_contexto" android:textAppearance="@style/SC.Secondary" />
+        <TextView android:id="@+id/flujo_titulo" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/SC.Title" android:layout_marginTop="8dp" android:accessibilityHeading="true" />
+        <TextView android:id="@+id/flujo_estado" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/SC.Secondary" android:layout_marginTop="12dp" android:accessibilityLiveRegion="polite" />
+        <ProgressBar android:id="@+id/flujo_progress" android:layout_width="32dp" android:layout_height="32dp" android:layout_gravity="center" android:visibility="gone" />
+        <LinearLayout android:id="@+id/flujo_contenido" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="12dp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_tarifa"
+        style="@style/SC.Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/tarifa">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_tarifa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:inputType="numberDecimal"
+            android:maxLength="15"
+            android:minLines="1"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tarifa_ayuda"
+        android:textAppearance="@style/SC.Secondary"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

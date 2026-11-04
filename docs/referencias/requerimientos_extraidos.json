@@ -1,0 +1,452 @@
+[
+  {
+    "id": "RF-01",
+    "requisito": "El sistema debe restringir la consulta y modificación de información según el rol y los servicios u operaciones asociados al usuario.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-02",
+    "requisito": "El sistema debe permitir consultar el catálogo de bandas y solistas publicados por el administrador.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-03",
+    "requisito": "El sistema debe mostrar la información, repertorio, tarifa referencial y disponibilidad de cada servicio musical.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-04",
+    "requisito": "El sistema debe gestionar el proceso de solicitud, cotización, aceptación, pago, reserva y cierre del servicio musical.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-05",
+    "requisito": "El sistema debe comprobar la disponibilidad del servicio al solicitar una cotización, aceptarla y realizar el pago que confirma la reserva.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-06",
+    "requisito": "El sistema debe impedir la confirmación de reservas con horarios superpuestos para el mismo servicio musical.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-07",
+    "requisito": "El sistema debe mostrar el calendario con días disponibles en verde, reservas confirmadas en amarillo, bloqueos en rojo y fechas no habilitadas en gris.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-08",
+    "requisito": "El sistema debe generar notificaciones internas sobre solicitudes, cotizaciones, pagos y cambios de estado de los contratos.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-09",
+    "requisito": "El sistema debe conservar el historial de solicitudes, versiones de cotizaciones, contratos y operaciones de pago.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-10",
+    "requisito": "El sistema debe registrar fechas y horas de las operaciones para consultar el historial y calcular indicadores del proceso de contratación.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-11",
+    "requisito": "El sistema debe permitir al administrador registrar cuentas de directores de banda y solistas.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-12",
+    "requisito": "El sistema debe permitir al administrador consultar, actualizar, activar y suspender las cuentas de los usuarios.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-13",
+    "requisito": "El sistema debe permitir al administrador crear bandas y asignarles un director registrado.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-14",
+    "requisito": "El sistema debe permitir al administrador registrar el servicio individual de un solista y asociarlo a su cuenta.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-15",
+    "requisito": "El sistema debe permitir al administrador gestionar el nombre, descripción, ubicación, géneros, instrumentos e imágenes de los servicios musicales.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-16",
+    "requisito": "El sistema debe permitir al administrador gestionar los integrantes y repertorios de las bandas y solistas.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-17",
+    "requisito": "El sistema debe permitir al administrador publicar, observar o retirar servicios del catálogo, registrando el motivo de la decisión.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-18",
+    "requisito": "El sistema debe permitir al administrador consultar todas las solicitudes y sus cotizaciones.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-19",
+    "requisito": "El sistema debe permitir al administrador consultar los contratos pendientes de pago, confirmados, finalizados y cancelados.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-20",
+    "requisito": "El sistema debe permitir al administrador filtrar contratos por periodo, fecha del evento, estado, servicio y tipo de proveedor.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-21",
+    "requisito": "El sistema debe permitir al administrador consultar los pagos simulados, métodos utilizados, importes abonados y saldos pendientes.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-22",
+    "requisito": "El sistema debe permitir al administrador consultar los calendarios y reservas de todas las bandas y solistas.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-23",
+    "requisito": "El sistema debe mostrar al administrador indicadores de solicitudes, contratos confirmados, contratos finalizados, cancelaciones y pagos.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-24",
+    "requisito": "El sistema debe permitir al administrador consultar la cantidad de contratos por día, semana o mes, diferenciando la fecha de confirmación de la fecha del evento.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-25",
+    "requisito": "El sistema debe permitir al administrador exportar los registros de contratación e indicadores para su análisis.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-26",
+    "requisito": "El sistema debe permitir al administrador consultar la auditoría de operaciones, identificando responsable, acción y fecha.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-27",
+    "requisito": "El sistema debe permitir al director consultar las bandas que le haya asignado el administrador.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-28",
+    "requisito": "El sistema debe permitir al director actualizar la tarifa referencial de su banda.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-29",
+    "requisito": "El sistema debe permitir al director configurar días de atención, horarios y márgenes de preparación.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-30",
+    "requisito": "El sistema debe permitir al director registrar y retirar bloqueos manuales de disponibilidad, siempre que no contradigan una reserva confirmada.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-31",
+    "requisito": "El sistema debe permitir al director consultar las solicitudes recibidas para su banda, incluyendo fecha, horas, lugar y requerimientos del evento.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-32",
+    "requisito": "El sistema debe permitir al director marcar solicitudes en revisión o rechazarlas indicando un motivo.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-33",
+    "requisito": "El sistema debe permitir al director elaborar cotizaciones con conceptos, cantidades, precios, descuentos, total, vigencia y condiciones.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-34",
+    "requisito": "El sistema debe permitir al director enviar nuevas versiones de una cotización, conservando las versiones anteriores.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-35",
+    "requisito": "El sistema debe permitir al director consultar los contratos, pagos y saldos correspondientes a su banda.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-36",
+    "requisito": "El sistema debe mostrar automáticamente en el calendario del director las reservas confirmadas por el pago del cliente, sin requerir un registro manual adicional.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-37",
+    "requisito": "El sistema debe notificar al director cuando el cliente acepte una cotización, realice un pago o confirme una reserva.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-38",
+    "requisito": "El sistema debe permitir al director registrar la finalización del servicio después de concluir el horario contratado.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-39",
+    "requisito": "El sistema debe permitir al solista consultar su servicio individual registrado por el administrador.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-40",
+    "requisito": "El sistema debe permitir al solista actualizar su tarifa referencial.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-41",
+    "requisito": "El sistema debe permitir al solista configurar sus días de atención, horarios y márgenes de preparación.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-42",
+    "requisito": "El sistema debe permitir al solista registrar y retirar bloqueos manuales de disponibilidad, sin afectar reservas confirmadas.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-43",
+    "requisito": "El sistema debe permitir al solista consultar las solicitudes dirigidas a su servicio individual.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-44",
+    "requisito": "El sistema debe permitir al solista revisar o rechazar solicitudes indicando un motivo.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-45",
+    "requisito": "El sistema debe permitir al solista elaborar y enviar cotizaciones con el desglose del precio, vigencia y condiciones del servicio.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-46",
+    "requisito": "El sistema debe permitir al solista emitir nuevas versiones de cotizaciones y conservar su historial.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-47",
+    "requisito": "El sistema debe permitir al solista consultar sus contratos, pagos y saldos pendientes.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-48",
+    "requisito": "El sistema debe mostrar automáticamente en el calendario del solista las reservas confirmadas por el pago del cliente.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-49",
+    "requisito": "El sistema debe notificar al solista sobre solicitudes, aceptación de cotizaciones, pagos y reservas.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-50",
+    "requisito": "El sistema debe permitir al solista registrar la finalización de su presentación después del horario contratado.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-51",
+    "requisito": "El sistema debe permitir al cliente consultar las bandas y solistas publicados.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-52",
+    "requisito": "El sistema debe permitir al cliente buscar y filtrar servicios por nombre, tipo, género, ubicación, tarifa y disponibilidad.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-53",
+    "requisito": "El sistema debe permitir al cliente consultar el perfil, repertorio, instrumentos, condiciones y tarifa referencial de cada servicio.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-54",
+    "requisito": "El sistema debe permitir al cliente consultar el calendario y los intervalos disponibles del servicio seleccionado.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-55",
+    "requisito": "El sistema debe permitir al cliente solicitar una cotización indicando fecha, hora inicial, hora final, lugar, tipo de evento y requerimientos.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-56",
+    "requisito": "El sistema debe permitir al cliente consultar el estado y detalle de sus solicitudes.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-57",
+    "requisito": "El sistema debe permitir al cliente revisar el precio, desglose, vigencia y condiciones de las cotizaciones recibidas.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-58",
+    "requisito": "El sistema debe permitir al cliente aceptar, rechazar o solicitar cambios en una cotización vigente.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-59",
+    "requisito": "El sistema debe solicitar la aceptación expresa de las condiciones antes de generar el contrato pendiente de pago.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-60",
+    "requisito": "El sistema debe permitir al cliente realizar pagos simulados mediante tarjeta, Yape o Plin.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-61",
+    "requisito": "El sistema debe permitir al cliente simular el pago del saldo completo o del 50 % del saldo pendiente.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-62",
+    "requisito": "El sistema debe permitir al cliente probar un pago aprobado o rechazado, conservando el historial de los intentos.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-63",
+    "requisito": "El sistema debe confirmar automáticamente la reserva con el primer pago aprobado, utilizando la fecha y las horas de la cotización aceptada.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-64",
+    "requisito": "El sistema debe mostrar al cliente el día reservado en amarillo y permitir consultar las horas comprometidas.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-65",
+    "requisito": "El sistema debe permitir al cliente consultar sus contratos, pagos aprobados y saldos pendientes.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-66",
+    "requisito": "El sistema debe permitir al cliente consultar y descargar una constancia de muestra del contrato.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-67",
+    "requisito": "El sistema debe permitir al cliente cancelar un contrato indicando el motivo y conservando el historial.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RF-68",
+    "requisito": "El sistema debe permitir al cliente registrar una valoración única y responder voluntariamente la encuesta de satisfacción después de finalizar el servicio.",
+    "criterio_original": ""
+  },
+  {
+    "id": "RNF-01",
+    "requisito": "El sistema debe permitir una navegación clara y consistente entre las pantallas de cada rol.",
+    "criterio_original": "Las pantallas mantienen nombres, iconos y ubicación de las acciones principales; el usuario identifica en qué sección se encuentra."
+  },
+  {
+    "id": "RNF-02",
+    "requisito": "El sistema debe presentar textos, importes, fechas y estados de manera legible en dispositivos móviles.",
+    "criterio_original": "No existen textos cortados ni elementos superpuestos al aumentar el tamaño de fuente al 150 %."
+  },
+  {
+    "id": "RNF-03",
+    "requisito": "La interfaz debe ajustarse a distintos tamaños de pantalla móvil.",
+    "criterio_original": "Las pantallas principales se visualizan correctamente en anchos de 360, 393 y 412 dp, sin desplazamiento horizontal del contenido general."
+  },
+  {
+    "id": "RNF-04",
+    "requisito": "El sistema debe comunicar los estados mediante texto e indicadores visuales, además del color.",
+    "criterio_original": "El calendario muestra etiquetas como “Disponible”, “Reservado” y “Ocupado”; los botones principales tienen un área táctil mínima de 48 × 48 dp."
+  },
+  {
+    "id": "RNF-05",
+    "requisito": "El sistema debe mantener una identidad gráfica uniforme en todos los dashboards.",
+    "criterio_original": "Colores, tipografía, botones, formularios y tarjetas utilizan los mismos estilos compartidos."
+  },
+  {
+    "id": "RNF-06",
+    "requisito": "El sistema debe responder oportunamente a las consultas y operaciones locales.",
+    "criterio_original": "Como meta, al menos el 95 % de las consultas se completa en dos segundos o menos, con 1 000 solicitudes, contratos y pagos de prueba en un dispositivo de referencia documentado."
+  },
+  {
+    "id": "RNF-07",
+    "requisito": "La aplicación debe mantener la interfaz disponible mientras consulta o guarda información.",
+    "criterio_original": "Las operaciones de almacenamiento se ejecutan fuera del hilo principal y no producen bloqueos de la interfaz durante las pruebas."
+  },
+  {
+    "id": "RNF-08",
+    "requisito": "El sistema debe conservar la información registrada después de cerrar y volver a abrir la aplicación.",
+    "criterio_original": "Las solicitudes, cotizaciones, contratos, pagos y reservas permanecen disponibles después de reiniciar la aplicación."
+  },
+  {
+    "id": "RNF-09",
+    "requisito": "El registro del pago aprobado y la confirmación de la reserva deben ejecutarse como una operación indivisible.",
+    "criterio_original": "Ante una interrupción, se guardan todos los cambios relacionados o ninguno; no queda un pago aprobado sin su reserva correspondiente."
+  },
+  {
+    "id": "RNF-10",
+    "requisito": "El sistema debe procesar una sola vez una misma operación de aceptación o pago.",
+    "criterio_original": "Repetir el envío con el mismo identificador de operación no crea contratos, pagos ni reservas adicionales."
+  },
+  {
+    "id": "RNF-11",
+    "requisito": "El calendario y las vistas de contratos deben reflejar la misma información de reservas.",
+    "criterio_original": "Después de un pago aprobado, las vistas del cliente, músico y administrador muestran la misma fecha, horario y estado al consultar el registro."
+  },
+  {
+    "id": "RNF-12",
+    "requisito": "El sistema debe reflejar los cambios de las operaciones sin exigir que el usuario vuelva a registrarlos.",
+    "criterio_original": "La reserva aparece en el calendario después del pago, sin que el director o solista pulse un botón adicional para guardarla."
+  },
+  {
+    "id": "RNF-13",
+    "requisito": "El sistema debe limitar las operaciones y consultas según el rol y la relación del usuario con cada registro.",
+    "criterio_original": "Las pruebas impiden que un cliente consulte contratos ajenos y que un músico modifique servicios no asignados, incluso mediante llamadas directas a la capa de datos."
+  },
+  {
+    "id": "RNF-14",
+    "requisito": "El sistema debe mostrar únicamente los datos personales necesarios para cada operación.",
+    "criterio_original": "El calendario público no expone nombres, teléfonos, direcciones ni condiciones contractuales de otros clientes."
+  },
+  {
+    "id": "RNF-15",
+    "requisito": "El prototipo no debe almacenar información sensible introducida en los formularios de pago.",
+    "criterio_original": "No se encuentran números de tarjeta, CVV ni códigos de aprobación en la base de datos, preferencias, archivos o registros de depuración."
+  },
+  {
+    "id": "RNF-16",
+    "requisito": "El sistema debe calcular importes, descuentos y saldos sin errores de precisión decimal.",
+    "criterio_original": "Los cálculos utilizan céntimos enteros o precisión decimal exacta; el saldo coincide con el total menos los pagos aprobados."
+  },
+  {
+    "id": "RNF-17",
+    "requisito": "El sistema debe utilizar criterios uniformes para almacenar, comparar y mostrar fechas y horas.",
+    "criterio_original": "Un evento conserva su fecha y horario en todas las vistas, utilizando la zona horaria America/Lima para su presentación."
+  },
+  {
+    "id": "RNF-18",
+    "requisito": "El sistema debe informar los errores de manera comprensible y permitir corregirlos.",
+    "criterio_original": "Los campos inválidos muestran mensajes específicos; una operación fallida no cierra inesperadamente la aplicación ni elimina datos previamente guardados."
+  },
+  {
+    "id": "RNF-19",
+    "requisito": "El sistema debe permitir identificar el origen y la secuencia de las operaciones importantes.",
+    "criterio_original": "Cada cambio relevante conserva identificador, usuario responsable, fecha, acción y referencia al registro afectado."
+  },
+  {
+    "id": "RNF-20",
+    "requisito": "El sistema debe separar la interfaz, las reglas de negocio y el almacenamiento.",
+    "criterio_original": "La lógica de cotizaciones, pagos y reservas se encuentra centralizada y puede probarse sin depender de una pantalla específica."
+  },
+  {
+    "id": "RNF-21",
+    "requisito": "Las reglas críticas del sistema deben poder verificarse mediante pruebas repetibles.",
+    "criterio_original": "Existen pruebas para pagos rechazados, pagos parciales, duplicados, restricciones por rol y conflictos de horario."
+  },
+  {
+    "id": "RNF-22",
+    "requisito": "El prototipo Android debe permitir recorrer el flujo principal sin conexión a internet.",
+    "criterio_original": "Con el dispositivo sin conexión, se puede ingresar con una cuenta de muestra, solicitar, cotizar, pagar de forma simulada y consultar la reserva."
+  }
+]

@@ -1,0 +1,8 @@
+# Activar con SPRING_PROFILES_ACTIVE=https y un certificado del entorno.
+server:
+  port: ${SERVER_PORT:8443}
+  ssl:
+    enabled: true
+    key-store: ${TLS_KEY_STORE}
+    key-store-password: ${TLS_KEY_STORE_PASSWORD}
+    key-store-type: PKCS12

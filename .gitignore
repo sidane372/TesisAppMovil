@@ -1,0 +1,37 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+**/build/
+/docs/pruebas/local/
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.key
+*.apk
+*.aab
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+# Entorno local, bases persistentes y verificacion: contienen datos y credenciales privados.
+/database/.local/
+/backend/.local/
+/backend/.gradle/
+
+/app/.local/
+# Preferencias personales y dispositivos de Android Studio.
+/.idea/

@@ -1,0 +1,49 @@
+{
+  "verified_at_utc": "2026-11-03T19:52:55.148102+00:00",
+  "inputs": [
+    {
+      "path": "database/migrations/V001__modelo_central.sql",
+      "sha256": "aa2f61292f6d8aa45da5cbaf8c266785d8a06e14d37d053ad2bcc6438ae4cef0"
+    },
+    {
+      "path": "database/migrations/V002__roles_del_sistema.sql",
+      "sha256": "fa4c17bab9d68bd0d1f0cf1914b35b5faab6cc31286d273f6a7790f3c77cd859"
+    },
+    {
+      "path": "database/migrations/V003__inmutabilidad_y_validaciones.sql",
+      "sha256": "f7192a25d8342220e2f54364ee1e3f5b40f847ff5e1479f7b20cac992d739dcb"
+    },
+    {
+      "path": "database/migrations/V004__consulta_saldos.sql",
+      "sha256": "01df85875403598f5160f1387be2b1719b617ce74e19c9e6c681bcf3cc1ff46d"
+    },
+    {
+      "path": "database/queries/bloquear_recurso.sql",
+      "sha256": "b312a2224c44573d7b06d53076a47340362cf65a4d16221fefb677e035955481"
+    },
+    {
+      "path": "database/queries/catalogo_publico.sql",
+      "sha256": "8be24c4d9c9356809fc6590daed6900e1cc53d3d028e6003c3cadc39bef99e3c"
+    },
+    {
+      "path": "database/queries/ocupaciones_en_conflicto.sql",
+      "sha256": "1192de8cb86a956570577ec1fb41b6562df2aa1477334d4150568ef77ae65868"
+    },
+    {
+      "path": "database/tests/test_schema.py",
+      "sha256": "367f8f2be1655e4b116a077e8bec6eb982f398b8f79093e2fd9ba2cad3897d4a"
+    },
+    {
+      "path": "tools/Test-Database.ps1",
+      "sha256": "a95668d7909464719713e30d0b7c0f76c31d7e41425ef845956264cda25c687c"
+    },
+    {
+      "path": "tools/export_database_docs.py",
+      "sha256": "784703139f306dd70996c6ed18b5306276af9fd7b9b8543fa38ac9f3fb253bfc"
+    },
+    {
+      "path": "database/tests/evidence/resultado_mysql.json",
+      "sha256": "201b9cfb03e21ce7123f552a09c2dbb117c06d2c12c1321e45067de8061c7d8d"
+    }
+  ]
+}

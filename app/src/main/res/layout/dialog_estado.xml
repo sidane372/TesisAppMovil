@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+<LinearLayout
+    
+    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+    <TextView android:id="@+id/estado_ayuda" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/SC.Secondary" android:layout_marginBottom="16dp" />
+    <Spinner
+        android:id="@+id/estado_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_card" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/field_motivo"
+        style="@style/SC.Input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/motivo">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_motivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="1000"
+            android:minLines="3"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>

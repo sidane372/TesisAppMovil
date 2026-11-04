@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:padding="20dp"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/gestion_tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/banda"
+        android:textAppearance="@style/SC.Eyebrow" />
+    <TextView
+        android:id="@+id/gestion_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_servicio"
+        android:textAppearance="@style/SC.Heading"
+        android:layout_marginTop="8dp" />
+    <TextView
+        android:id="@+id/gestion_ciudad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ciudad"
+        android:textAppearance="@style/SC.Secondary"
+        android:layout_marginTop="8dp" />
+    <TextView
+        android:id="@+id/gestion_tarifa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tarifa"
+        android:textAppearance="@style/SC.Body"
+        android:layout_marginTop="12dp" />
+    <TextView
+        android:id="@+id/gestion_estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/estado_servicio"
+        android:textAppearance="@style/SC.Body"
+        android:padding="8dp"
+        android:layout_marginTop="12dp" />
+    <TextView
+        android:id="@+id/gestion_repertorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/repertorio"
+        android:textAppearance="@style/SC.Secondary"
+        android:layout_marginTop="12dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/gestion_abrir"
+        style="@style/SC.Outlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/administrar"
+        android:layout_marginTop="12dp"
+        android:maxLines="3" />
+</LinearLayout>

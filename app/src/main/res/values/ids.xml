@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nav_inicio" type="id" />
+    <item name="nav_comparar" type="id" />
+    <item name="nav_guia" type="id" />
+    <item name="nav_usuarios" type="id" />
+    <item name="nav_servicios" type="id" />
+    <item name="nav_propios" type="id" />
+    <item name="action_refresh" type="id" />
+    <item name="action_guia" type="id" />
+    <item name="nav_catalogo" type="id" />
+    <item name="nav_cuenta" type="id" />
+<item name="nav_solicitudes" type="id" /><item name="nav_contratos" type="id" /><item name="nav_calendario" type="id" /><item name="nav_pagos" type="id"/><item name="nav_cobros" type="id"/></resources>

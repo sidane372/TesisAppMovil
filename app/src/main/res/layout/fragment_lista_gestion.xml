@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pagina_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="19dp"
+        android:paddingBottom="28dp">
+        <TextView
+            android:id="@+id/lista_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cuentas_comunidad"
+            android:textAppearance="@style/SC.Title" />
+        <TextView
+            android:id="@+id/lista_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cuentas_descripcion"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="8dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lista_crear"
+            style="@style/SC.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crear_musico"
+            android:layout_marginTop="12dp"
+            android:maxLines="3"
+            app:icon="@drawable/ic_plus" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_buscar_lista"
+            style="@style/SC.Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/buscar_pagina">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_buscar_lista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
+                android:inputType="text"
+                android:maxLength="100"
+                android:minLines="1"
+                android:gravity="top|start"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/estado_cuenta"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="12dp" />
+        <Spinner
+            android:id="@+id/lista_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_card" />
+        <TextView
+            android:id="@+id/lista_ayuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buscar_usuarios_ayuda"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/lista_mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cargando_datos"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="16dp"
+            android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/lista_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:contentDescription="@string/cargando_datos" />
+        <TextView
+            android:id="@+id/lista_vacio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sin_registros"
+            android:textAppearance="@style/SC.Secondary"
+            android:padding="21dp"
+            android:background="@drawable/bg_card"
+            android:layout_marginTop="16dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista_datos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:id="@+id/lista_pagina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pagina_info"
+            android:textAppearance="@style/SC.Secondary"
+            android:layout_marginTop="12dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lista_anterior"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/anterior"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lista_siguiente"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/siguiente"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lista_retry"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reintentar"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_soft"
+    android:layout_marginBottom="12dp">
+    <TextView
+        android:id="@+id/cancion_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_cancion"
+        android:textAppearance="@style/SC.Heading" />
+    <TextView
+        android:id="@+id/cancion_genero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/genero"
+        android:textAppearance="@style/SC.Secondary"
+        android:layout_marginTop="6dp" />
+    <TextView
+        android:id="@+id/cancion_duracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/duracion_cancion"
+        android:textAppearance="@style/SC.Secondary"
+        android:layout_marginTop="6dp" />
+    <TextView
+        android:id="@+id/cancion_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/descripcion_cancion"
+        android:textAppearance="@style/SC.Body"
+        android:layout_marginTop="8dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sin_audio"
+        android:textAppearance="@style/SC.Secondary"
+        android:layout_marginTop="8dp" />
+    <LinearLayout
+        android:id="@+id/cancion_acciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancion_editar"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editar_cancion"
+            android:layout_marginTop="12dp"
+            android:maxLines="3" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancion_retirar"
+            style="@style/SC.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retirar"
+            android:layout_marginTop="12dp"
+            android:maxLines="3"
+            android:textColor="@color/sc_error_text" />
+    </LinearLayout>
+</LinearLayout>

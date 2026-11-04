@@ -1,0 +1,214 @@
+erDiagram
+    bloqueo_agenda {
+        bigint id PK
+        bigint id_servicio FK
+        bigint id_actor FK
+        datetime inicio_utc
+        datetime fin_utc
+    }
+    contrato {
+        bigint id PK
+        varchar codigo
+        bigint id_cotizacion FK
+        bigint id_solicitud FK
+        bigint id_servicio FK
+        bigint id_cliente FK
+        bigint id_proveedor FK
+        bigint total_centimos
+        varchar estado
+    }
+    cotizacion {
+        bigint id PK
+        bigint id_solicitud FK
+        bigint total_centimos
+        varchar estado
+    }
+    detalle_cotizacion {
+        bigint id PK
+        bigint id_cotizacion FK
+        bigint total_centimos
+    }
+    evento_medicion {
+        bigint id PK
+        bigint id_servicio FK
+    }
+    evento_outbox {
+        bigint id PK
+        varchar tipo
+        varchar estado
+    }
+    evento_pago {
+        bigint id PK
+        bigint id_pago FK
+        varchar estado
+    }
+    historial_operacion {
+        bigint id PK
+        bigint id_actor FK
+        bigint id_solicitud FK
+    }
+    horario_atencion {
+        bigint id PK
+        bigint id_servicio FK
+    }
+    imagen_servicio {
+        bigint id PK
+        bigint id_servicio FK
+    }
+    incidencia_pago {
+        bigint id PK
+        bigint id_pago FK
+        bigint id_contrato FK
+        varchar tipo
+        varchar estado
+    }
+    integrante {
+        bigint id PK
+        bigint id_servicio FK
+        bigint id_solista_vinculado FK
+        varchar nombre
+    }
+    notificacion {
+        bigint id PK
+        bigint id_destinatario FK
+        varchar tipo
+    }
+    ocupacion_agenda {
+        bigint id PK
+        bigint id_recurso FK
+        bigint id_reserva FK
+        bigint id_bloqueo FK
+        bigint id_retencion FK
+        datetime inicio_utc
+        datetime fin_utc
+        datetime vence_en
+    }
+    pago {
+        bigint id PK
+        bigint id_contrato FK
+        bigint id_cliente FK
+        bigint importe_centimos
+        varchar estado
+    }
+    recuperacion_acceso {
+        bigint id PK
+        bigint id_usuario FK
+        datetime vence_en
+    }
+    recurso_agenda {
+        bigint id PK
+        bigint id_servicio FK
+        bigint id_musico FK
+    }
+    reembolso {
+        bigint id PK
+        bigint id_pago FK
+        varchar proveedor FK
+        bigint id_contrato FK
+        bigint importe_centimos
+        varchar estado
+    }
+    repertorio {
+        bigint id PK
+        bigint id_servicio FK
+    }
+    reserva {
+        bigint id PK
+        bigint id_contrato FK
+        bigint id_servicio FK
+        varchar estado
+    }
+    retencion_agenda {
+        bigint id PK
+        bigint id_contrato FK
+        bigint id_servicio FK
+        bigint id_pago FK
+        datetime inicio_utc
+        datetime fin_utc
+        datetime vence_en
+        varchar estado
+    }
+    rol {
+        smallint id PK
+        varchar codigo
+    }
+    servicio_genero {
+        bigint id_servicio PK
+        varchar genero PK
+    }
+    servicio_instrumento {
+        bigint id_servicio PK
+        varchar instrumento PK
+    }
+    servicio_musical {
+        bigint id PK
+        bigint id_responsable FK
+        varchar tipo
+        varchar nombre
+        varchar estado_publicacion
+    }
+    servicio_tipo_evento {
+        bigint id_servicio PK
+        varchar tipo_evento PK
+    }
+    sesion {
+        bigint id PK
+        bigint id_usuario FK
+        datetime vence_en
+    }
+    solicitud_cotizacion {
+        bigint id PK
+        bigint id_cliente FK
+        bigint id_servicio FK
+        bigint id_proveedor FK
+        varchar estado
+    }
+    usuario {
+        bigint id PK
+        smallint id_rol FK
+        varchar estado
+    }
+    valoracion {
+        bigint id PK
+        bigint id_contrato FK
+    }
+    usuario ||--o{ bloqueo_agenda : fk_bloqueo_actor
+    servicio_musical ||--o{ bloqueo_agenda : fk_bloqueo_servicio
+    solicitud_cotizacion ||--o| contrato : fk_contrato_contexto
+    cotizacion ||--o| contrato : fk_contrato_cotizacion
+    solicitud_cotizacion ||--o{ cotizacion : fk_cotizacion_solicitud
+    cotizacion ||--o{ detalle_cotizacion : fk_detalle_cotizacion
+    servicio_musical |o--o{ evento_medicion : fk_medicion_servicio
+    pago |o--o{ evento_pago : fk_evento_pago
+    usuario |o--o{ historial_operacion : fk_historial_actor
+    solicitud_cotizacion |o--o{ historial_operacion : fk_historial_solicitud
+    servicio_musical ||--o{ horario_atencion : fk_horario_servicio
+    servicio_musical ||--o{ imagen_servicio : fk_imagen_servicio
+    pago ||--o{ incidencia_pago : fk_incidencia_pago
+    servicio_musical ||--o{ integrante : fk_integrante_servicio
+    usuario |o--o{ integrante : fk_integrante_solista
+    usuario ||--o{ notificacion : fk_notificacion_usuario
+    bloqueo_agenda |o--o{ ocupacion_agenda : fk_ocupacion_bloqueo
+    recurso_agenda ||--o{ ocupacion_agenda : fk_ocupacion_recurso
+    reserva |o--o{ ocupacion_agenda : fk_ocupacion_reserva
+    retencion_agenda |o--o{ ocupacion_agenda : fk_ocupacion_retencion
+    contrato ||--o{ pago : fk_pago_contrato
+    usuario ||--o{ recuperacion_acceso : fk_recuperacion_usuario
+    usuario |o--o| recurso_agenda : fk_recurso_musico
+    servicio_musical |o--o| recurso_agenda : fk_recurso_servicio
+    pago ||--o{ reembolso : fk_reembolso_pago
+    pago ||--o{ reembolso : fk_reembolso_proveedor
+    servicio_musical ||--o{ repertorio : fk_repertorio_servicio
+    contrato ||--o| reserva : fk_reserva_contrato
+    contrato ||--o{ retencion_agenda : fk_retencion_contrato
+    pago ||--o| retencion_agenda : fk_retencion_pago
+    servicio_musical ||--o{ servicio_genero : fk_genero_servicio
+    servicio_musical ||--o{ servicio_instrumento : fk_instrumento_servicio
+    usuario ||--o{ servicio_musical : fk_servicio_responsable
+    servicio_musical ||--o{ servicio_tipo_evento : fk_tipo_evento_servicio
+    usuario ||--o{ sesion : fk_sesion_usuario
+    usuario ||--o{ solicitud_cotizacion : fk_solicitud_cliente
+    usuario ||--o{ solicitud_cotizacion : fk_solicitud_proveedor
+    servicio_musical ||--o{ solicitud_cotizacion : fk_solicitud_servicio
+    rol ||--o{ usuario : fk_usuario_rol
+    contrato ||--o| valoracion : fk_valoracion_contrato
