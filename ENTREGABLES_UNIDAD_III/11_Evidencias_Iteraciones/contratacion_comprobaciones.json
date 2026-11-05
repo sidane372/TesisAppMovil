@@ -1,0 +1,22 @@
+{
+  "checks": [
+    "Agenda publica con horario completo, sin datos privados",
+    "Solicitud sin reserva y aviso al proveedor",
+    "Reintento de solicitud devuelve el mismo ID",
+    "Desglose y descuento exactos",
+    "Reintento de cotizacion no crea otra version",
+    "Contrato unico pendiente de pago con snapshot y recursos",
+    "Aceptacion idempotente",
+    "Aceptar no ocupa agenda",
+    "Snapshot no cambia al editar tarifa",
+    "Bloqueos concurrentes de bandas con mismo director: un solo ganador",
+    "Recursos compartidos bloquean el otro servicio sin revelar motivo",
+    "Retirar bloqueo libera los recursos",
+    "Evento cruza medianoche de Peru bajo franjas contiguas",
+    "Intervalos adyacentes con margenes no se superponen",
+    "Listados privados y resumen real"
+  ],
+  "rid": 1,
+  "cid": 1,
+  "date": "2026-11-11"
+}

@@ -1,0 +1,50 @@
+{
+  "libros": [
+    {
+      "archivo": "02_Backlog_Priorizado.xlsx",
+      "filas": 68,
+      "hojas": 2,
+      "formulas": 5,
+      "filtros": true,
+      "paneles_fijos": true,
+      "errores_excel": 0
+    },
+    {
+      "archivo": "09_Registro_Incidencias.xlsx",
+      "filas": 7,
+      "hojas": 1,
+      "formulas": 3,
+      "filtros": true,
+      "paneles_fijos": true,
+      "errores_excel": 0
+    }
+  ],
+  "documentos": [
+    {
+      "archivo": "01_Plan_Desarrollo.docx",
+      "paginas": 4,
+      "motor": "OOXML local y ReportLab con Arial; rasterización render_docx.py y Poppler",
+      "integridad_texto": true
+    },
+    {
+      "archivo": "10_Documentacion_Tecnica.docx",
+      "paginas": 9,
+      "motor": "OOXML local y ReportLab con Arial; rasterización render_docx.py y Poppler",
+      "integridad_texto": true
+    }
+  ],
+  "capturas": 13,
+  "esquema": {
+    "tablas_negocio": 36,
+    "historial_flyway": 1,
+    "columnas_negocio": 337,
+    "claves_foraneas": 55,
+    "checks": 75,
+    "triggers": 9,
+    "vistas": 1,
+    "indices": 142
+  },
+  "migraciones_copiadas_con_hash_identico": 7,
+  "revision_secretos_locales": "Sin coincidencias",
+  "nota_render": "Revisión visual de 13 páginas con composición local del DOCX. Microsoft Word no expuso automatización y no se verificó su composición nativa."
+}

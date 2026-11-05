@@ -1,0 +1,205 @@
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 9.4.1 is available: 9.5.0 [AndroidGradlePluginVersion]
+agp = "9.4.1"
+      ~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\layout\item_servicio.xml:68: Warning: Use app:drawableStartCompat instead of android:drawableStart [UseCompatTextViewDrawableXml from androidx.appcompat]
+                android:drawableStart="@drawable/ic_location" android:drawablePadding="8dp"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseCompatTextViewDrawableXml":
+   TextView uses android: compound drawable attributes instead of app: ones
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.appcompat
+   Feedback: https://issuetracker.google.com/issues/new?component=460343
+
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:28: Warning: Formatting %d followed by words ("servicios"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="conteo_catalogo">%1$d servicios encontrados</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "PluralsCandidate":
+   This lint check looks for potential errors in internationalization where
+   you have translated a message which involves a quantity and it looks like
+   other parts of the string may need grammatical changes.
+
+   For example, rather than something like this:
+     <string name="try_again">Try again in %d seconds.</string>
+   you should be using a plural:
+      <plurals name="try_again">
+           <item quantity="one">Try again in %d second</item>
+           <item quantity="other">Try again in %d seconds</item>
+       </plurals>
+   This will ensure that in other languages the right set of translations are
+   provided for the different quantity classes.
+
+   (This check depends on some heuristics, so it may not accurately determine
+   whether a string really should be a quantity. You can use tools:ignore to
+   filter out false positives.
+
+   https://developer.android.com/guide/topics/resources/string-resource.html#Plurals
+
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\adapter\CancionAdapter.java:30: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\adapter\GestionServicioAdapter.java:24: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\adapter\UsuarioAdapter.java:24: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NotifyDataSetChanged":
+   The RecyclerView adapter's onNotifyDataSetChanged method does not specify
+   what about the data set has changed, forcing any observers to assume that
+   all existing items and structure may no longer be valid. `LayoutManager`s
+   will be forced to fully rebind and relayout all visible views.
+
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\layout\header_navigation.xml:9: Warning: Possible overdraw: Root element paints background @color/sc_navy with a theme that also paints a background (inferred theme is @style/Theme.SantaCeciliaTesis) [Overdraw]
+    android:background="@color/sc_navy">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\colors.xml:5: Warning: The resource R.color.sc_blue_pressed appears to be unused [UnusedResources]
+    <color name="sc_blue_pressed">#244788</color>
+           ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\colors.xml:18: Warning: The resource R.color.sc_error appears to be unused [UnusedResources]
+    <color name="sc_error">#FFF0EF</color>
+           ~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.catalogo_vacio appears to be unused [UnusedResources]
+    <string name="catalogo_vacio">Aquí encontrarás los servicios musicales publicados por la asociación.</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings.xml:8: Warning: The resource R.string.catalogo_sin_publicaciones appears to be unused [UnusedResources]
+    <string name="catalogo_sin_publicaciones">La asociación aún no tiene servicios publicados.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings.xml:27: Warning: The resource R.string.nombre_completo appears to be unused [UnusedResources]
+    <string name="nombre_completo">%1$s %2$s</string><string name="rol_administrador">Administrador</string><string name="rol_director">Director de banda</string><string name="rol_cliente">Cliente</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings.xml:27: Warning: The resource R.string.rol_administrador appears to be unused [UnusedResources]
+    <string name="nombre_completo">%1$s %2$s</string><string name="rol_administrador">Administrador</string><string name="rol_director">Director de banda</string><string name="rol_cliente">Cliente</string>
+                                                             ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings.xml:27: Warning: The resource R.string.rol_cliente appears to be unused [UnusedResources]
+    <string name="nombre_completo">%1$s %2$s</string><string name="rol_administrador">Administrador</string><string name="rol_director">Director de banda</string><string name="rol_cliente">Cliente</string>
+                                                                                                                                                                          ~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings.xml:30: Warning: The resource R.string.sesion_cerrada_local appears to be unused [UnusedResources]
+    <string name="sesion_cerrada">Sesión cerrada.</string><string name="sesion_cerrada_local">Sesión cerrada en este dispositivo. No pudimos avisar al servidor.</string>
+                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings.xml:30: Warning: The resource R.string.sesion_cerrada appears to be unused [UnusedResources]
+    <string name="sesion_cerrada">Sesión cerrada.</string><string name="sesion_cerrada_local">Sesión cerrada en este dispositivo. No pudimos avisar al servidor.</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:20: Warning: The resource R.string.buscar_musicos appears to be unused [UnusedResources]
+    <string name="buscar_musicos">Busca por nombre, género, instrumento o ciudad</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:24: Warning: The resource R.string.sin_limite appears to be unused [UnusedResources]
+    <string name="sin_limite">Sin límite</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:26: Warning: The resource R.string.aplicar_filtros appears to be unused [UnusedResources]
+    <string name="aplicar_filtros">Aplicar filtros</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:30: Warning: The resource R.string.ubicacion appears to be unused [UnusedResources]
+    <string name="ubicacion">Ubicación</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:92: Warning: The resource R.string.privado_online appears to be unused [UnusedResources]
+    <string name="privado_online">Estos datos necesitan una conexión con Santa Cecilia.</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:95: Warning: The resource R.string.estado_actual appears to be unused [UnusedResources]
+    <string name="estado_actual">Estado: %1$s</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:105: Warning: The resource R.string.acerca appears to be unused [UnusedResources]
+    <string name="acerca">Acerca de Santa Cecilia</string>
+            ~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:135: Warning: The resource R.string.nombre_completo_cuenta appears to be unused [UnusedResources]
+    <string name="nombre_completo_cuenta">%1$s %2$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\res\values\strings_etapa5.xml:151: Warning: The resource R.string.solista_sin_integrantes appears to be unused [UnusedResources]
+    <string name="solista_sin_integrantes">Servicio individual</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests=true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests=true.
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\fragment\common\ContratacionFormFragment.java:448: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            totalView.setText("Total: " + money(total));
+                              ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\fragment\common\ContratacionFormFragment.java:448: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            totalView.setText("Total: " + money(total));
+                              ~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\fragment\common\ContratacionFormFragment.java:450: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            totalView.setText("Completa cantidades e importes para calcular el total");
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\fragment\common\PagosFragment.java:261: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        amount.setText("Importe: " + money(pos == 0 ? balance : (balance + 1) / 2));
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\sidan\AndroidStudioProjects\SantaCeciliaTesis\app\src\main\java\com\example\santaceciliatesis\view\fragment\common\PagosFragment.java:261: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        amount.setText("Importe: " + money(pos == 0 ? balance : (balance + 1) / 2));
+                                       ~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 30 warnings

@@ -1,0 +1,40 @@
+{
+  "checks": [
+    "Flyway y cuentas receptoras configuradas sin credenciales de banco",
+    "Configuracion de cobros exclusiva del administrador",
+    "Mitad de saldo impar calculada en centimos por el servidor",
+    "Inicio de pago idempotente",
+    "Cliente ajeno y proveedor no pueden alterar el pago",
+    "Comprobantes falsos o formatos activos rechazados",
+    "Reporte no aprueba, no abona y no reserva",
+    "Reporte idempotente conserva comprobante",
+    "Comprobante privado y recodificado a JPEG",
+    "No se concilia sin confirmar contraste en cuenta",
+    "Revision duplicada concurrente aplica una sola vez",
+    "Primer abono confirma contrato y una reserva con sus recursos",
+    "Segundo abono liquida el saldo sin crear otra reserva",
+    "Contrato liquidado no se vuelve a cobrar ni finaliza antes de tiempo",
+    "Ingresos concurrentes para intervalos compartidos: una reserva y una incidencia",
+    "Ingreso conflictivo conserva evidencia sin abonar",
+    "Solicitud de devolucion idempotente",
+    "Devolucion registrada conserva saldo y resuelve incidencia",
+    "Confirmacion de devolucion idempotente",
+    "Rechazo no reduce saldo ni confirma contrato",
+    "Cancelar instrucciones no cancela el contrato",
+    "Una operacion bancaria no se reutiliza en otro contrato",
+    "Monto realmente recibido distinto abre incidencia sin abono",
+    "Devolucion no puede exceder el ingreso real",
+    "Cancelacion conserva abonos y libera agenda",
+    "Devolucion parcial aplicada ajusta saldo una sola vez",
+    "Datos receptores con historial no se cambian",
+    "Outbox entrega avisos internos durables"
+  ],
+  "counts": {
+    "avisos": 150,
+    "reservas": 6,
+    "incidencias": 5,
+    "movimientos": 19,
+    "outboxPendiente": 0,
+    "ocupacionesActivas": 8
+  }
+}

@@ -1,0 +1,7 @@
+Regresión del retorno después de crear una cuenta
+Dispositivo observado: Pixel 7a emulado con Android API 37.
+Prueba: AccesoFragmentTest.registrationSuccessShowsNoticeAfterRegistrationFragmentIsDetached
+Resultado observado: OK (1 test).
+La prueba reproduce la respuesta de éxito y el retiro del fragmento real de registro. Verifica que se conserva el aviso y se vacía la pila. No crea cuentas ni transacciones.
+Diagnóstico inicial: IllegalStateException en AccesoFragment.host, invocado por onRegistered después de mostrarAcceso LOGIN.
+La cuenta del registro del usuario se confirmó existente y activa mediante consulta local. No se incluyen correo, contraseña ni registros personales en este paquete.
