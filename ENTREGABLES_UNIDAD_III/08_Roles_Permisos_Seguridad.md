@@ -1,34 +1,27 @@
-# Roles, permisos y seguridad — diseño y estado inicial
+# Roles permisos y mecanismos de seguridad
 
-La tabla reúne permisos de todo el sistema. Etapa 3 implementó autenticación y permisos de identidad/servicios en backend; Etapa 4 conectó acceso y cuenta desde Android. Contratación, agenda y pagos de esta matriz siguen previstos. Ver [API efectiva](../backend/API.md) y [sesión Android](../docs/integracion_android.md).
+La autorización se aplica en el servidor por rol, relación con el registro y estado de negocio. Los menús Android ayudan a navegar, pero no conceden permisos por sí mismos.
 
 | Operación | Administrador | Cliente | Director | Solista |
 |---|---|---|---|---|
+| Consultar catálogo publicado | Sí | Sí | Sí | Sí |
 | Crear músicos y servicios | Sí | No | No | No |
-| Cambiar identidad/publicación de servicios | Sí | No | No | No |
-| Precio, agenda, repertorio y galería | Sí | No | Bandas asignadas | Servicio propio |
-| Integrantes | Bandas | No | Bandas asignadas | No en servicio individual |
-| Solicitar cotización | No en nombre del cliente | Propia | No | No |
-| Responder/cotizar | Consulta global | No | Solicitudes de sus bandas | Solicitudes de su servicio |
-| Aceptar y pagar | No en nombre del cliente | Contrato propio | No | No |
-| Consultar contratos/pagos | Global autorizado | Propios | Bandas asignadas | Servicio propio |
-| Cancelar según política | Sí | Propio | Propio | Propio |
-| Finalizar después del horario | Sí | No | Propio | Propio |
-| Valorar contrato finalizado | Consulta autorizada | Propio y único | No | No |
-| Auditoría/indicadores/exportación | Sí | No | No | No |
-| Perfil personal | Propio | Propio | Propio | Propio |
+| Publicar o retirar servicios | Sí | No | No | No |
+| Editar tarifa y repertorio | Global autorizado | No | Bandas asignadas | Servicio propio |
+| Configurar franjas y bloqueos | Global autorizado | No | Bandas asignadas | Servicio propio |
+| Enviar solicitud y aceptar propuesta | No por el cliente | Propia | No | No |
+| Cotizar o rechazar solicitudes | Consulta global | No | Bandas asignadas | Servicio propio |
+| Consultar contratos y pagos | Global autorizado | Propios | Bandas asignadas | Servicio propio |
+| Adjuntar comprobante de ingreso | No por el cliente | Contrato propio | No | No |
+| Configurar cuentas y conciliar | Sí | No | No | No |
+| Registrar seguimiento de devolución | Sí | Consulta propia | Consulta propia | Consulta propia |
+| Cancelar contrato confirmado | Según operación autorizada | Propio con motivo | Según rol autorizado | Según rol autorizado |
+| Finalizar después del evento | Sí | No | Banda asignada | Servicio propio |
 
-Estado implementado: URL HTTPS validada, tráfico cleartext deshabilitado, caché solo pública, sin contraseñas/tokens/datos de tarjeta. Las pruebas JVM de configuración se informan en ../docs/pruebas/verificacion_etapa1.md. El enum Rol no concede permisos y la pantalla base no representa una sesión autenticada.
+Registro público fijo CLIENTE y alta inicial de administrador mediante configuración privada. Contraseñas bcrypt, longitud mínima de 12 caracteres y máximo de 72 bytes UTF-8. Tokens aleatorios con hashes en servidor, acceso corto, refresh rotatorio, revocación por familia y control de reutilización. Suspender una cuenta revoca su acceso.
 
-Pendientes: hash de contraseñas seguro en servidor, login/recuperación, tokens breves/rotación/revocación, Keystore para credenciales de sesión en Android, límites de intentos, autorización por propietario en cada endpoint, pruebas 401/403 y acceso directo a contratos ajenos, limpieza de caché privada al cambiar cuenta, privacidad y seguridad de backups, despliegue HTTPS y revisión del proveedor financiero.
+Android cifra la sesión mediante AES-GCM y Android Keystore. No guarda contraseñas en Room, preferencias o el repositorio. Las peticiones usan HTTPS con validación del certificado; la CA de desarrollo solo está en debug. Release requiere URL, TLS y firma del entorno de distribución.
 
+Los comprobantes son privados y autorizados por contrato, con validación de imagen y recodificación sin metadatos. Los errores no publican trazas ni secretos. El calendario público oculta direcciones, identidad y motivos privados. Las cuentas MySQL de aplicación y migración tienen funciones separadas.
 
-## Estructura de seguridad añadida en Etapa 2
-
-MySQL contiene los cuatro roles de referencia, cuentas sin usuarios sembrados, hash de contraseña, sesiones con hashes/rotación/revocación y recuperación con token de un uso. FK compuestas impiden asociar pagos a otro cliente contractual. Estas restricciones estructurales se probaron por SQL; todavía no existe login, verificación de contraseña ni autorización HTTP. La cuenta usada por las pruebas pertenece a una instancia aislada detenida al finalizar. El acceso privado del backend, grants, TLS y respaldo/restauración siguen pendientes del entorno de servidor.
-
-## Controles implementados en Etapa 3
-
-Registro público fijo CLIENTE; creación de músicos solo ADMINISTRADOR; bcrypt; contraseñas de 12 caracteres mínimo y 72 bytes UTF-8 máximo; acceso corto y refresh aleatorios con hashes; rotación con revocación al reutilizar; cierre de familia; suspensión/desactivación con revocación; propietario validado para tarifa y repertorio; rechazo de versión antigua; errores 401/403/404 según contexto. La API no devuelve entidades, hashes ni tokens de recuperación.
-
-Se comprobaron accesos HTTP y recuperación con correo local, incluida revocación posterior. Para operación real se deben configurar HTTPS, SMTP, credenciales privadas y límites coordinados si hay varias réplicas. Los controles de contratos/pagos todavía no están implementados. Ver ../backend/API.md y CONFIGURACION_MYSQL.md.
+Evidencias locales: rechazo entre actores ajenos, comprobante privado, revisión restringida, idempotencia, concurrencia y revocación descritos en las comprobaciones de los entregables 07 y 11. Pendientes de producción: revisión de privacidad, SMTP externo, backups y restauración probados, análisis formal de seguridad, límites distribuidos y gestión de certificados. No se certifica seguridad integral por haber compilado el APK.
