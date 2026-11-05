@@ -1,21 +1,18 @@
-# Módulos integrados — registro inicial
+# Módulos integrados y evidencia disponible
 
-Actualización Etapa 4: Android conecta autenticación/cuenta y catálogo/detalle con el backend real por HTTPS nativo. Volley fue retirado; sesión cifrada con Keystore y Room v2. Se verificaron dos emuladores, renovación, caché al reiniciar sin conexión y logout independiente/local. [Guía y alcance](../docs/integracion_android.md). El resto del registro conserva el corte inicial; el flujo completo de contratación/pagos sigue pendiente.
+El flujo principal ya está implementado entre Android, Spring Boot y MySQL. Su evidencia financiera corresponde a datos sintéticos de pruebas locales; no hubo transferencias reales ni uso de un sandbox bancario oficial.
 
-| Flujo | Precondición / datos | Resultado esperado | Resultado obtenido / estado |
+| Flujo | Precondición | Resultado esperado | Resultado observado y evidencia |
 |---|---|---|---|
-| Base de compilación | SDK y dependencias locales/descargadas | APK compilable, pruebas JVM y lint | Ver ../docs/pruebas/verificacion_etapa1.md |
-| Consulta real de catálogo | API HTTPS con snapshot completo, servicios publicados | Catálogo y caché sincronizados | Verificado localmente en Etapa 4: HTTPS, catálogo y Room; sin despliegue productivo |
-| Cliente → Solicitud → Director/Solista → Cotización → Aceptación → Contrato → Pago → Reserva | Cuentas reales de prueba, backend/MySQL, catálogo y sandbox oficial | Contrato y reserva únicos tras pago verificado | No ejecutado: módulos no implementados |
-| Consulta entre dispositivos | Dos sesiones/dispositivos y API común | Mismo estado central autorizado | Verificado para catálogo público y cuenta propia en dos emuladores (Etapa 4) |
+| Registro y acceso | Servidor HTTPS, cliente con datos válidos | Cuenta persistente y transición estable al login | Cuenta observada activa; cierre de transición corregido; regresión instrumentada aprobada |
+| Catálogo entre dispositivos | API común y servicios publicados de verificación | Consultas del estado central y caché pública | Comprobación histórica en dos emuladores; docs/integracion_android.md |
+| Solicitud y cotización | Cliente, proveedor y franjas del servicio en entorno aislado | Solicitud sin reserva y nueva versión de propuesta | Capturas 07 y 08; contratacion_comprobaciones.json |
+| Aceptación y contrato | Última propuesta vigente y consentimiento | Un contrato pendiente de pago con snapshot | Captura 09; comprobaciones de idempotencia y concurrencia |
+| Comprobante y revisión | Cuenta receptora e ingreso sintéticos identificados | Comprobante privado, revisión solo por administrador | Capturas 10 y 12; pagos_comprobaciones_sinteticas.json |
+| Abono y reserva | Ingreso sintético conciliado y agenda libre | Confirmación y reserva únicas en transacción | Captura 13; revisión concurrente y primer/segundo abono registrados |
+| Conflicto y devolución | Recurso ocupado o importe distinto | Incidencia sin reserva incompatible y seguimiento de devolución | 28 comprobaciones agrupadas de pagos en instancia aislada |
+| Persistencia habitual | Instancia local de desarrollo | Conservar esquema, administrador y sesión al reiniciar | verificacion_arranque.json; sin borrar datos |
 
-No hay datos de clientes reales ni cobros de pruebas registrados. No se presenta la compilación como prueba de extremo a extremo del negocio. No se generaron capturas de flujos inexistentes.
+Las evidencias JSON y de regresión están en 11_Evidencias_Iteraciones. Las capturas y sus vistas asociadas están en 06_Interfaces_Funcionales. Las fases anteriores se conservaron como evidencia histórica y no se volvieron a ejecutar para generar este paquete.
 
-
-## Verificación local añadida en Etapa 2
-
-El esquema MySQL central ya existe como migraciones ejecutadas y verificadas: 31 pruebas SQL aprobadas, incluido rollback interno y agenda concurrente. Esto acredita integridad/protocolo de la capa de datos; no el flujo de extremo a extremo ni comunicación Android–backend–MySQL. Las fixtures de pagos no corresponden a una pasarela o sandbox oficial. Evidencia: ../docs/pruebas/verificacion_etapa2.md.
-
-## Interfaz añadida en Etapa 5
-
-Dashboards por rol, drawer/cinco accesos, usuarios/servicios administrativos, tarifas/repertorio propios, perfil editable y catálogo con filtros/comparación. Se verificaron operaciones Android contra MySQL/HTTPS y revisión de tamaños/fuente ampliada. [Guía y límites](../docs/interfaz.md). Contrataciones, agenda y pagos siguen en sus etapas; no se generó otro paquete académico de pruebas.
+Pendientes: evaluación formal con usuarios, medición RNF de rendimiento y accesibilidad, infraestructura productiva y recorrido con los datos oficiales de la asociación. Las comprobaciones locales no acreditan recepción de dinero real ni cumplimiento total de los 90 requisitos formales.
