@@ -1,0 +1,30 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --name-status --no-renames --no-ext-diff 32d19efd7db950183772fea8bbfcfd5684150dec
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:41-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit 32d19efd7db950183772fea8bbfcfd5684150dec
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:01-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:01-05:00
+
+    docs: agrega evidencias de interfaces y modulos
+
+M	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/README.md
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/01_login.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/02_administrador.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/03_cliente.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/04_director.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/05_solista.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/06_catalogo.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/07_solicitud.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/08_cotizacion.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/09_contrato.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/10_pagos.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/11_calendario.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/12_revision_pago.png
+A	ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/13_reserva.png
+M	ENTREGABLES_UNIDAD_III/07_Modulos_Integrados.md
+
+SALIDA DE ERROR

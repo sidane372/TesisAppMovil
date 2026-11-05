@@ -31,12 +31,12 @@ public class UsuarioService {
     public UsuarioResponse obtener(long id){return UsuarioResponse.of(usuarios.findById(id).orElseThrow(ApiException::notFound));}
     @PreAuthorize("hasRole('ADMINISTRADOR')") @Transactional
     public UsuarioResponse crearMusico(CrearMusico input,AuthPrincipal actor){
-        if(input.rol()!=Rol.DIRECTOR&&input.rol()!=Rol.SOLISTA)throw ApiException.invalid("Solo se crean cuentas de director o solista en esta operacion");
+        if(input.rol()==null)throw ApiException.invalid("Selecciona el rol de la cuenta");
         if(usuarios.findByCorreoNormalizado(input.correo().trim()).isPresent())throw ApiException.conflict("El correo ya esta registrado");
         LocalDateTime now=LocalDateTime.now(clock);Usuario u=new Usuario();u.setRolId(input.rol().getId());u.setNombres(input.nombres().trim());
         u.setApellidos(input.apellidos().trim());u.setCorreo(input.correo().trim());u.setPasswordHash(passwords.encode(input.password()));
         u.setEstado("ACTIVO");u.setCreadoEn(now);u.setActualizadoEn(now);usuarios.saveAndFlush(u);
-        auditoria.registrar(actor.usuarioId(),"Usuario",u.getId(),"CREACION_CUENTA_MUSICAL","Cuenta creada por administrador");return UsuarioResponse.of(u);
+        auditoria.registrar(actor.usuarioId(),"Usuario",u.getId(),"CREACION_CUENTA_ADMINISTRATIVA","Rol asignado: "+input.rol().name());return UsuarioResponse.of(u);
     }
     @Transactional public UsuarioResponse editarPropio(Perfil input,AuthPrincipal actor){return editar(actor.usuarioId(),input,actor);}
     @PreAuthorize("hasRole('ADMINISTRADOR')") @Transactional

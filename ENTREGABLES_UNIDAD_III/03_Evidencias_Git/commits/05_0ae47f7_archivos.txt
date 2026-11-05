@@ -1,0 +1,17 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --name-status --no-renames --no-ext-diff 0ae47f7f341192731b29e6958638b675c3d0b2aa
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:41-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit 0ae47f7f341192731b29e6958638b675c3d0b2aa
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:55-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:55-05:00
+
+    docs: documenta servicios y permisos
+
+M	ENTREGABLES_UNIDAD_III/05_Logica_Negocio_Servicios.md
+M	ENTREGABLES_UNIDAD_III/08_Roles_Permisos_Seguridad.md
+
+SALIDA DE ERROR

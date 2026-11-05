@@ -1,0 +1,80 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false log --all --reverse --date=iso-strict --format=fuller
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:36-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit 3bcb57c7e7af2307ad91ed7c5f3e51f1c3a4908c
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-03T23:53:32-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-03T23:53:32-05:00
+
+    feat: incorpora Santa Cecilia Android y backend
+    
+    Incluye autenticacion por roles, catalogo, contratacion, agenda y pagos directos con Yape, Plin y transferencia. Agrega migraciones MySQL, arranque local persistente y corrige la transicion del registro al login. Excluye credenciales y datos locales.
+
+commit 3276c815deb28c73ebbe9511a997bb7f172a64b7
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:19-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:19-05:00
+
+    docs: agrega plan de desarrollo
+
+commit 6e0e528b88fc0233d9111b2f8ec641d6cfe47c88
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:25-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:25-05:00
+
+    docs: agrega backlog priorizado
+
+commit cc5ad2193878190a980f57f1dceccc933792ab4c
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:49-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:49-05:00
+
+    docs: incorpora modelo y scripts MySQL
+
+commit 0ae47f7f341192731b29e6958638b675c3d0b2aa
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:55-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:55-05:00
+
+    docs: documenta servicios y permisos
+
+commit 32d19efd7db950183772fea8bbfcfd5684150dec
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:01-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:01-05:00
+
+    docs: agrega evidencias de interfaces y modulos
+
+commit f1cd040ce62697c86ad31266b8ab1cd944b54e4b
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:06-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:06-05:00
+
+    docs: incorpora incidencias y documentacion tecnica
+
+commit e5d35b97a99f460f211927b4a835672bed9a5acd
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:10-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:10-05:00
+
+    docs: incorpora evidencias y resultados de pruebas
+
+commit 526df8eff10021079d39c5f459e9fd4bed95dd8c
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:15-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:15-05:00
+
+    docs: actualiza control de versiones y entregables
+
+SALIDA DE ERROR

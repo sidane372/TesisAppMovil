@@ -12,19 +12,28 @@
         android:orientation="vertical"
         android:padding="19dp"
         android:paddingBottom="28dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/bg_admin_hero">
         <TextView
             android:id="@+id/lista_titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cuentas_comunidad"
-            android:textAppearance="@style/SC.Title" />
+            android:textAppearance="@style/SC.Title"
+            android:textColor="@color/sc_white" />
         <TextView
             android:id="@+id/lista_descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cuentas_descripcion"
             android:textAppearance="@style/SC.Secondary"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="12dp"
+            android:textColor="#E2EAF9" />
+        </LinearLayout>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/lista_crear"
             style="@style/SC.Button"

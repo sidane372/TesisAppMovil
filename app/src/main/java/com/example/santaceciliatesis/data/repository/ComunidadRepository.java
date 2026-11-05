@@ -191,16 +191,21 @@ public final class ComunidadRepository {
 
     public RequestHandle cambiarEstado(
             Usuario u, String estado, String motivo, Callback<Usuario> callback) {
+        return cambiarEstado(u, estado, motivo, false, callback);
+    }
+
+    public RequestHandle cambiarEstado(
+            Usuario u, String estado, String motivo, boolean eliminar, Callback<Usuario> callback) {
         return run(
                 callback,
                 t ->
                         AuthJsonMapper.usuario(
                                 api.request(
-                                                "PATCH",
-                                                ApiEndpoints.USUARIOS + "/" + u.getId() + "/estado",
+                                                eliminar ? "DELETE" : "PATCH",
+                                                ApiEndpoints.USUARIOS + "/" + u.getId() + (eliminar ? "" : "/estado"),
                                                 new JSONObject()
                                                         .put("version", u.getVersion())
-                                                        .put("estado", estado)
+                                                        .put("estado", eliminar ? null : estado)
                                                         .put("motivo", motivo),
                                                 t)
                                         .getJSONObject("data")));

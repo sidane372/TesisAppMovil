@@ -102,7 +102,8 @@ public final class FormularioFragment extends BaseFragment
                 labels.get(key).setVisibility(View.GONE);
             spinner(
                     R.id.form_selector,
-                    List.of(getString(R.string.rol_director), getString(R.string.solista)));
+                    List.of(getString(R.string.rol_director), getString(R.string.solista),
+                            getString(R.string.rol_administrador), getString(R.string.rol_cliente)));
         }
         if (mode.equals("SERVICIO_EDITAR")) {
             v(R.id.form_selector).setVisibility(View.GONE);
@@ -147,6 +148,8 @@ public final class FormularioFragment extends BaseFragment
         if (saved != null) {
             draft = saved.getBundle("draft");
             savedOwner = saved.getLong("owner", 0);
+            if (mode.equals("USUARIO_NUEVO"))
+                ((Spinner) v(R.id.form_selector)).setSelection(saved.getInt("role", 0));
         }
         v(R.id.formulario_guardar)
                 .setOnClickListener(
@@ -161,7 +164,7 @@ public final class FormularioFragment extends BaseFragment
                                         && index > 0
                                         && index <= owners.size()) owner = owners.get(index - 1);
                                 if (mode.equals("USUARIO_NUEVO"))
-                                    role = index == 1 ? "SOLISTA" : "DIRECTOR";
+                                    role = List.of("DIRECTOR", "SOLISTA", "ADMINISTRADOR", "CLIENTE").get(index);
                             }
                             controller.guardar(values(), owner, role);
                         });
@@ -306,6 +309,8 @@ public final class FormularioFragment extends BaseFragment
             fieldsBundle.putString("_version", version);
             out.putBundle("draft", fieldsBundle);
             Spinner select = requireView().findViewById(R.id.form_selector);
+            if (mode.equals("USUARIO_NUEVO") && select != null)
+                out.putInt("role", select.getSelectedItemPosition());
             if (mode.equals("SERVICIO_NUEVO")
                     && select != null
                     && select.getSelectedItemPosition() > 0)

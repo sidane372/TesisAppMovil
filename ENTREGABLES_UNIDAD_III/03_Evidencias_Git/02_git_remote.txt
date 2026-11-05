@@ -1,0 +1,9 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false remote -v
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:36-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+origin	https://github.com/sidane372/TesisAppMovil.git (fetch)
+origin	https://github.com/sidane372/TesisAppMovil.git (push)
+
+SALIDA DE ERROR

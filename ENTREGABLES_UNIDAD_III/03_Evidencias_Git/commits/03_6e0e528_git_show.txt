@@ -1,0 +1,18 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --stat --summary --no-renames --no-ext-diff 6e0e528b88fc0233d9111b2f8ec641d6cfe47c88
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:40-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit 6e0e528b88fc0233d9111b2f8ec641d6cfe47c88
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:25-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:25-05:00
+
+    docs: agrega backlog priorizado
+
+ ENTREGABLES_UNIDAD_III/02_Backlog_Priorizado.xlsx | Bin 0 -> 21112 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ENTREGABLES_UNIDAD_III/02_Backlog_Priorizado.xlsx
+
+SALIDA DE ERROR

@@ -1,0 +1,48 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --stat --summary --no-renames --no-ext-diff e5d35b97a99f460f211927b4a835672bed9a5acd
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:42-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit e5d35b97a99f460f211927b4a835672bed9a5acd
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:10-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:10-05:00
+
+    docs: incorpora evidencias y resultados de pruebas
+
+ .../Iteracion_03_Backend_Identidad.md              |   15 +
+ .../Iteracion_04_Integracion_Android.md            |   15 +
+ .../Iteracion_05_Interfaz_por_Rol.md               |   15 +
+ .../Iteracion_06_Contratacion_Agenda.md            |   15 +
+ .../Iteracion_07_Pagos_Directos.md                 |   15 +
+ .../Iteracion_08_Correcciones_y_Git.md             |   15 +
+ .../Verificacion_Paquete.json                      |   50 +
+ .../contratacion_comprobaciones.json               |   22 +
+ .../contratacion_concurrencia.json                 |    1 +
+ .../mysql_verificacion_historica_v004.json         | 6741 ++++++++++++++++++++
+ .../pagos_comprobaciones_sinteticas.json           |   40 +
+ .../regresion_registro.txt                         |    7 +
+ .../11_Evidencias_Iteraciones/resumen_lint.txt     |  205 +
+ .../verificacion_arranque.json                     |    1 +
+ ENTREGABLES_UNIDAD_III/GUIA_DEMOSTRACION.md        |   24 +
+ Estado_Actual_Proyecto.md                          |  131 +
+ 16 files changed, 7312 insertions(+)
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_03_Backend_Identidad.md
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_04_Integracion_Android.md
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_05_Interfaz_por_Rol.md
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_06_Contratacion_Agenda.md
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_07_Pagos_Directos.md
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_08_Correcciones_y_Git.md
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Verificacion_Paquete.json
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/contratacion_comprobaciones.json
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/contratacion_concurrencia.json
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/mysql_verificacion_historica_v004.json
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/pagos_comprobaciones_sinteticas.json
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/regresion_registro.txt
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/resumen_lint.txt
+ create mode 100644 ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/verificacion_arranque.json
+ create mode 100644 ENTREGABLES_UNIDAD_III/GUIA_DEMOSTRACION.md
+ create mode 100644 Estado_Actual_Proyecto.md
+
+SALIDA DE ERROR

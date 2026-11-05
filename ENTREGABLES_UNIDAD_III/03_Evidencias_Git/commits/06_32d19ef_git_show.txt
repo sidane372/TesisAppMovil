@@ -1,0 +1,44 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --stat --summary --no-renames --no-ext-diff 32d19efd7db950183772fea8bbfcfd5684150dec
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:41-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit 32d19efd7db950183772fea8bbfcfd5684150dec
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:01-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:01-05:00
+
+    docs: agrega evidencias de interfaces y modulos
+
+ .../06_Interfaces_Funcionales/README.md            |  22 +++++++++++---
+ .../capturas/01_login.png                          | Bin 0 -> 148510 bytes
+ .../capturas/02_administrador.png                  | Bin 0 -> 238595 bytes
+ .../capturas/03_cliente.png                        | Bin 0 -> 234524 bytes
+ .../capturas/04_director.png                       | Bin 0 -> 237006 bytes
+ .../capturas/05_solista.png                        | Bin 0 -> 236699 bytes
+ .../capturas/06_catalogo.png                       | Bin 0 -> 181283 bytes
+ .../capturas/07_solicitud.png                      | Bin 0 -> 186561 bytes
+ .../capturas/08_cotizacion.png                     | Bin 0 -> 194007 bytes
+ .../capturas/09_contrato.png                       | Bin 0 -> 245691 bytes
+ .../capturas/10_pagos.png                          | Bin 0 -> 207612 bytes
+ .../capturas/11_calendario.png                     | Bin 0 -> 157227 bytes
+ .../capturas/12_revision_pago.png                  | Bin 0 -> 241312 bytes
+ .../capturas/13_reserva.png                        | Bin 0 -> 204541 bytes
+ ENTREGABLES_UNIDAD_III/07_Modulos_Integrados.md    |  33 ++++++++++-----------
+ 15 files changed, 33 insertions(+), 22 deletions(-)
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/01_login.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/02_administrador.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/03_cliente.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/04_director.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/05_solista.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/06_catalogo.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/07_solicitud.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/08_cotizacion.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/09_contrato.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/10_pagos.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/11_calendario.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/12_revision_pago.png
+ create mode 100644 ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/13_reserva.png
+
+SALIDA DE ERROR

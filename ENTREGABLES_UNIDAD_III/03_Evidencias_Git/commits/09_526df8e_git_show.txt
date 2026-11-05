@@ -1,0 +1,18 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --stat --summary --no-renames --no-ext-diff 526df8eff10021079d39c5f459e9fd4bed95dd8c
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:42-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit 526df8eff10021079d39c5f459e9fd4bed95dd8c
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:15-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:15-05:00
+
+    docs: actualiza control de versiones y entregables
+
+ ENTREGABLES_UNIDAD_III/03_Control_Versiones.md | 23 ++++++------
+ ENTREGABLES_UNIDAD_III/README_ENTREGA.md       | 48 ++++++++++++++++----------
+ 2 files changed, 41 insertions(+), 30 deletions(-)
+
+SALIDA DE ERROR

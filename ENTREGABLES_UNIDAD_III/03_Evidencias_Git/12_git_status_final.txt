@@ -1,0 +1,48 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false status --short --branch --untracked-files=all
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:43-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+## main...origin/main
+ M .gitignore
+ M ENTREGABLES_UNIDAD_III/03_Control_Versiones.md
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/00_Documento_Anterior.md
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/01_git_version.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/02_git_remote.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/03_git_branch.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/04_git_log_grafo.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/05_git_log_completo.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/06_git_status_inicial.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/07_git_diff_sin_preparar.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/08_git_diff_preparado.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/09_git_ls_remote.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/10_git_referencias.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/11_git_arbol_github.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/12_git_status_final.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/Historial_Real.json
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/README.md
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/SHA256SUMS.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/Verificacion_Integridad.json
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/01_3bcb57c_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/01_3bcb57c_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/02_3276c81_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/02_3276c81_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/03_6e0e528_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/03_6e0e528_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/04_cc5ad21_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/04_cc5ad21_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/05_0ae47f7_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/05_0ae47f7_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/06_32d19ef_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/06_32d19ef_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/07_f1cd040_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/07_f1cd040_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/08_e5d35b9_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/08_e5d35b9_git_show.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/09_526df8e_archivos.txt
+?? ENTREGABLES_UNIDAD_III/03_Evidencias_Git/commits/09_526df8e_git_show.txt
+?? ENTREGABLES_UNIDAD_III/SHA256SUMS.txt
+?? Santa_Cecilia_Unidad_III.zip
+?? tatus
+
+SALIDA DE ERROR

@@ -1,0 +1,12 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false status --short --branch --untracked-files=all
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:36-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+## main...origin/main
+ M .gitignore
+?? ENTREGABLES_UNIDAD_III/SHA256SUMS.txt
+?? Santa_Cecilia_Unidad_III.zip
+?? tatus
+
+SALIDA DE ERROR

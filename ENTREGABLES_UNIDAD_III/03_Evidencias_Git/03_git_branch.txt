@@ -1,0 +1,9 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false branch --all --verbose --verbose
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:36-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+* main                526df8e [origin/main] docs: actualiza control de versiones y entregables
+  remotes/origin/main 526df8e docs: actualiza control de versiones y entregables
+
+SALIDA DE ERROR

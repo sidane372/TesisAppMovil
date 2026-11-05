@@ -1,0 +1,31 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --name-status --no-renames --no-ext-diff e5d35b97a99f460f211927b4a835672bed9a5acd
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:42-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit e5d35b97a99f460f211927b4a835672bed9a5acd
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:10-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:10-05:00
+
+    docs: incorpora evidencias y resultados de pruebas
+
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_03_Backend_Identidad.md
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_04_Integracion_Android.md
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_05_Interfaz_por_Rol.md
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_06_Contratacion_Agenda.md
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_07_Pagos_Directos.md
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_08_Correcciones_y_Git.md
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Verificacion_Paquete.json
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/contratacion_comprobaciones.json
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/contratacion_concurrencia.json
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/mysql_verificacion_historica_v004.json
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/pagos_comprobaciones_sinteticas.json
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/regresion_registro.txt
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/resumen_lint.txt
+A	ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/verificacion_arranque.json
+A	ENTREGABLES_UNIDAD_III/GUIA_DEMOSTRACION.md
+A	Estado_Actual_Proyecto.md
+
+SALIDA DE ERROR

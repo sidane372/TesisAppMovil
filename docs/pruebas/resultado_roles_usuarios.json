@@ -1,0 +1,154 @@
+{
+  "fecha": "2026-11-05T03:59:09.446020+00:00",
+  "resultado": "APROBADO",
+  "entorno": "MySQL local y API HTTP aislada; datos sintéticos; sin tocar la base habitual",
+  "comprobaciones_http": [
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/admin/usuarios",
+      "http": 201
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/admin/usuarios/2",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 200
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/admin/usuarios/2",
+      "http": 409
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/admin/usuarios",
+      "http": 201
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/admin/usuarios/3",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/admin/usuarios",
+      "http": 403
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/admin/usuarios/3",
+      "http": 200
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/me",
+      "http": 401
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 401
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/admin/usuarios",
+      "http": 201
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/admin/usuarios/4",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/admin/usuarios",
+      "http": 403
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/admin/usuarios/4",
+      "http": 200
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/me",
+      "http": 401
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 401
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/admin/usuarios",
+      "http": 201
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/admin/usuarios/5",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 200
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/admin/usuarios",
+      "http": 403
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/admin/usuarios/5",
+      "http": 200
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/me",
+      "http": 401
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/login",
+      "http": 401
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/register",
+      "http": 201
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/auth/register",
+      "http": 400
+    }
+  ],
+  "roles_creados_y_verificados": [
+    "ADMINISTRADOR",
+    "DIRECTOR",
+    "SOLISTA",
+    "CLIENTE"
+  ],
+  "eliminacion": "Baja lógica y revocación de sesiones; administradores protegidos"
+}

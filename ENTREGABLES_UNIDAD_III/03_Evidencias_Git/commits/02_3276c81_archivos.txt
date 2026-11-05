@@ -1,0 +1,16 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --name-status --no-renames --no-ext-diff 3276c815deb28c73ebbe9511a997bb7f172a64b7
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:40-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit 3276c815deb28c73ebbe9511a997bb7f172a64b7
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:19-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:19-05:00
+
+    docs: agrega plan de desarrollo
+
+A	ENTREGABLES_UNIDAD_III/01_Plan_Desarrollo.docx
+
+SALIDA DE ERROR

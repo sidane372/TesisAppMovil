@@ -236,8 +236,8 @@ public final class FormularioController {
                                 "password",
                                 "Usa al menos 12 caracteres y hasta 72 bytes UTF-8, sin"
                                         + " controles.");
-                    if (!"DIRECTOR".equals(rol) && !"SOLISTA".equals(rol))
-                        throw new IllegalArgumentException("Selecciona un rol musical.");
+                    if (!Set.of("ADMINISTRADOR", "DIRECTOR", "SOLISTA", "CLIENTE").contains(rol))
+                        throw new IllegalArgumentException("Selecciona el rol de la cuenta.");
                     body.put("correo", email).put("password", secret).put("rol", rol);
                     endpoint = ApiEndpoints.USUARIOS;
                     method = "POST";

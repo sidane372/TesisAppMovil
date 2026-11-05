@@ -1,0 +1,10 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false ls-remote --symref origin HEAD refs/heads/*
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:38-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+ref: refs/heads/main	HEAD
+526df8eff10021079d39c5f459e9fd4bed95dd8c	HEAD
+526df8eff10021079d39c5f459e9fd4bed95dd8c	refs/heads/main
+
+SALIDA DE ERROR

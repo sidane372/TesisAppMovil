@@ -1,0 +1,7 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false ls-tree -r --name-only HEAD -- .github
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:39-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+
+SALIDA DE ERROR

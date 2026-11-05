@@ -1,0 +1,20 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --stat --summary --no-renames --no-ext-diff f1cd040ce62697c86ad31266b8ab1cd944b54e4b
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:41-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit f1cd040ce62697c86ad31266b8ab1cd944b54e4b
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:46:06-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:46:06-05:00
+
+    docs: incorpora incidencias y documentacion tecnica
+
+ ENTREGABLES_UNIDAD_III/09_Registro_Incidencias.xlsx  | Bin 0 -> 7204 bytes
+ ENTREGABLES_UNIDAD_III/10_Documentacion_Tecnica.docx | Bin 0 -> 46512 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ENTREGABLES_UNIDAD_III/09_Registro_Incidencias.xlsx
+ create mode 100644 ENTREGABLES_UNIDAD_III/10_Documentacion_Tecnica.docx
+
+SALIDA DE ERROR

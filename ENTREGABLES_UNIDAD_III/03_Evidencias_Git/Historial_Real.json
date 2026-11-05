@@ -1,0 +1,1796 @@
+{
+  "captura": "2026-11-04T22:02:35-05:00",
+  "repositorio": "https://github.com/sidane372/TesisAppMovil.git",
+  "head": "526df8eff10021079d39c5f459e9fd4bed95dd8c",
+  "rama_actual": "main",
+  "ramas_locales": [
+    "main"
+  ],
+  "referencias_seguimiento": [
+    "origin/main"
+  ],
+  "rama_predeterminada_remota": "main",
+  "ramas_anunciadas_remotas": {
+    "refs/heads/main": "526df8eff10021079d39c5f459e9fd4bed95dd8c"
+  },
+  "coincidencia_head_remoto": true,
+  "commits": [
+    {
+      "numero": 1,
+      "id": "3bcb57c7e7af2307ad91ed7c5f3e51f1c3a4908c",
+      "padres": [],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-03T23:53:32-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-03T23:53:32-05:00",
+      "mensaje": "feat: incorpora Santa Cecilia Android y backend",
+      "cuerpo": "Incluye autenticacion por roles, catalogo, contratacion, agenda y pagos directos con Yape, Plin y transferencia. Agrega migraciones MySQL, arranque local persistente y corrige la transicion del registro al login. Excluye credenciales y datos locales.",
+      "cambios": [
+        {
+          "estado": "A",
+          "archivo": ".gitattributes"
+        },
+        {
+          "estado": "A",
+          "archivo": ".gitignore"
+        },
+        {
+          "estado": "A",
+          "archivo": "DETENER_SANTA_CECILIA.cmd"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/03_Control_Versiones.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/05_Logica_Negocio_Servicios.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/07_Modulos_Integrados.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/08_Roles_Permisos_Seguridad.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_01_Arquitectura.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_02_MySQL.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/README_ENTREGA.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ESTADO_SANTA_CECILIA.cmd"
+        },
+        {
+          "estado": "A",
+          "archivo": "INICIAR_SANTA_CECILIA.cmd"
+        },
+        {
+          "estado": "A",
+          "archivo": "README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "REINICIAR_SANTA_CECILIA.cmd"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/.gitignore"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/build.gradle.kts"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/schemas/com.example.santaceciliatesis.data.local.AppDatabase/1.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/schemas/com.example.santaceciliatesis.data.local.AppDatabase/2.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/schemas/com.example.santaceciliatesis.data.local.AppDatabase/3.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/androidTest/java/com/example/santaceciliatesis/data/local/AppDatabaseTest.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/androidTest/java/com/example/santaceciliatesis/data/remote/ServicioJsonMapperTest.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/androidTest/java/com/example/santaceciliatesis/view/fragment/common/AccesoFragmentTest.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/debug/AndroidManifest.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/debug/res/raw/desarrollo_ca.pem"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/debug/res/xml/network_security_config.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/AndroidManifest.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/assets/licenses/Inter-OFL.txt"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/assets/licenses/Poppins-OFL.txt"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/SantaCeciliaApplication.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/AuthController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/CatalogoController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/ComparacionController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/ConsultaController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/CuentaController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/DetalleServicioController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/FlujoController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/controller/FormularioController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/AppContainer.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/local/AppDatabase.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/local/dao/ServicioDao.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/local/entity/CacheScopeEntity.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/local/entity/ServicioCacheEntity.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/local/mapper/ServicioCacheMapper.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/local/migration/DatabaseMigrations.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/ApiClient.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/ApiConfig.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/ApiEndpoints.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/ApiFailure.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/AuthenticatedApiClient.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/RequestHandle.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/dto/ServicioResumenDto.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/mapper/AuthJsonMapper.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/mapper/ServicioDetalleMapper.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/remote/mapper/ServicioJsonMapper.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/repository/AuthRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/repository/Callback.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/repository/ComunidadRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/repository/ContratacionRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/data/repository/ServicioRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/Cancion.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/Pagina.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/Rol.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/ServicioDetalle.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/ServicioMusical.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/Sesion.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/TipoServicio.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/model/Usuario.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/service/ComparacionStore.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/service/SessionManager.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/service/SessionStore.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/util/MoneyUtils.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/util/Presentacion.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/util/Resource.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/activity/MainActivity.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/activity/NavigationHost.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/adapter/CancionAdapter.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/adapter/GestionServicioAdapter.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/adapter/ServicioAdapter.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/adapter/UsuarioAdapter.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/dialog/EstadoDialog.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/administrador/InicioAdministradorFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/administrador/UsuarioDetalleFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/administrador/UsuariosFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/cliente/InicioClienteFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/AccesoFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/AgendaFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/BandejaFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/BaseFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/CatalogoFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/CompararFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/ComprobanteDialog.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/ContratacionFormFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/ContratoDetalleFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/CuentaFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/CuentasCobroFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/DetalleServicioFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/FlujoBaseFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/FormularioFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/GestionServicioFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/GuiaFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/HorariosFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/InicioBaseFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/PagoComprobanteFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/PagoDetalleFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/PagosFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/PrivateScreen.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/Refreshable.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/ServiciosGestionFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/common/SolicitudDetalleFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/director/InicioDirectorFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/fragment/solista/InicioSolistaFragment.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/viewholder/CancionViewHolder.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/viewholder/GestionServicioViewHolder.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/viewholder/ServicioViewHolder.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/java/com/example/santaceciliatesis/view/viewholder/UsuarioViewHolder.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/keepRules/rules.keep"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/color/input_access_outline.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/color/input_outline.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/color/navigation_item_color.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_avatar.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_badge.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_card.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_hero.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_logo.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_notice.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_soft.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/bg_success.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/hero_music.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_arrow.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_back.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_calendar.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_catalogo.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_compare.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_contract.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_cuenta.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_edit.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_help.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_inicio.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_launcher_background.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_launcher_foreground.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_location.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_logout.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_menu.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_music.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_plus.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_refresh.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_request.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_search.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/drawable/ic_users.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/font/inter.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/font/inter_variable.ttf"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/font/poppins.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/font/poppins_bold.ttf"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/font/poppins_medium.ttf"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/font/poppins_regular.ttf"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/font/poppins_semibold.ttf"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/activity_main.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/dialog_estado.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/form_cancion.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/form_servicio.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/form_tarifa.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/form_usuario.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_acceso.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_catalogo.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_comparar.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_cuenta.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_detalle_servicio.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_flujo.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_formulario.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_gestion_servicio.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_guia.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_inicio.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/fragment_lista_gestion.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/header_navigation.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/item_cancion.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/item_comparacion.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/item_gestion_servicio.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/item_selector.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/item_servicio.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/layout/item_usuario.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/mipmap-anydpi/ic_launcher.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/mipmap-anydpi/ic_launcher_round.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/values/colors.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/values/ids.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/values/strings.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/values/strings_etapa5.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/values/strings_etapa6.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/values/strings_etapa7.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/values/themes.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/xml/backup_rules.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/xml/data_extraction_rules.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/main/res/xml/network_security_config.xml"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/test/java/com/example/santaceciliatesis/data/remote/ApiConfigTest.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "app/src/test/java/com/example/santaceciliatesis/util/MoneyUtilsTest.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/.env.example"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/API.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/CONFIGURACION_MYSQL.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/build.gradle.kts"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/settings.gradle.kts"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/SantaCeciliaApiApplication.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/audit/AuditoriaService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/config/AdministradorInicial.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/config/CorrelationFilter.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/config/CorreoConfig.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/config/PagosPrivadosFilter.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/config/SecurityConfig.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/AdminServicioController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/AdminUsuarioController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/AuthController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/ContratacionController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/EstadoController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/PagoDirectoController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/ServicioController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/controller/UsuarioController.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/ApiResponse.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/AuthDtos.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/CambioConMotivo.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/ContratacionDtos.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/Pagina.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/PagoDirectoDtos.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/ServicioDtos.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/UsuarioDtos.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/dto/UsuarioResponse.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/entity/FamiliaSesion.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/entity/RecuperacionAcceso.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/entity/Rol.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/entity/ServicioMusical.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/entity/Sesion.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/entity/TokenAcceso.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/entity/Usuario.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/exception/ApiError.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/exception/ApiException.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/exception/GlobalExceptionHandler.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/exception/TokenRejectedException.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/ContenidoServicioRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/ContratacionRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/FamiliaSesionRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/RecuperacionRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/ServicioRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/SesionRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/TokenAccesoRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/repository/UsuarioRepository.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/security/AuthPrincipal.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/security/BearerAuthenticationFilter.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/security/RequestThrottle.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/security/StrongPassword.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/security/StrongPasswordValidator.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/security/TokenCodec.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/AuthService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/ComprobanteImagenService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/ContratacionService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/PagoAvisosService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/PagoDirectoService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/RecoveryMailSender.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/RecoveryService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/ServicioService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/java/com/santacecilia/api/service/UsuarioService.java"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/resources/application-example.yml"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/resources/application-https.yml"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/resources/application.yml"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/resources/static/restablecer.css"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/resources/static/restablecer.html"
+        },
+        {
+          "estado": "A",
+          "archivo": "backend/src/main/resources/static/restablecer.js"
+        },
+        {
+          "estado": "A",
+          "archivo": "build.gradle.kts"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/autenticacion_etapa3.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/bootstrap/crear_esquema.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/diagramas/modelo_relacional.mmd"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/diccionario_datos.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/instalar_desarrollo.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/V001__modelo_central.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/V002__roles_del_sistema.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/V003__inmutabilidad_y_validaciones.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/V004__consulta_saldos.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/V005__autenticacion_y_consentimiento.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/V006__flujo_contratacion.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/migrations/V007__pagos_directos_conciliados.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/modelo_logico.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/protocolo_agenda.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/queries/bloquear_recurso.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/queries/catalogo_publico.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/queries/ocupaciones_en_conflicto.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/tests/evidence/manifesto_archivos.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/tests/evidence/resultado_mysql.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "database/tests/test_schema.py"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/ARRANQUE_LOCAL.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/arbol_proyecto.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/arquitectura.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/cambios_requerimientos_v2.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/contratacion_agenda.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/dependencias.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/diagnostico_inicial.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/diagramas/secuencias_reales.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/endpoints_api.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/estructura_mvc.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/integracion_android.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/interfaz.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/interfaz/capturas/administrador.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/interfaz/capturas/cliente.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/interfaz/capturas/director.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/interfaz/capturas/solista.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/matriz_trazabilidad.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/orden_implementacion.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/pagos_arquitectura.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/pruebas/resultado_etapa1.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/pruebas/verificacion_etapa1.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/pruebas/verificacion_etapa2.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/referencias/inventario.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/referencias/recursos_interfaz.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "docs/referencias/requerimientos_extraidos.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "gradle.properties"
+        },
+        {
+          "estado": "A",
+          "archivo": "gradle/gradle-daemon-jvm.properties"
+        },
+        {
+          "estado": "A",
+          "archivo": "gradle/libs.versions.toml"
+        },
+        {
+          "estado": "A",
+          "archivo": "gradle/wrapper/gradle-wrapper.jar"
+        },
+        {
+          "estado": "A",
+          "archivo": "gradle/wrapper/gradle-wrapper.properties"
+        },
+        {
+          "estado": "A",
+          "archivo": "gradlew"
+        },
+        {
+          "estado": "A",
+          "archivo": "gradlew.bat"
+        },
+        {
+          "estado": "A",
+          "archivo": "settings.gradle.kts"
+        },
+        {
+          "estado": "A",
+          "archivo": "tools/Iniciar-Backend.ps1"
+        },
+        {
+          "estado": "A",
+          "archivo": "tools/Preparar-HttpsLocal.ps1"
+        },
+        {
+          "estado": "A",
+          "archivo": "tools/Sistema-Local.ps1"
+        },
+        {
+          "estado": "A",
+          "archivo": "tools/Test-Database.ps1"
+        },
+        {
+          "estado": "A",
+          "archivo": "tools/export_database_docs.py"
+        },
+        {
+          "estado": "A",
+          "archivo": "tools/extract_requirements.py"
+        }
+      ],
+      "estadistica": "328 files changed, 30922 insertions(+)",
+      "evidencia": "commits/01_3bcb57c_git_show.txt",
+      "inventario": "commits/01_3bcb57c_archivos.txt"
+    },
+    {
+      "numero": 2,
+      "id": "3276c815deb28c73ebbe9511a997bb7f172a64b7",
+      "padres": [
+        "3bcb57c7e7af2307ad91ed7c5f3e51f1c3a4908c"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:45:19-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:45:19-05:00",
+      "mensaje": "docs: agrega plan de desarrollo",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/01_Plan_Desarrollo.docx"
+        }
+      ],
+      "estadistica": "1 file changed, 0 insertions(+), 0 deletions(-)",
+      "evidencia": "commits/02_3276c81_git_show.txt",
+      "inventario": "commits/02_3276c81_archivos.txt"
+    },
+    {
+      "numero": 3,
+      "id": "6e0e528b88fc0233d9111b2f8ec641d6cfe47c88",
+      "padres": [
+        "3276c815deb28c73ebbe9511a997bb7f172a64b7"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:45:25-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:45:25-05:00",
+      "mensaje": "docs: agrega backlog priorizado",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/02_Backlog_Priorizado.xlsx"
+        }
+      ],
+      "estadistica": "1 file changed, 0 insertions(+), 0 deletions(-)",
+      "evidencia": "commits/03_6e0e528_git_show.txt",
+      "inventario": "commits/03_6e0e528_archivos.txt"
+    },
+    {
+      "numero": 4,
+      "id": "cc5ad2193878190a980f57f1dceccc933792ab4c",
+      "padres": [
+        "6e0e528b88fc0233d9111b2f8ec641d6cfe47c88"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:45:49-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:45:49-05:00",
+      "mensaje": "docs: incorpora modelo y scripts MySQL",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/COMO_IMPORTAR_MYSQL.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/Diccionario_Datos_Actual.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/Modelo_Logico_Actual.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/Modelo_Relacional_Actual.mmd"
+        },
+        {
+          "estado": "M",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/bootstrap/crear_esquema.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V001__modelo_central.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V002__roles_del_sistema.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V003__inmutabilidad_y_validaciones.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V004__consulta_saldos.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V005__autenticacion_y_consentimiento.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V006__flujo_contratacion.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V007__pagos_directos_conciliados.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/queries/bloquear_recurso.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/queries/catalogo_publico.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/queries/ocupaciones_en_conflicto.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/Santa_Cecilia_Tablas.sql"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/metadatos_esquema_actual.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/modelo_logico.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/protocolo_agenda.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/resumen_esquema.json"
+        }
+      ],
+      "estadistica": "21 files changed, 11212 insertions(+), 15 deletions(-)",
+      "evidencia": "commits/04_cc5ad21_git_show.txt",
+      "inventario": "commits/04_cc5ad21_archivos.txt"
+    },
+    {
+      "numero": 5,
+      "id": "0ae47f7f341192731b29e6958638b675c3d0b2aa",
+      "padres": [
+        "cc5ad2193878190a980f57f1dceccc933792ab4c"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:45:55-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:45:55-05:00",
+      "mensaje": "docs: documenta servicios y permisos",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "M",
+          "archivo": "ENTREGABLES_UNIDAD_III/05_Logica_Negocio_Servicios.md"
+        },
+        {
+          "estado": "M",
+          "archivo": "ENTREGABLES_UNIDAD_III/08_Roles_Permisos_Seguridad.md"
+        }
+      ],
+      "estadistica": "2 files changed, 32 insertions(+), 37 deletions(-)",
+      "evidencia": "commits/05_0ae47f7_git_show.txt",
+      "inventario": "commits/05_0ae47f7_archivos.txt"
+    },
+    {
+      "numero": 6,
+      "id": "32d19efd7db950183772fea8bbfcfd5684150dec",
+      "padres": [
+        "0ae47f7f341192731b29e6958638b675c3d0b2aa"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:46:01-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:46:01-05:00",
+      "mensaje": "docs: agrega evidencias de interfaces y modulos",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "M",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/README.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/01_login.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/02_administrador.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/03_cliente.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/04_director.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/05_solista.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/06_catalogo.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/07_solicitud.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/08_cotizacion.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/09_contrato.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/10_pagos.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/11_calendario.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/12_revision_pago.png"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/13_reserva.png"
+        },
+        {
+          "estado": "M",
+          "archivo": "ENTREGABLES_UNIDAD_III/07_Modulos_Integrados.md"
+        }
+      ],
+      "estadistica": "15 files changed, 33 insertions(+), 22 deletions(-)",
+      "evidencia": "commits/06_32d19ef_git_show.txt",
+      "inventario": "commits/06_32d19ef_archivos.txt"
+    },
+    {
+      "numero": 7,
+      "id": "f1cd040ce62697c86ad31266b8ab1cd944b54e4b",
+      "padres": [
+        "32d19efd7db950183772fea8bbfcfd5684150dec"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:46:06-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:46:06-05:00",
+      "mensaje": "docs: incorpora incidencias y documentacion tecnica",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/09_Registro_Incidencias.xlsx"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/10_Documentacion_Tecnica.docx"
+        }
+      ],
+      "estadistica": "2 files changed, 0 insertions(+), 0 deletions(-)",
+      "evidencia": "commits/07_f1cd040_git_show.txt",
+      "inventario": "commits/07_f1cd040_archivos.txt"
+    },
+    {
+      "numero": 8,
+      "id": "e5d35b97a99f460f211927b4a835672bed9a5acd",
+      "padres": [
+        "f1cd040ce62697c86ad31266b8ab1cd944b54e4b"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:46:10-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:46:10-05:00",
+      "mensaje": "docs: incorpora evidencias y resultados de pruebas",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_03_Backend_Identidad.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_04_Integracion_Android.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_05_Interfaz_por_Rol.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_06_Contratacion_Agenda.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_07_Pagos_Directos.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Iteracion_08_Correcciones_y_Git.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/Verificacion_Paquete.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/contratacion_comprobaciones.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/contratacion_concurrencia.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/mysql_verificacion_historica_v004.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/pagos_comprobaciones_sinteticas.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/regresion_registro.txt"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/resumen_lint.txt"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/verificacion_arranque.json"
+        },
+        {
+          "estado": "A",
+          "archivo": "ENTREGABLES_UNIDAD_III/GUIA_DEMOSTRACION.md"
+        },
+        {
+          "estado": "A",
+          "archivo": "Estado_Actual_Proyecto.md"
+        }
+      ],
+      "estadistica": "16 files changed, 7312 insertions(+)",
+      "evidencia": "commits/08_e5d35b9_git_show.txt",
+      "inventario": "commits/08_e5d35b9_archivos.txt"
+    },
+    {
+      "numero": 9,
+      "id": "526df8eff10021079d39c5f459e9fd4bed95dd8c",
+      "padres": [
+        "e5d35b97a99f460f211927b4a835672bed9a5acd"
+      ],
+      "autor": "Sidane Contreras",
+      "correo_autor": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_autor": "2026-11-04T21:46:15-05:00",
+      "confirmador": "Sidane Contreras",
+      "correo_confirmador": "sidaneluisbricenocontreras@gmail.com",
+      "fecha_confirmacion": "2026-11-04T21:46:15-05:00",
+      "mensaje": "docs: actualiza control de versiones y entregables",
+      "cuerpo": "",
+      "cambios": [
+        {
+          "estado": "M",
+          "archivo": "ENTREGABLES_UNIDAD_III/03_Control_Versiones.md"
+        },
+        {
+          "estado": "M",
+          "archivo": "ENTREGABLES_UNIDAD_III/README_ENTREGA.md"
+        }
+      ],
+      "estadistica": "2 files changed, 41 insertions(+), 30 deletions(-)",
+      "evidencia": "commits/09_526df8e_git_show.txt",
+      "inventario": "commits/09_526df8e_archivos.txt"
+    }
+  ],
+  "evidencias_presentes_en_commits": [
+    {
+      "commit": "3bcb57c",
+      "archivo": "app/src/main/java/com/example/santaceciliatesis/data/AppContainer.java",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "3bcb57c",
+      "archivo": "app/src/androidTest/java/com/example/santaceciliatesis/view/fragment/common/AccesoFragmentTest.java",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "cc5ad21",
+      "archivo": "ENTREGABLES_UNIDAD_III/04_Base_Datos/Santa_Cecilia_Tablas.sql",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "32d19ef",
+      "archivo": "ENTREGABLES_UNIDAD_III/06_Interfaces_Funcionales/capturas/13_reserva.png",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "e5d35b9",
+      "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/contratacion_comprobaciones.json",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "e5d35b9",
+      "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/pagos_comprobaciones_sinteticas.json",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "e5d35b9",
+      "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/regresion_registro.txt",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "e5d35b9",
+      "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/verificacion_arranque.json",
+      "existe_en_commit": true
+    },
+    {
+      "commit": "e5d35b9",
+      "archivo": "ENTREGABLES_UNIDAD_III/11_Evidencias_Iteraciones/resumen_lint.txt",
+      "existe_en_commit": true
+    }
+  ]
+}

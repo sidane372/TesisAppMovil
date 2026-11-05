@@ -50,26 +50,26 @@ public final class UsuarioDetalleFragment extends BaseFragment
                         v -> {
                             if (user != null) host().formulario("USUARIO_EDITAR", user.getId(), 0);
                         });
-        v(R.id.cuenta_cambiar_estado).setOnClickListener(v -> change());
+        v(R.id.cuenta_cambiar_estado).setOnClickListener(v -> change(false));
+        v(R.id.cuenta_eliminar).setOnClickListener(v -> change(true));
     }
 
-    private void change() {
+    private void change(boolean eliminar) {
         if (user == null || saving) return;
         List<String> states =
                 new ArrayList<>(
-                        user.getRol() == Rol.CLIENTE
-                                ? List.of("ACTIVO", "SUSPENDIDO")
-                                : List.of("ACTIVO", "SUSPENDIDO", "DESACTIVADO"));
+                        eliminar ? List.of("DESACTIVADO") : List.of("ACTIVO", "SUSPENDIDO"));
         states.remove(user.getEstado());
         EstadoDialog.show(
                 this,
-                getString(R.string.estado_cuenta),
+                getString(eliminar ? R.string.eliminar_usuario_aviso : R.string.estado_cuenta),
                 states,
                 (state, reason) -> {
                     if (user == null || saving) return;
                     saving = true;
                     enabled(R.id.cuenta_cambiar_estado, false);
                     enabled(R.id.cuenta_editar, false);
+                    enabled(R.id.cuenta_eliminar, false);
                     visible(R.id.cuenta_progress, true);
                     mutation =
                             deps().getComunidadRepository()
@@ -77,6 +77,7 @@ public final class UsuarioDetalleFragment extends BaseFragment
                                             user,
                                             state,
                                             reason,
+                                            eliminar,
                                             new Callback<Usuario>() {
                                                 public void onSuccess(Usuario u) {
                                                     saving = false;
@@ -100,6 +101,7 @@ public final class UsuarioDetalleFragment extends BaseFragment
         visible(R.id.cuenta_progress, true);
         enabled(R.id.cuenta_editar, false);
         enabled(R.id.cuenta_cambiar_estado, false);
+        visible(R.id.cuenta_eliminar, false);
         text(R.id.cuenta_estado, getString(R.string.cargando_datos));
     }
 
@@ -127,9 +129,12 @@ public final class UsuarioDetalleFragment extends BaseFragment
         visible(R.id.cuenta_cambiar_estado, musical);
         enabled(R.id.cuenta_editar, musical);
         enabled(R.id.cuenta_cambiar_estado, musical);
+        visible(R.id.cuenta_eliminar, musical && !"DESACTIVADO".equals(u.getEstado()));
+        enabled(R.id.cuenta_eliminar, musical);
     }
 
     public void error(ApiFailure error) {
+        visible(R.id.cuenta_eliminar, false);
         user = null;
         visible(R.id.cuenta_progress, false);
         visible(R.id.cuenta_panel, false);

@@ -1,0 +1,36 @@
+COMANDO: git --no-pager -c color.ui=false -c core.quotepath=false show --format=fuller --date=iso-strict --name-status --no-renames --no-ext-diff cc5ad2193878190a980f57f1dceccc933792ab4c
+CAPTURA AMERICA/LIMA: 2026-11-04T22:02:40-05:00
+CODIGO DE SALIDA: 0
+
+SALIDA ESTANDAR
+commit cc5ad2193878190a980f57f1dceccc933792ab4c
+Author:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+AuthorDate: 2026-11-04T21:45:49-05:00
+Commit:     Sidane Contreras <sidaneluisbricenocontreras@gmail.com>
+CommitDate: 2026-11-04T21:45:49-05:00
+
+    docs: incorpora modelo y scripts MySQL
+
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/COMO_IMPORTAR_MYSQL.md
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/Diccionario_Datos_Actual.md
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/Modelo_Logico_Actual.md
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/Modelo_Relacional_Actual.mmd
+M	ENTREGABLES_UNIDAD_III/04_Base_Datos/README.md
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/bootstrap/crear_esquema.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V001__modelo_central.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V002__roles_del_sistema.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V003__inmutabilidad_y_validaciones.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V004__consulta_saldos.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V005__autenticacion_y_consentimiento.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V006__flujo_contratacion.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/migrations/V007__pagos_directos_conciliados.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/queries/bloquear_recurso.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/queries/catalogo_publico.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/SQL/queries/ocupaciones_en_conflicto.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/Santa_Cecilia_Tablas.sql
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/metadatos_esquema_actual.json
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/modelo_logico.md
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/protocolo_agenda.md
+A	ENTREGABLES_UNIDAD_III/04_Base_Datos/resumen_esquema.json
+
+SALIDA DE ERROR
