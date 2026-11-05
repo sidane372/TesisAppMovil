@@ -1,19 +1,20 @@
-# Base de datos — Etapa 2 implementada y verificada localmente
+# Base de datos implementada
 
-Se crearon 30 tablas MySQL InnoDB, 40 FK, 68 CHECK, índices, 9 triggers y una vista de saldos. Las cuatro migraciones se aplicaron en MySQL Community 8.0.30 y pasaron 31 pruebas SQL, incluidas dos conexiones simultáneas para el mismo recurso/músico compartido.
+El esquema vigente tiene **36 tablas de negocio y una tabla de historial Flyway**, con migraciones V001–V007 aplicadas en MySQL 8.0.30 local. Android utiliza Room v3 exclusivamente para caché pública; las operaciones de negocio se guardan en MySQL a través de la API.
 
-| Entregable | Fuente única |
+| Archivo | Contenido |
 |---|---|
-| Guía de instalación y reproducción | ../../database/README.md |
-| Modelo lógico y decisiones | ../../database/modelo_logico.md |
-| Diccionario físico completo de 276 columnas | ../../database/diccionario_datos.md |
-| Diagrama de relaciones | ../../database/diagramas/modelo_relacional.mmd |
-| Scripts versionados | ../../database/migrations/V001__modelo_central.sql a V004__consulta_saldos.sql |
-| PK, FK, índices y restricciones | Diccionario generado desde INFORMATION_SCHEMA; metadata del reporte |
-| Protocolo de agenda y recursos compartidos | ../../database/protocolo_agenda.md |
-| Pruebas de consultas/rollback/concurrencia | ../../database/tests/test_schema.py |
-| Evidencia real y hashes | ../../database/tests/evidence/resultado_mysql.json |
-| Informe de resultados y límites | ../../docs/pruebas/verificacion_etapa2.md |
-| Configuración prevista para backend | ../../backend/CONFIGURACION_MYSQL.md y .env.example |
+| Santa_Cecilia_Tablas.sql | Archivo único importable con las 36 tablas, relaciones, restricciones, triggers, vista y cuatro roles |
+| COMO_IMPORTAR_MYSQL.md | Pasos para abrir e importar la copia de consulta en MySQL |
+| Diccionario_Datos_Actual.md | Columnas, PK, FK, índices, CHECK y triggers consultados en INFORMATION_SCHEMA |
+| Modelo_Relacional_Actual.mmd | Relaciones del esquema aplicado |
+| metadatos_esquema_actual.json | Metadatos verificables sin datos personales ni credenciales |
+| resumen_esquema.json | Conteos del esquema vigente |
+| Modelo_Logico_Actual.md | Modelo vigente y relación entre el negocio y la persistencia |
+| modelo_logico.md | Modelo conceptual histórico con nota de evolución |
+| protocolo_agenda.md | Reglas de exclusión y concurrencia |
+| SQL/ | Copia de entrega de migraciones, consultas y creación de esquema |
 
-Se enlazan las fuentes para evitar mantener copias SQL divergentes. La instancia de pruebas fue detenida y no modifica Laragon. No hay aún un servidor MySQL productivo desplegado, backend/API conectado, migración Flyway ejecutada ni pasarela financiera. La base local Room v1 sigue separada del esquema central.
+Las copias SQL son instantáneas de `database/`, que sigue siendo la fuente de mantenimiento del proyecto. Sus hashes se incluyen en el manifiesto de entrega. No importar a una base con historial distinto ni editar migraciones ya aplicadas. En este equipo, INICIAR_SANTA_CECILIA.cmd prepara el entorno sin importación manual.
+
+La evidencia histórica de 31 comprobaciones SQL de V001–V004 se conserva en el entregable 11. El esquema actual no se acredita con los conteos antiguos de 30 tablas. Las verificaciones de contratación y pagos se describen por separado y utilizaron datos sintéticos. No se incluye una copia de datos de personas ni de la base persistente.

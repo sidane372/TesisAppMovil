@@ -1,0 +1,10 @@
+{
+  "tablas_negocio": 36,
+  "historial_flyway": 1,
+  "columnas_negocio": 337,
+  "claves_foraneas": 55,
+  "checks": 75,
+  "triggers": 9,
+  "vistas": 1,
+  "indices": 142
+}

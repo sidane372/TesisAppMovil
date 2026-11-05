@@ -1,0 +1,7506 @@
+{
+  "tables": [
+    {
+      "motor": "InnoDB",
+      "tabla": "auth_familia",
+      "comentario": "Revocacion y serializacion de una familia de sesiones"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "bloqueo_agenda",
+      "comentario": "Bloqueo manual requiere protocolo comun de recursos"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "comprobante_directo",
+      "comentario": ""
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "contrato",
+      "comentario": "Aceptacion inmutable; no reserva hasta pago verificado"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "cotizacion",
+      "comentario": "Versiones historicas de propuesta economica"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "cuenta_cobro",
+      "comentario": ""
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "detalle_cotizacion",
+      "comentario": "Desglose exacto sin float o double"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "evento_medicion",
+      "comentario": "Eventos minimos de busqueda; no encuesta ni direccion privada"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "evento_outbox",
+      "comentario": "Salida fiable: escritura con negocio y entrega posterior"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "evento_pago",
+      "comentario": "Bandeja de eventos autenticados; API del proveedor verifica el cobro"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "flyway_schema_history",
+      "comentario": ""
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "historial_operacion",
+      "comentario": "Auditoria conservada al cancelar o despublicar"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "horario_atencion",
+      "comentario": "Franjas recurrentes; cruzar medianoche requiere dos franjas"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "imagen_servicio",
+      "comentario": "Metadatos de imagen; archivo fuera de MySQL"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "incidencia_pago",
+      "comentario": "Cobro externo no aplicado y otras incidencias auditables"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "integrante",
+      "comentario": "Contenido normalizado y vinculo de recurso compartido"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "movimiento_cuenta",
+      "comentario": ""
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "notificacion",
+      "comentario": "Notificaciones persistentes por destinatario"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "ocupacion_agenda",
+      "comentario": "Ocupacion por recurso; exclusion temporal depende del protocolo transaccional"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "pago",
+      "comentario": "Intentos, cobro externo y aplicacion contractual diferenciados"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "pago_directo",
+      "comentario": ""
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "recuperacion_acceso",
+      "comentario": "Recuperacion segura, sin guardar credenciales"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "recurso_agenda",
+      "comentario": "Mutex transaccional por servicio o musico; SELECT FOR UPDATE ordenado"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "reembolso",
+      "comentario": "Devoluciones externas idempotentes y conciliables"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "repertorio",
+      "comentario": "Repertorio individual por servicio"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "reserva",
+      "comentario": "Una reserva por contrato; fechas derivadas de snapshot contractual"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "retencion_agenda",
+      "comentario": "Soporte opcional de checkout asincrono; no obliga a habilitarlo"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "rol",
+      "comentario": "Cuatro roles; no crea cuentas de usuario"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "servicio_genero",
+      "comentario": "Lista de generos consultable por SQL"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "servicio_instrumento",
+      "comentario": "Instrumentos publicos del servicio"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "servicio_musical",
+      "comentario": "Banda o servicio individual de solista"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "servicio_tipo_evento",
+      "comentario": "Tipos de evento del perfil publico"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "sesion",
+      "comentario": "Rotacion y revocacion futura de sesiones reales"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "solicitud_cotizacion",
+      "comentario": "Solicitud sin reserva de horario"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "token_acceso",
+      "comentario": "Solo huella del bearer corto; nunca el token en claro"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "usuario",
+      "comentario": "Cuentas reales; baja logica preserva historia"
+    },
+    {
+      "motor": "InnoDB",
+      "tabla": "valoracion",
+      "comentario": "Valoracion; no se crea encuesta de RF-68 pendiente de conciliacion"
+    }
+  ],
+  "columns": [
+    {
+      "nulo": "NO",
+      "tipo": "char(36)",
+      "clave": "PRI",
+      "tabla": "auth_familia",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "auth_familia",
+      "calculo": "",
+      "columna": "id_usuario",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "auth_familia",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "auth_familia",
+      "calculo": "",
+      "columna": "revocada_en",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador del bloqueo manual"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio que bloquea"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "id_actor",
+      "defecto": null,
+      "comentario": "Actor autorizado en backend"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "inicio_utc",
+      "defecto": null,
+      "comentario": "Inicio ocupado UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "fin_utc",
+      "defecto": null,
+      "comentario": "Fin exclusivo UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "motivo",
+      "defecto": null,
+      "comentario": "Motivo privado nunca publicado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "activo",
+      "defecto": "1",
+      "comentario": "Retiro logico de bloqueo"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Creacion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "bloqueo_agenda",
+      "calculo": "",
+      "columna": "retirado_en",
+      "defecto": null,
+      "comentario": "Retiro UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "id_pago",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "id_reembolso",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "mediumblob",
+      "clave": "",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "imagen",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "imagen_hash",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(30)",
+      "clave": "",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "tipo",
+      "defecto": "image/jpeg",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "id_actor",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "comprobante_directo",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador oficial del contrato"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(50)",
+      "clave": "UNI",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "codigo",
+      "defecto": null,
+      "comentario": "Codigo visible unico"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "id_cotizacion",
+      "defecto": null,
+      "comentario": "Version exacta aceptada"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "id_solicitud",
+      "defecto": null,
+      "comentario": "Solicitud unica aun entre distintas versiones"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio historico coherente con solicitud"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "id_cliente",
+      "defecto": null,
+      "comentario": "Cliente historico coherente con solicitud"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "id_proveedor",
+      "defecto": null,
+      "comentario": "Proveedor historico coherente con solicitud"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "MUL",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "inicio_evento_utc",
+      "defecto": null,
+      "comentario": "Inicio aceptado UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "fin_evento_utc",
+      "defecto": null,
+      "comentario": "Fin exclusivo aceptado UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "inicio_ocupacion_utc",
+      "defecto": null,
+      "comentario": "Inicio con margen de preparacion incluido"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "fin_ocupacion_utc",
+      "defecto": null,
+      "comentario": "Fin con margen posterior incluido"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "total_centimos",
+      "defecto": null,
+      "comentario": "Total historico exacto PEN"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "condiciones_aceptadas",
+      "defecto": null,
+      "comentario": "Aceptacion expresa obligatoria"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "politica_version",
+      "defecto": null,
+      "comentario": "Version exacta aceptada"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "json",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "snapshot",
+      "defecto": null,
+      "comentario": "Copia historica de perfil, actores, conceptos, recursos y politicas"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "clave_idempotencia",
+      "defecto": null,
+      "comentario": "Clave de aceptacion por cliente"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "huella_aceptacion",
+      "defecto": null,
+      "comentario": "SHA256 de entrada canonica para detectar reutilizacion de clave"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(20)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "PENDIENTE_PAGO",
+      "comentario": "Estado contractual independiente del proveedor financiero"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": "Version optimista de estado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "aceptado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Aceptacion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "MUL",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "confirmado_en",
+      "defecto": null,
+      "comentario": "Primer abono verificado UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "finalizado_en",
+      "defecto": null,
+      "comentario": "Finalizacion despues del evento UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "cancelado_en",
+      "defecto": null,
+      "comentario": "Cancelacion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "contrato",
+      "calculo": "",
+      "columna": "motivo_cancelacion",
+      "defecto": null,
+      "comentario": "Motivo conservado segun politica"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de version"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "id_solicitud",
+      "defecto": null,
+      "comentario": "Solicitud que agrupa versiones"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "numero_version",
+      "defecto": null,
+      "comentario": "Consecutivo dentro de la solicitud"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "inicio_propuesto_utc",
+      "defecto": null,
+      "comentario": "Inicio propuesto UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "fin_propuesto_utc",
+      "defecto": null,
+      "comentario": "Fin propuesto UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "subtotal_centimos",
+      "defecto": null,
+      "comentario": "Suma exacta de conceptos; backend reconcilia"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "descuento_centimos",
+      "defecto": "0",
+      "comentario": "Descuento exacto no mayor que subtotal"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "(`subtotal_centimos` - `descuento_centimos`)",
+      "columna": "total_centimos",
+      "defecto": null,
+      "comentario": "Total exacto en centimos PEN"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "text",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "condiciones",
+      "defecto": null,
+      "comentario": "Condiciones versionadas del servicio"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "text",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "politica_cancelacion",
+      "defecto": null,
+      "comentario": "Politica propuesta para aceptacion expresa"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "politica_version",
+      "defecto": null,
+      "comentario": "Identificador de politica aceptable"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "vigente_hasta_utc",
+      "defecto": null,
+      "comentario": "Caducidad de la propuesta"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(16)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "BORRADOR",
+      "comentario": "Estado de version, no edicion de propuesta enviada"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Creacion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "clave_envio",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "cotizacion",
+      "calculo": "",
+      "columna": "huella_envio",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(180)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "titular",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "MUL",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "banco",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(20)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "telefono",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(40)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "numero_cuenta",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(20)",
+      "clave": "UNI",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "cci",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "yape",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "plin",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "transferencia",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "activo",
+      "defecto": "1",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "cuenta_cobro",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "detalle_cotizacion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador del concepto"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "detalle_cotizacion",
+      "calculo": "",
+      "columna": "id_cotizacion",
+      "defecto": null,
+      "comentario": "Version propietaria"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(300)",
+      "clave": "",
+      "tabla": "detalle_cotizacion",
+      "calculo": "",
+      "columna": "concepto",
+      "defecto": null,
+      "comentario": "Descripcion del concepto economico"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "decimal(10,3)",
+      "clave": "",
+      "tabla": "detalle_cotizacion",
+      "calculo": "",
+      "columna": "cantidad",
+      "defecto": null,
+      "comentario": "Cantidad exacta, hasta tres decimales"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "detalle_cotizacion",
+      "calculo": "",
+      "columna": "precio_unitario_centimos",
+      "defecto": null,
+      "comentario": "Precio exacto unitario en centimos PEN"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "detalle_cotizacion",
+      "calculo": "cast(round((`cantidad` * `precio_unitario_centimos`),0) as signed)",
+      "columna": "total_centimos",
+      "defecto": null,
+      "comentario": "Redondeo decimal por concepto: mitad hacia arriba"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "detalle_cotizacion",
+      "calculo": "",
+      "columna": "orden",
+      "defecto": "0",
+      "comentario": "Orden del desglose"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "evento_medicion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de evento de medicion consentida"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "char(36)",
+      "clave": "MUL",
+      "tabla": "evento_medicion",
+      "calculo": "",
+      "columna": "sesion_medicion",
+      "defecto": null,
+      "comentario": "Identificador pseudonimo de sesion; no cuenta personal"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "char(36)",
+      "clave": "UNI",
+      "tabla": "evento_medicion",
+      "calculo": "",
+      "columna": "clave_evento",
+      "defecto": null,
+      "comentario": "Identificador idempotente de evento"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "evento_medicion",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio publico consultado, cuando corresponda"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(12)",
+      "clave": "",
+      "tabla": "evento_medicion",
+      "calculo": "",
+      "columna": "accion",
+      "defecto": null,
+      "comentario": "Inicio voluntario, consulta o fin"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "evento_medicion",
+      "calculo": "",
+      "columna": "consentimiento_version",
+      "defecto": null,
+      "comentario": "Version informada de consentimiento expreso"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "evento_medicion",
+      "calculo": "",
+      "columna": "ocurrido_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Hora del servidor para indicadores"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de evento transaccional de salida"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "char(36)",
+      "clave": "UNI",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "clave_evento",
+      "defecto": null,
+      "comentario": "Clave estable de entrega idempotente"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "tipo",
+      "defecto": null,
+      "comentario": "Tipo de notificacion o integracion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "entidad",
+      "defecto": null,
+      "comentario": "Agregado de origen"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "identificador_entidad",
+      "defecto": null,
+      "comentario": "ID logico del agregado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "json",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "payload",
+      "defecto": null,
+      "comentario": "Datos minimos redactados del evento"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(12)",
+      "clave": "MUL",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "PENDIENTE",
+      "comentario": "Estado de entrega"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Commit del hecho de negocio UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "disponible_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Proximo intento UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "enviado_en",
+      "defecto": null,
+      "comentario": "Confirmacion de entrega UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "evento_outbox",
+      "calculo": "",
+      "columna": "intentos",
+      "defecto": "0",
+      "comentario": "Reintentos de entrega"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de recepcion de webhook"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(50)",
+      "clave": "MUL",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "proveedor",
+      "defecto": null,
+      "comentario": "Proveedor autenticado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(150)",
+      "clave": "",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "id_evento_externo",
+      "defecto": null,
+      "comentario": "Identificador deduplicado del evento oficial"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "id_pago",
+      "defecto": null,
+      "comentario": "Intento correlacionado; puede llegar antes de correlacionar"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "payload_hash",
+      "defecto": null,
+      "comentario": "Huella del cuerpo recibido; no almacena tarjeta ni payload completo"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "autenticado_en",
+      "defecto": null,
+      "comentario": "Validacion de firma oficial antes de persistir como evento confiable"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "recibido_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Recepcion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "procesado_en",
+      "defecto": null,
+      "comentario": "Aplicacion o conciliacion UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(16)",
+      "clave": "MUL",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "RECIBIDO",
+      "comentario": "Estado de procesamiento interno"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "intentos",
+      "defecto": "0",
+      "comentario": "Numero de reintentos de verificacion"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "evento_pago",
+      "calculo": "",
+      "columna": "ultimo_error_codigo",
+      "defecto": null,
+      "comentario": "Codigo tecnico sin secretos"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "PRI",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "installed_rank",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(50)",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "version",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(200)",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "description",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(20)",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "type",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "script",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "checksum",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "installed_by",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "timestamp",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "installed_on",
+      "defecto": "CURRENT_TIMESTAMP",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "execution_time",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "MUL",
+      "tabla": "flyway_schema_history",
+      "calculo": "",
+      "columna": "success",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de evento auditable"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "id_actor",
+      "defecto": null,
+      "comentario": "Usuario actor; NULL si sistema"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "id_solicitud",
+      "defecto": null,
+      "comentario": "Origen opcional de contratacion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "entidad",
+      "defecto": null,
+      "comentario": "Tipo de agregado auditado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "identificador_entidad",
+      "defecto": null,
+      "comentario": "Referencia logica no es FK universal"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "accion",
+      "defecto": null,
+      "comentario": "Accion realizada"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "json",
+      "clave": "",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "detalle",
+      "defecto": null,
+      "comentario": "Metadatos redactados sin claves ni datos financieros sensibles"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "correlation_id",
+      "defecto": null,
+      "comentario": "Correlacion tecnica de la operacion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "MUL",
+      "tabla": "historial_operacion",
+      "calculo": "",
+      "columna": "ocurrido_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Instante real UTC del servidor"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "horario_atencion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador del intervalo recurrente"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "horario_atencion",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio configurado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "smallint",
+      "clave": "",
+      "tabla": "horario_atencion",
+      "calculo": "",
+      "columna": "dia_semana",
+      "defecto": null,
+      "comentario": "ISO lunes=1 a domingo=7; hora local America/Lima"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "time",
+      "clave": "",
+      "tabla": "horario_atencion",
+      "calculo": "",
+      "columna": "hora_inicio",
+      "defecto": null,
+      "comentario": "Apertura local"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "time",
+      "clave": "",
+      "tabla": "horario_atencion",
+      "calculo": "",
+      "columna": "hora_fin",
+      "defecto": null,
+      "comentario": "Cierre local el mismo dia"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "smallint",
+      "clave": "",
+      "tabla": "horario_atencion",
+      "calculo": "",
+      "columna": "margen_previo_min",
+      "defecto": "0",
+      "comentario": "Preparacion antes del evento"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "smallint",
+      "clave": "",
+      "tabla": "horario_atencion",
+      "calculo": "",
+      "columna": "margen_posterior_min",
+      "defecto": "0",
+      "comentario": "Preparacion despues del evento"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de imagen"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio propietario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(500)",
+      "clave": "",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "ruta_objeto",
+      "defecto": null,
+      "comentario": "Ruta del almacenamiento externo, no URL firmada permanente"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "mime",
+      "defecto": null,
+      "comentario": "MIME validado en servidor"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "tamano_bytes",
+      "defecto": null,
+      "comentario": "Tamano validado del archivo"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(300)",
+      "clave": "",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "descripcion",
+      "defecto": null,
+      "comentario": "Descripcion accesible"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "orden",
+      "defecto": "0",
+      "comentario": "Orden en galeria"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "es_portada",
+      "defecto": "0",
+      "comentario": "Marca de portada"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "imagen_servicio",
+      "calculo": "(case when (`es_portada` = 1) then `id_servicio` else NULL end)",
+      "columna": "servicio_portada",
+      "defecto": null,
+      "comentario": "Una portada por servicio"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "imagen_servicio",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Carga UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de incidencia financiera"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "id_pago",
+      "defecto": null,
+      "comentario": "Pago afectado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "id_contrato",
+      "defecto": null,
+      "comentario": "Contrato coherente con pago"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(50)",
+      "clave": "",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "tipo",
+      "defecto": null,
+      "comentario": "Conflicto, cobro tardio o error de conciliacion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(12)",
+      "clave": "MUL",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "ABIERTA",
+      "comentario": "Estado de resolucion humana/automatica"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(2000)",
+      "clave": "",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "detalle",
+      "defecto": null,
+      "comentario": "Detalle sin instrumentos financieros sensibles"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Deteccion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "incidencia_pago",
+      "calculo": "",
+      "columna": "resuelta_en",
+      "defecto": null,
+      "comentario": "Resolucion UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador del integrante"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Banda propietaria; tipo validado por Service"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "id_solista_vinculado",
+      "defecto": null,
+      "comentario": "Usuario solista invitado; aceptacion requerida"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(180)",
+      "clave": "",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "nombre",
+      "defecto": null,
+      "comentario": "Nombre publico autorizado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "instrumento",
+      "defecto": null,
+      "comentario": "Instrumento o funcion musical"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(120)",
+      "clave": "",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "funcion",
+      "defecto": null,
+      "comentario": "Funcion dentro de banda"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(16)",
+      "clave": "",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "estado_vinculo",
+      "defecto": "SIN_VINCULO",
+      "comentario": "Estado del consentimiento de vinculo"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "activo",
+      "defecto": "1",
+      "comentario": "Baja logica conserva referencias historicas"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": "Version optimista"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "integrante",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Creacion UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "id_cuenta",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "id_pago",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "id_reembolso",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "operacion",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "date",
+      "clave": "",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "fecha",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "importe_centimos",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "id_verificador",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "movimiento_cuenta",
+      "calculo": "",
+      "columna": "registrado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de notificacion interna"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "id_destinatario",
+      "defecto": null,
+      "comentario": "Usuario unico destinatario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(40)",
+      "clave": "",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "tipo",
+      "defecto": null,
+      "comentario": "Tipo de aviso controlado por backend"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(180)",
+      "clave": "",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "titulo",
+      "defecto": null,
+      "comentario": "Titulo seguro"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(2000)",
+      "clave": "",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "mensaje",
+      "defecto": null,
+      "comentario": "Contenido sin secretos"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "entidad",
+      "defecto": null,
+      "comentario": "Entidad de destino; validar permiso al navegar"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "identificador_entidad",
+      "defecto": null,
+      "comentario": "Referencia logica de destino autorizada"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Creacion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "notificacion",
+      "calculo": "",
+      "columna": "leida_en",
+      "defecto": null,
+      "comentario": "Lectura UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador del intervalo por recurso"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "id_recurso",
+      "defecto": null,
+      "comentario": "Recurso bloqueado antes de consultar o insertar"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "id_reserva",
+      "defecto": null,
+      "comentario": "Reserva confirmada que origina ocupacion"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "id_bloqueo",
+      "defecto": null,
+      "comentario": "Bloqueo manual que origina ocupacion"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "id_retencion",
+      "defecto": null,
+      "comentario": "Retencion tecnica que origina ocupacion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "inicio_utc",
+      "defecto": null,
+      "comentario": "Intervalo semiabierto con margenes; snapshot de recurso"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "fin_utc",
+      "defecto": null,
+      "comentario": "Fin exclusivo de ocupacion UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "vence_en",
+      "defecto": null,
+      "comentario": "Solo retenciones tienen caducidad tecnica"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "ocupacion_agenda",
+      "calculo": "",
+      "columna": "activa",
+      "defecto": "1",
+      "comentario": "Desactivar al liberar o convertir en misma transaccion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de intento financiero"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "id_contrato",
+      "defecto": null,
+      "comentario": "Contrato propietario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "id_cliente",
+      "defecto": null,
+      "comentario": "Pagador coherente con contrato"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(50)",
+      "clave": "MUL",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "proveedor",
+      "defecto": null,
+      "comentario": "Integracion financiera concreta; aun no seleccionada"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(150)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "referencia_externa",
+      "defecto": null,
+      "comentario": "ID de operacion en proveedor; NULL antes de crear checkout"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "clave_idempotencia",
+      "defecto": null,
+      "comentario": "Clave unica del intento dentro de contrato"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "huella_solicitud",
+      "defecto": null,
+      "comentario": "SHA256 de entrada canonica asociada a clave"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(20)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "modalidad",
+      "defecto": null,
+      "comentario": "Importe determinado por servidor segun saldo"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(40)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "metodo",
+      "defecto": null,
+      "comentario": "Metodo reportado por proveedor; no promete Yape o Plin"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "importe_centimos",
+      "defecto": null,
+      "comentario": "Importe exacto del intento PEN"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "char(3)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "moneda",
+      "defecto": "PEN",
+      "comentario": "Moneda esperada y verificada"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(24)",
+      "clave": "MUL",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "PENDIENTE",
+      "comentario": "Estado interno; separado de respuesta externa"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "estado_externo",
+      "defecto": null,
+      "comentario": "Estado original del proveedor sin reinterpretarlo"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Inicio UTC del intento"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "verificado_en",
+      "defecto": null,
+      "comentario": "Consulta/autenticacion del resultado con proveedor"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "cobrado_en",
+      "defecto": null,
+      "comentario": "Evidencia de cobro externo; no implica reserva compatible"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "aplicado_en",
+      "defecto": null,
+      "comentario": "Instante del abono aplicado al contrato; idempotente"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "pago",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": "Version optimista de seguimiento"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "id_pago",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "id_cuenta",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "json",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "destino_snapshot",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "operacion_reportada",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "date",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "fecha_reportada",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "importe_reportado_centimos",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(180)",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "titular_origen",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "reportado_en",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "huella_reporte",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "motivo_revision",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "huella_revision",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "pago_directo",
+      "calculo": "",
+      "columna": "id_revisor",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "recuperacion_acceso",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de recuperacion de acceso"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "recuperacion_acceso",
+      "calculo": "",
+      "columna": "id_usuario",
+      "defecto": null,
+      "comentario": "Cuenta destinataria"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "binary(32)",
+      "clave": "UNI",
+      "tabla": "recuperacion_acceso",
+      "calculo": "",
+      "columna": "token_hash",
+      "defecto": null,
+      "comentario": "Hash de token aleatorio de un solo uso"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "recuperacion_acceso",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Emision UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "recuperacion_acceso",
+      "calculo": "",
+      "columna": "vence_en",
+      "defecto": null,
+      "comentario": "Caducidad UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "recuperacion_acceso",
+      "calculo": "",
+      "columna": "utilizada_en",
+      "defecto": null,
+      "comentario": "Consumo UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "recurso_agenda",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Fila estable de serializacion por recurso"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "recurso_agenda",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Recurso del propio servicio"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "recurso_agenda",
+      "calculo": "",
+      "columna": "id_musico",
+      "defecto": null,
+      "comentario": "Usuario musico compartido entre bandas/servicio individual"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de solicitud de devolucion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "id_pago",
+      "defecto": null,
+      "comentario": "Intento de cobro original"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(50)",
+      "clave": "MUL",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "proveedor",
+      "defecto": null,
+      "comentario": "Proveedor coherente con pago; deduplicacion de devolucion externa"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "id_contrato",
+      "defecto": null,
+      "comentario": "Contrato coherente con pago"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "clave_idempotencia",
+      "defecto": null,
+      "comentario": "Clave de solicitud por pago"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(150)",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "referencia_externa",
+      "defecto": null,
+      "comentario": "Referencia de devolucion en proveedor"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "importe_centimos",
+      "defecto": null,
+      "comentario": "Importe exacto solicitado PEN"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "motivo",
+      "defecto": null,
+      "comentario": "Motivo autorizado de devolucion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(16)",
+      "clave": "MUL",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "PENDIENTE",
+      "comentario": "Confirmar con proveedor, no con rollback SQL"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "solicitado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Solicitud UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "confirmado_en",
+      "defecto": null,
+      "comentario": "Confirmacion externa UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "huella_solicitud",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "huella_confirmacion",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "id_solicitante",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "reembolso",
+      "calculo": "",
+      "columna": "id_verificador",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de cancion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio propietario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(180)",
+      "clave": "",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "titulo",
+      "defecto": null,
+      "comentario": "Titulo de la pieza"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "genero",
+      "defecto": null,
+      "comentario": "Genero de la pieza"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "descripcion",
+      "defecto": null,
+      "comentario": "Descripcion opcional"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "duracion_segundos",
+      "defecto": null,
+      "comentario": "Duracion opcional positiva"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(500)",
+      "clave": "",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "audio_ruta",
+      "defecto": null,
+      "comentario": "Ruta controlada de audio, no secreto ni binario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "orden",
+      "defecto": "0",
+      "comentario": "Orden de presentacion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "repertorio",
+      "calculo": "",
+      "columna": "activo",
+      "defecto": "1",
+      "comentario": "Retiro logico"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "reserva",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de reserva materializada"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "reserva",
+      "calculo": "",
+      "columna": "id_contrato",
+      "defecto": null,
+      "comentario": "Contrato unico que origina la reserva"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "reserva",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio coherente con contrato"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(12)",
+      "clave": "",
+      "tabla": "reserva",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "CONFIRMADA",
+      "comentario": "Estado operativo de reserva"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "reserva",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Primer abono aplicado UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "reserva",
+      "calculo": "",
+      "columna": "cancelada_en",
+      "defecto": null,
+      "comentario": "Liberacion de intervalo UTC segun politica"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de retencion tecnica"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "id_contrato",
+      "defecto": null,
+      "comentario": "Contrato que inicia checkout"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio coherente con contrato"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "id_pago",
+      "defecto": null,
+      "comentario": "Intento asociado coherente con contrato"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "inicio_utc",
+      "defecto": null,
+      "comentario": "Inicio con margenes UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "fin_utc",
+      "defecto": null,
+      "comentario": "Fin con margenes UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "vence_en",
+      "defecto": null,
+      "comentario": "Caducidad tecnica UTC, nunca reserva confirmada"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(12)",
+      "clave": "MUL",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "ACTIVA",
+      "comentario": "Estado de retencion tecnica"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "retencion_agenda",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Creacion UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "smallint",
+      "clave": "PRI",
+      "tabla": "rol",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador estable del rol"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(24)",
+      "clave": "UNI",
+      "tabla": "rol",
+      "calculo": "",
+      "columna": "codigo",
+      "defecto": null,
+      "comentario": "Codigo de autorizacion del servidor"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "servicio_genero",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio propietario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "PRI",
+      "tabla": "servicio_genero",
+      "calculo": "",
+      "columna": "genero",
+      "defecto": null,
+      "comentario": "Genero musical normalizado por backend"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "servicio_instrumento",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio propietario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(80)",
+      "clave": "PRI",
+      "tabla": "servicio_instrumento",
+      "calculo": "",
+      "columna": "instrumento",
+      "defecto": null,
+      "comentario": "Instrumento o especialidad"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador publico del servicio"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "id_responsable",
+      "defecto": null,
+      "comentario": "Director o solista responsable; rol validado en Service"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(12)",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "tipo",
+      "defecto": null,
+      "comentario": "BANDA o SOLISTA; no son tablas duplicadas"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "servicio_musical",
+      "calculo": "(case when (`tipo` = _ascii\\'SOLISTA\\') then `id_responsable` else NULL end)",
+      "columna": "id_solista_unico",
+      "defecto": null,
+      "comentario": "Un solo servicio individual por solista"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(160)",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "nombre",
+      "defecto": null,
+      "comentario": "Nombre publico"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "text",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "descripcion_historica",
+      "defecto": null,
+      "comentario": "Resena historica opcional; no campo Presentacion del servicio"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "ciudad",
+      "defecto": null,
+      "comentario": "Ubicacion publica sin direccion de eventos"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(500)",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "experiencia",
+      "defecto": null,
+      "comentario": "Experiencia publicada"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "text",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "incluye",
+      "defecto": null,
+      "comentario": "Contenido referencial sujeto a cotizacion"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "tarifa_centimos",
+      "defecto": null,
+      "comentario": "PEN por hora; NULL significa A cotizar"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(20)",
+      "clave": "MUL",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "estado_publicacion",
+      "defecto": "BORRADOR",
+      "comentario": "Ciclo de revision administrativa"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "motivo_revision",
+      "defecto": null,
+      "comentario": "Motivo privado de observacion o retiro"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": "Version optimista"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Creacion UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "actualizado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Modificacion UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "servicio_musical",
+      "calculo": "",
+      "columna": "agenda_version",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "servicio_tipo_evento",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio propietario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "PRI",
+      "tabla": "servicio_tipo_evento",
+      "calculo": "",
+      "columna": "tipo_evento",
+      "defecto": null,
+      "comentario": "Tipo de evento atendido"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de sesion de usuario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "id_usuario",
+      "defecto": null,
+      "comentario": "Titular autenticado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "char(36)",
+      "clave": "MUL",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "familia",
+      "defecto": null,
+      "comentario": "Familia de rotacion para revocar reuso"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "binary(32)",
+      "clave": "UNI",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "refresh_hash",
+      "defecto": null,
+      "comentario": "Hash SHA256 de token aleatorio; nunca token en claro"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Emision UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "vence_en",
+      "defecto": null,
+      "comentario": "Caducidad UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "consumida_en",
+      "defecto": null,
+      "comentario": "Uso del refresh; conservar para detectar reuso"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "sesion",
+      "calculo": "",
+      "columna": "revocada_en",
+      "defecto": null,
+      "comentario": "Revocacion UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de solicitud"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "id_cliente",
+      "defecto": null,
+      "comentario": "Cliente solicitante"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "id_servicio",
+      "defecto": null,
+      "comentario": "Servicio elegido"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "id_proveedor",
+      "defecto": null,
+      "comentario": "Responsable al solicitar; se conserva historicamente"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "inicio_evento_utc",
+      "defecto": null,
+      "comentario": "Inicio del evento UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "fin_evento_utc",
+      "defecto": null,
+      "comentario": "Fin exclusivo del evento UTC"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(500)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "lugar",
+      "defecto": null,
+      "comentario": "Direccion privada del evento"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "ciudad",
+      "defecto": null,
+      "comentario": "Ciudad del evento"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "tipo_evento",
+      "defecto": null,
+      "comentario": "Tipo de evento solicitado"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "int",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "asistentes",
+      "defecto": null,
+      "comentario": "Asistentes previstos"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "text",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "preferencias",
+      "defecto": null,
+      "comentario": "Preferencias musicales"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "text",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "requerimientos",
+      "defecto": null,
+      "comentario": "Necesidades del evento"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "text",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "notas",
+      "defecto": null,
+      "comentario": "Notas privadas"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(24)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "ENVIADA",
+      "comentario": "Estado de la solicitud"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "clave_idempotencia",
+      "defecto": null,
+      "comentario": "Clave de solicitud por cliente"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": "Version optimista"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Creacion UTC para indicadores de cohorte"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "primera_respuesta_en",
+      "defecto": null,
+      "comentario": "Primera respuesta real UTC"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "binary(32)",
+      "clave": "",
+      "tabla": "solicitud_cotizacion",
+      "calculo": "",
+      "columna": "huella_creacion",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "token_acceso",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "MUL",
+      "tabla": "token_acceso",
+      "calculo": "",
+      "columna": "id_sesion",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "binary(32)",
+      "clave": "UNI",
+      "tabla": "token_acceso",
+      "calculo": "",
+      "columna": "token_hash",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "token_acceso",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "token_acceso",
+      "calculo": "",
+      "columna": "vence_en",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador del usuario"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "smallint",
+      "clave": "MUL",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "id_rol",
+      "defecto": null,
+      "comentario": "Rol validado por el servidor"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "nombres",
+      "defecto": null,
+      "comentario": "Nombres de la persona"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(120)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "apellidos",
+      "defecto": null,
+      "comentario": "Apellidos de la persona"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(254)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "correo",
+      "defecto": null,
+      "comentario": "Correo capturado"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(254)",
+      "clave": "UNI",
+      "tabla": "usuario",
+      "calculo": "lower(trim(`correo`))",
+      "columna": "correo_normalizado",
+      "defecto": null,
+      "comentario": "Identidad normalizada; conserva diferencias de acento"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(255)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "password_hash",
+      "defecto": null,
+      "comentario": "Hash adaptativo generado por backend; nunca contrasena"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(24)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "telefono",
+      "defecto": null,
+      "comentario": "Telefono autorizado del perfil"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(100)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "ciudad",
+      "defecto": null,
+      "comentario": "Ciudad del perfil"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(1000)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "biografia",
+      "defecto": null,
+      "comentario": "Texto opcional del perfil"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "varchar(24)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "estado",
+      "defecto": "PENDIENTE_ACTIVACION",
+      "comentario": "Estado administrativo de acceso"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "version",
+      "defecto": "0",
+      "comentario": "Version para bloqueo optimista"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "creado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Instante UTC de creacion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "actualizado_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Instante UTC de ultima modificacion"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(80)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "privacidad_version",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "YES",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "usuario",
+      "calculo": "",
+      "columna": "privacidad_aceptada_en",
+      "defecto": null,
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "v_saldo_contrato",
+      "calculo": "",
+      "columna": "id_contrato",
+      "defecto": "0",
+      "comentario": "Identificador oficial del contrato"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "",
+      "tabla": "v_saldo_contrato",
+      "calculo": "",
+      "columna": "total_centimos",
+      "defecto": null,
+      "comentario": "Total historico exacto PEN"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "decimal(41,0)",
+      "clave": "",
+      "tabla": "v_saldo_contrato",
+      "calculo": "",
+      "columna": "abonado_centimos",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "decimal(63,0)",
+      "clave": "",
+      "tabla": "v_saldo_contrato",
+      "calculo": "",
+      "columna": "reembolsado_centimos",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "decimal(64,0)",
+      "clave": "",
+      "tabla": "v_saldo_contrato",
+      "calculo": "",
+      "columna": "saldo_centimos",
+      "defecto": "0",
+      "comentario": ""
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "PRI",
+      "tabla": "valoracion",
+      "calculo": "",
+      "columna": "id",
+      "defecto": null,
+      "comentario": "Identificador de resena"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "bigint",
+      "clave": "UNI",
+      "tabla": "valoracion",
+      "calculo": "",
+      "columna": "id_contrato",
+      "defecto": null,
+      "comentario": "Unica valoracion por contrato finalizado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "smallint",
+      "clave": "",
+      "tabla": "valoracion",
+      "calculo": "",
+      "columna": "puntuacion",
+      "defecto": null,
+      "comentario": "Escala operativa 1-5; no instrumento de encuesta"
+    },
+    {
+      "nulo": "YES",
+      "tipo": "varchar(2000)",
+      "clave": "",
+      "tabla": "valoracion",
+      "calculo": "",
+      "columna": "comentario",
+      "defecto": null,
+      "comentario": "Comentario autorizado"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "tinyint(1)",
+      "clave": "",
+      "tabla": "valoracion",
+      "calculo": "",
+      "columna": "consentimiento_publicacion",
+      "defecto": "0",
+      "comentario": "Permiso expreso de publicacion"
+    },
+    {
+      "nulo": "NO",
+      "tipo": "datetime(6)",
+      "clave": "",
+      "tabla": "valoracion",
+      "calculo": "",
+      "columna": "creada_en",
+      "defecto": "CURRENT_TIMESTAMP(6)",
+      "comentario": "Registro UTC"
+    }
+  ],
+  "constraints": [
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "auth_familia",
+      "nombre": "fk_auth_familia_usuario"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "auth_familia",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "auth_familia",
+      "nombre": "uq_auth_familia_usuario"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "bloqueo_agenda",
+      "nombre": "ck_bloqueo_activo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "bloqueo_agenda",
+      "nombre": "ck_bloqueo_intervalo"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "bloqueo_agenda",
+      "nombre": "fk_bloqueo_actor"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "bloqueo_agenda",
+      "nombre": "fk_bloqueo_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "bloqueo_agenda",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "comprobante_directo",
+      "nombre": "ck_comprobante_origen"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "comprobante_directo",
+      "nombre": "fk_comprobante_actor"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "comprobante_directo",
+      "nombre": "fk_comprobante_pago"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "comprobante_directo",
+      "nombre": "fk_comprobante_reembolso"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "comprobante_directo",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "comprobante_directo",
+      "nombre": "uq_comprobante_pago"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "comprobante_directo",
+      "nombre": "uq_comprobante_reembolso"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "contrato",
+      "nombre": "ck_contrato_aceptacion"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "contrato",
+      "nombre": "ck_contrato_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "contrato",
+      "nombre": "ck_contrato_fechas"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "contrato",
+      "nombre": "ck_contrato_intervalo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "contrato",
+      "nombre": "ck_contrato_total"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "contrato",
+      "nombre": "fk_contrato_cotizacion"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "contrato",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "contrato",
+      "nombre": "uq_contrato_aceptacion"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "contrato",
+      "nombre": "uq_contrato_cliente"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "contrato",
+      "nombre": "uq_contrato_codigo"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "contrato",
+      "nombre": "uq_contrato_cotizacion"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "contrato",
+      "nombre": "uq_contrato_servicio"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "contrato",
+      "nombre": "uq_contrato_solicitud"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "cotizacion",
+      "nombre": "ck_cotizacion_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "cotizacion",
+      "nombre": "ck_cotizacion_importes"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "cotizacion",
+      "nombre": "ck_cotizacion_intervalo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "cotizacion",
+      "nombre": "ck_cotizacion_version"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "cotizacion",
+      "nombre": "ck_cotizacion_vigencia"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "cotizacion",
+      "nombre": "fk_cotizacion_solicitud"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "cotizacion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_envio"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_solicitud"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_version"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "cuenta_cobro",
+      "nombre": "ck_cobro_destino"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "cuenta_cobro",
+      "nombre": "ck_cobro_medios"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "cuenta_cobro",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_cci"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_cuenta"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_telefono"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "detalle_cotizacion",
+      "nombre": "ck_detalle_cantidad"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "detalle_cotizacion",
+      "nombre": "ck_detalle_orden"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "detalle_cotizacion",
+      "nombre": "ck_detalle_precio"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "detalle_cotizacion",
+      "nombre": "ck_detalle_total"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "detalle_cotizacion",
+      "nombre": "fk_detalle_cotizacion"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "detalle_cotizacion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "evento_medicion",
+      "nombre": "ck_medicion_accion"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "evento_medicion",
+      "nombre": "ck_medicion_perfil"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "evento_medicion",
+      "nombre": "fk_medicion_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "evento_medicion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "evento_medicion",
+      "nombre": "uq_medicion_evento"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "evento_outbox",
+      "nombre": "ck_outbox_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "evento_outbox",
+      "nombre": "ck_outbox_intentos"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "evento_outbox",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "evento_outbox",
+      "nombre": "uq_outbox_clave"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "evento_pago",
+      "nombre": "ck_evento_pago_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "evento_pago",
+      "nombre": "ck_evento_pago_intentos"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "evento_pago",
+      "nombre": "fk_evento_pago"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "evento_pago",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "evento_pago",
+      "nombre": "uq_evento_pago_externo"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "flyway_schema_history",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "historial_operacion",
+      "nombre": "fk_historial_actor"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "historial_operacion",
+      "nombre": "fk_historial_solicitud"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "historial_operacion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "horario_atencion",
+      "nombre": "ck_horario_dia"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "horario_atencion",
+      "nombre": "ck_horario_horas"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "horario_atencion",
+      "nombre": "ck_horario_margen"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "horario_atencion",
+      "nombre": "fk_horario_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "horario_atencion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "horario_atencion",
+      "nombre": "uq_horario_intervalo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "imagen_servicio",
+      "nombre": "ck_imagen_orden"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "imagen_servicio",
+      "nombre": "ck_imagen_portada"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "imagen_servicio",
+      "nombre": "ck_imagen_tamano"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "imagen_servicio",
+      "nombre": "fk_imagen_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "imagen_servicio",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "imagen_servicio",
+      "nombre": "uq_imagen_portada"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "incidencia_pago",
+      "nombre": "ck_incidencia_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "incidencia_pago",
+      "nombre": "ck_incidencia_resuelta"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "incidencia_pago",
+      "nombre": "fk_incidencia_pago"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "incidencia_pago",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "integrante",
+      "nombre": "ck_integrante_activo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "integrante",
+      "nombre": "ck_integrante_vinculo"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "integrante",
+      "nombre": "fk_integrante_servicio"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "integrante",
+      "nombre": "fk_integrante_solista"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "integrante",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "integrante",
+      "nombre": "uq_integrante_vinculo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "movimiento_cuenta",
+      "nombre": "ck_movimiento_importe"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "movimiento_cuenta",
+      "nombre": "ck_movimiento_origen"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_cuenta"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_pago"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_reembolso"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_verificador"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "movimiento_cuenta",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_bancario"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_pago"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_reembolso"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "notificacion",
+      "nombre": "fk_notificacion_usuario"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "notificacion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "ocupacion_agenda",
+      "nombre": "ck_ocupacion_activa"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "ocupacion_agenda",
+      "nombre": "ck_ocupacion_caducidad"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "ocupacion_agenda",
+      "nombre": "ck_ocupacion_intervalo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "ocupacion_agenda",
+      "nombre": "ck_ocupacion_origen"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_bloqueo"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_recurso"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_reserva"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_retencion"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "ocupacion_agenda",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_bloqueo"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_reserva"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_retencion"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "pago",
+      "nombre": "ck_pago_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "pago",
+      "nombre": "ck_pago_importe"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "pago",
+      "nombre": "ck_pago_modalidad"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "pago",
+      "nombre": "ck_pago_moneda"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "pago",
+      "nombre": "ck_pago_verificacion"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "pago",
+      "nombre": "fk_pago_contrato"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "pago",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "pago",
+      "nombre": "uq_pago_clave"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "pago",
+      "nombre": "uq_pago_contrato"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "pago",
+      "nombre": "uq_pago_proveedor"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "pago",
+      "nombre": "uq_pago_referencia"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_cuenta"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_pago"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_revisor"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "pago_directo",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "recuperacion_acceso",
+      "nombre": "ck_recuperacion_vigencia"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "recuperacion_acceso",
+      "nombre": "fk_recuperacion_usuario"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "recuperacion_acceso",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "recuperacion_acceso",
+      "nombre": "uq_recuperacion_token"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "recurso_agenda",
+      "nombre": "ck_recurso_origen"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "recurso_agenda",
+      "nombre": "fk_recurso_musico"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "recurso_agenda",
+      "nombre": "fk_recurso_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "recurso_agenda",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "recurso_agenda",
+      "nombre": "uq_recurso_musico"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "recurso_agenda",
+      "nombre": "uq_recurso_servicio"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "reembolso",
+      "nombre": "ck_reembolso_confirmacion"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "reembolso",
+      "nombre": "ck_reembolso_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "reembolso",
+      "nombre": "ck_reembolso_importe"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_pago"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_proveedor"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_solicitante"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_verificador"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "reembolso",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "reembolso",
+      "nombre": "uq_reembolso_clave"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "reembolso",
+      "nombre": "uq_reembolso_externo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "repertorio",
+      "nombre": "ck_repertorio_activo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "repertorio",
+      "nombre": "ck_repertorio_duracion"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "repertorio",
+      "nombre": "ck_repertorio_orden"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "repertorio",
+      "nombre": "fk_repertorio_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "repertorio",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "reserva",
+      "nombre": "ck_reserva_cancelacion"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "reserva",
+      "nombre": "ck_reserva_estado"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "reserva",
+      "nombre": "fk_reserva_contrato"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "reserva",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "reserva",
+      "nombre": "uq_reserva_contrato"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "retencion_agenda",
+      "nombre": "ck_retencion_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "retencion_agenda",
+      "nombre": "ck_retencion_intervalo"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_contrato"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_pago"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "retencion_agenda",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "retencion_agenda",
+      "nombre": "uq_retencion_pago"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "rol",
+      "nombre": "ck_rol_codigo"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "rol",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "rol",
+      "nombre": "uq_rol_codigo"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "servicio_genero",
+      "nombre": "fk_genero_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "servicio_genero",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "servicio_instrumento",
+      "nombre": "fk_instrumento_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "servicio_instrumento",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "servicio_musical",
+      "nombre": "ck_servicio_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "servicio_musical",
+      "nombre": "ck_servicio_nombre"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "servicio_musical",
+      "nombre": "ck_servicio_tarifa"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "servicio_musical",
+      "nombre": "ck_servicio_tipo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "servicio_musical",
+      "nombre": "ck_servicio_version"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "servicio_musical",
+      "nombre": "fk_servicio_responsable"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "servicio_musical",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "servicio_musical",
+      "nombre": "uq_servicio_solista"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "servicio_tipo_evento",
+      "nombre": "fk_tipo_evento_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "servicio_tipo_evento",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "sesion",
+      "nombre": "ck_sesion_vigencia"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "sesion",
+      "nombre": "fk_sesion_familia_usuario"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "sesion",
+      "nombre": "fk_sesion_usuario"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "sesion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "sesion",
+      "nombre": "uq_sesion_refresh"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ck_solicitud_asistentes"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ck_solicitud_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ck_solicitud_intervalo"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "fk_solicitud_cliente"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "fk_solicitud_proveedor"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "fk_solicitud_servicio"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_clave"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_contexto"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "token_acceso",
+      "nombre": "ck_token_acceso_vigencia"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "token_acceso",
+      "nombre": "fk_token_acceso_sesion"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "token_acceso",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "token_acceso",
+      "nombre": "uq_token_acceso_hash"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "usuario",
+      "nombre": "ck_usuario_estado"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "usuario",
+      "nombre": "ck_usuario_nombre"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "usuario",
+      "nombre": "ck_usuario_privacidad"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "usuario",
+      "nombre": "ck_usuario_version"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "usuario",
+      "nombre": "fk_usuario_rol"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "usuario",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "usuario",
+      "nombre": "uq_usuario_correo"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "valoracion",
+      "nombre": "ck_valoracion_consentimiento"
+    },
+    {
+      "tipo": "CHECK",
+      "tabla": "valoracion",
+      "nombre": "ck_valoracion_puntuacion"
+    },
+    {
+      "tipo": "FOREIGN KEY",
+      "tabla": "valoracion",
+      "nombre": "fk_valoracion_contrato"
+    },
+    {
+      "tipo": "PRIMARY KEY",
+      "tabla": "valoracion",
+      "nombre": "PRIMARY"
+    },
+    {
+      "tipo": "UNIQUE",
+      "tabla": "valoracion",
+      "nombre": "uq_valoracion_contrato"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "orden": 1,
+      "tabla": "auth_familia",
+      "nombre": "fk_auth_familia_usuario",
+      "borrado": "RESTRICT",
+      "columna": "id_usuario",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "bloqueo_agenda",
+      "nombre": "fk_bloqueo_actor",
+      "borrado": "RESTRICT",
+      "columna": "id_actor",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "bloqueo_agenda",
+      "nombre": "fk_bloqueo_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "comprobante_directo",
+      "nombre": "fk_comprobante_actor",
+      "borrado": "NO ACTION",
+      "columna": "id_actor",
+      "destino": "usuario",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "comprobante_directo",
+      "nombre": "fk_comprobante_pago",
+      "borrado": "NO ACTION",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "comprobante_directo",
+      "nombre": "fk_comprobante_reembolso",
+      "borrado": "NO ACTION",
+      "columna": "id_reembolso",
+      "destino": "reembolso",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "borrado": "RESTRICT",
+      "columna": "id_solicitud",
+      "destino": "solicitud_cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "solicitud_cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_servicio"
+    },
+    {
+      "orden": 3,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "borrado": "RESTRICT",
+      "columna": "id_cliente",
+      "destino": "solicitud_cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_cliente"
+    },
+    {
+      "orden": 4,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "borrado": "RESTRICT",
+      "columna": "id_proveedor",
+      "destino": "solicitud_cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_proveedor"
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_cotizacion",
+      "borrado": "RESTRICT",
+      "columna": "id_cotizacion",
+      "destino": "cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_cotizacion",
+      "borrado": "RESTRICT",
+      "columna": "id_solicitud",
+      "destino": "cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_solicitud"
+    },
+    {
+      "orden": 1,
+      "tabla": "cotizacion",
+      "nombre": "fk_cotizacion_solicitud",
+      "borrado": "RESTRICT",
+      "columna": "id_solicitud",
+      "destino": "solicitud_cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "detalle_cotizacion",
+      "nombre": "fk_detalle_cotizacion",
+      "borrado": "RESTRICT",
+      "columna": "id_cotizacion",
+      "destino": "cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_medicion",
+      "nombre": "fk_medicion_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_pago",
+      "nombre": "fk_evento_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "historial_operacion",
+      "nombre": "fk_historial_actor",
+      "borrado": "RESTRICT",
+      "columna": "id_actor",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "historial_operacion",
+      "nombre": "fk_historial_solicitud",
+      "borrado": "RESTRICT",
+      "columna": "id_solicitud",
+      "destino": "solicitud_cotizacion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "horario_atencion",
+      "nombre": "fk_horario_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "imagen_servicio",
+      "nombre": "fk_imagen_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "incidencia_pago",
+      "nombre": "fk_incidencia_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "incidencia_pago",
+      "nombre": "fk_incidencia_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_contrato",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_contrato"
+    },
+    {
+      "orden": 1,
+      "tabla": "integrante",
+      "nombre": "fk_integrante_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "integrante",
+      "nombre": "fk_integrante_solista",
+      "borrado": "RESTRICT",
+      "columna": "id_solista_vinculado",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_cuenta",
+      "borrado": "NO ACTION",
+      "columna": "id_cuenta",
+      "destino": "cuenta_cobro",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_pago",
+      "borrado": "NO ACTION",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_reembolso",
+      "borrado": "NO ACTION",
+      "columna": "id_reembolso",
+      "destino": "reembolso",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_verificador",
+      "borrado": "NO ACTION",
+      "columna": "id_verificador",
+      "destino": "usuario",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "notificacion",
+      "nombre": "fk_notificacion_usuario",
+      "borrado": "RESTRICT",
+      "columna": "id_destinatario",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_bloqueo",
+      "borrado": "RESTRICT",
+      "columna": "id_bloqueo",
+      "destino": "bloqueo_agenda",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_recurso",
+      "borrado": "RESTRICT",
+      "columna": "id_recurso",
+      "destino": "recurso_agenda",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_reserva",
+      "borrado": "RESTRICT",
+      "columna": "id_reserva",
+      "destino": "reserva",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_retencion",
+      "borrado": "RESTRICT",
+      "columna": "id_retencion",
+      "destino": "retencion_agenda",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "fk_pago_contrato",
+      "borrado": "RESTRICT",
+      "columna": "id_contrato",
+      "destino": "contrato",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "fk_pago_contrato",
+      "borrado": "RESTRICT",
+      "columna": "id_cliente",
+      "destino": "contrato",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_cliente"
+    },
+    {
+      "orden": 1,
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_cuenta",
+      "borrado": "RESTRICT",
+      "columna": "id_cuenta",
+      "destino": "cuenta_cobro",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_revisor",
+      "borrado": "RESTRICT",
+      "columna": "id_revisor",
+      "destino": "usuario",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "recuperacion_acceso",
+      "nombre": "fk_recuperacion_usuario",
+      "borrado": "RESTRICT",
+      "columna": "id_usuario",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "recurso_agenda",
+      "nombre": "fk_recurso_musico",
+      "borrado": "RESTRICT",
+      "columna": "id_musico",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "recurso_agenda",
+      "nombre": "fk_recurso_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_contrato",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_contrato"
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_proveedor",
+      "borrado": "RESTRICT",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_proveedor",
+      "borrado": "RESTRICT",
+      "columna": "proveedor",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "proveedor"
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_solicitante",
+      "borrado": "NO ACTION",
+      "columna": "id_solicitante",
+      "destino": "usuario",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_verificador",
+      "borrado": "NO ACTION",
+      "columna": "id_verificador",
+      "destino": "usuario",
+      "actualizacion": "NO ACTION",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "repertorio",
+      "nombre": "fk_repertorio_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "reserva",
+      "nombre": "fk_reserva_contrato",
+      "borrado": "RESTRICT",
+      "columna": "id_contrato",
+      "destino": "contrato",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "reserva",
+      "nombre": "fk_reserva_contrato",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "contrato",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_servicio"
+    },
+    {
+      "orden": 1,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_contrato",
+      "borrado": "RESTRICT",
+      "columna": "id_contrato",
+      "destino": "contrato",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_contrato",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "contrato",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_servicio"
+    },
+    {
+      "orden": 1,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_pago",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_pago",
+      "borrado": "RESTRICT",
+      "columna": "id_contrato",
+      "destino": "pago",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_contrato"
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_genero",
+      "nombre": "fk_genero_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_instrumento",
+      "nombre": "fk_instrumento_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_musical",
+      "nombre": "fk_servicio_responsable",
+      "borrado": "RESTRICT",
+      "columna": "id_responsable",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_tipo_evento",
+      "nombre": "fk_tipo_evento_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "sesion",
+      "nombre": "fk_sesion_familia_usuario",
+      "borrado": "RESTRICT",
+      "columna": "familia",
+      "destino": "auth_familia",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 2,
+      "tabla": "sesion",
+      "nombre": "fk_sesion_familia_usuario",
+      "borrado": "RESTRICT",
+      "columna": "id_usuario",
+      "destino": "auth_familia",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id_usuario"
+    },
+    {
+      "orden": 1,
+      "tabla": "sesion",
+      "nombre": "fk_sesion_usuario",
+      "borrado": "RESTRICT",
+      "columna": "id_usuario",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "fk_solicitud_cliente",
+      "borrado": "RESTRICT",
+      "columna": "id_cliente",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "fk_solicitud_proveedor",
+      "borrado": "RESTRICT",
+      "columna": "id_proveedor",
+      "destino": "usuario",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "fk_solicitud_servicio",
+      "borrado": "RESTRICT",
+      "columna": "id_servicio",
+      "destino": "servicio_musical",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "token_acceso",
+      "nombre": "fk_token_acceso_sesion",
+      "borrado": "RESTRICT",
+      "columna": "id_sesion",
+      "destino": "sesion",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "usuario",
+      "nombre": "fk_usuario_rol",
+      "borrado": "RESTRICT",
+      "columna": "id_rol",
+      "destino": "rol",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    },
+    {
+      "orden": 1,
+      "tabla": "valoracion",
+      "nombre": "fk_valoracion_contrato",
+      "borrado": "RESTRICT",
+      "columna": "id_contrato",
+      "destino": "contrato",
+      "actualizacion": "RESTRICT",
+      "columna_destino": "id"
+    }
+  ],
+  "indexes": [
+    {
+      "orden": 1,
+      "tabla": "auth_familia",
+      "nombre": "ix_auth_familia_usuario",
+      "columna": "id_usuario",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "auth_familia",
+      "nombre": "ix_auth_familia_usuario",
+      "columna": "revocada_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "auth_familia",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "auth_familia",
+      "nombre": "uq_auth_familia_usuario",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "auth_familia",
+      "nombre": "uq_auth_familia_usuario",
+      "columna": "id_usuario",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "bloqueo_agenda",
+      "nombre": "fk_bloqueo_actor",
+      "columna": "id_actor",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "bloqueo_agenda",
+      "nombre": "ix_bloqueo_servicio",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "bloqueo_agenda",
+      "nombre": "ix_bloqueo_servicio",
+      "columna": "activo",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "bloqueo_agenda",
+      "nombre": "ix_bloqueo_servicio",
+      "columna": "inicio_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 4,
+      "tabla": "bloqueo_agenda",
+      "nombre": "ix_bloqueo_servicio",
+      "columna": "fin_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "bloqueo_agenda",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "comprobante_directo",
+      "nombre": "fk_comprobante_actor",
+      "columna": "id_actor",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "comprobante_directo",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "comprobante_directo",
+      "nombre": "uq_comprobante_pago",
+      "columna": "id_pago",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "comprobante_directo",
+      "nombre": "uq_comprobante_reembolso",
+      "columna": "id_reembolso",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "columna": "id_solicitud",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "columna": "id_cliente",
+      "no_unico": 1
+    },
+    {
+      "orden": 4,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_contexto",
+      "columna": "id_proveedor",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_cotizacion",
+      "columna": "id_cotizacion",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "fk_contrato_cotizacion",
+      "columna": "id_solicitud",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_cliente",
+      "columna": "id_cliente",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_cliente",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_cliente",
+      "columna": "aceptado_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_confirmacion",
+      "columna": "confirmado_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_confirmacion",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_evento",
+      "columna": "inicio_evento_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_evento",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_proveedor",
+      "columna": "id_proveedor",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_proveedor",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "contrato",
+      "nombre": "ix_contrato_proveedor",
+      "columna": "inicio_evento_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_aceptacion",
+      "columna": "id_cliente",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_aceptacion",
+      "columna": "clave_idempotencia",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_cliente",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_cliente",
+      "columna": "id_cliente",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_codigo",
+      "columna": "codigo",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_cotizacion",
+      "columna": "id_cotizacion",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_servicio",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_servicio",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "contrato",
+      "nombre": "uq_contrato_solicitud",
+      "columna": "id_solicitud",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cotizacion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_envio",
+      "columna": "id_solicitud",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_envio",
+      "columna": "clave_envio",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_solicitud",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_solicitud",
+      "columna": "id_solicitud",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_version",
+      "columna": "id_solicitud",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "cotizacion",
+      "nombre": "uq_cotizacion_version",
+      "columna": "numero_version",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cuenta_cobro",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_cci",
+      "columna": "cci",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_cuenta",
+      "columna": "banco",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_cuenta",
+      "columna": "numero_cuenta",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_telefono",
+      "columna": "banco",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "cuenta_cobro",
+      "nombre": "uq_cobro_telefono",
+      "columna": "telefono",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "detalle_cotizacion",
+      "nombre": "ix_detalle_cotizacion",
+      "columna": "id_cotizacion",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "detalle_cotizacion",
+      "nombre": "ix_detalle_cotizacion",
+      "columna": "orden",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "detalle_cotizacion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_medicion",
+      "nombre": "fk_medicion_servicio",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_medicion",
+      "nombre": "ix_medicion_sesion",
+      "columna": "sesion_medicion",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "evento_medicion",
+      "nombre": "ix_medicion_sesion",
+      "columna": "ocurrido_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_medicion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_medicion",
+      "nombre": "uq_medicion_evento",
+      "columna": "clave_evento",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_outbox",
+      "nombre": "ix_outbox_pendiente",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "evento_outbox",
+      "nombre": "ix_outbox_pendiente",
+      "columna": "disponible_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "evento_outbox",
+      "nombre": "ix_outbox_pendiente",
+      "columna": "id",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_outbox",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_outbox",
+      "nombre": "uq_outbox_clave",
+      "columna": "clave_evento",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_pago",
+      "nombre": "fk_evento_pago",
+      "columna": "id_pago",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_pago",
+      "nombre": "ix_evento_pago_pendiente",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "evento_pago",
+      "nombre": "ix_evento_pago_pendiente",
+      "columna": "recibido_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_pago",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "evento_pago",
+      "nombre": "uq_evento_pago_externo",
+      "columna": "proveedor",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "evento_pago",
+      "nombre": "uq_evento_pago_externo",
+      "columna": "id_evento_externo",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "flyway_schema_history",
+      "nombre": "flyway_schema_history_s_idx",
+      "columna": "success",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "flyway_schema_history",
+      "nombre": "PRIMARY",
+      "columna": "installed_rank",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "historial_operacion",
+      "nombre": "fk_historial_actor",
+      "columna": "id_actor",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "historial_operacion",
+      "nombre": "ix_historial_fecha",
+      "columna": "ocurrido_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "historial_operacion",
+      "nombre": "ix_historial_fecha",
+      "columna": "entidad",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "historial_operacion",
+      "nombre": "ix_historial_solicitud",
+      "columna": "id_solicitud",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "historial_operacion",
+      "nombre": "ix_historial_solicitud",
+      "columna": "ocurrido_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "historial_operacion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "horario_atencion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "horario_atencion",
+      "nombre": "uq_horario_intervalo",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "horario_atencion",
+      "nombre": "uq_horario_intervalo",
+      "columna": "dia_semana",
+      "no_unico": 0
+    },
+    {
+      "orden": 3,
+      "tabla": "horario_atencion",
+      "nombre": "uq_horario_intervalo",
+      "columna": "hora_inicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 4,
+      "tabla": "horario_atencion",
+      "nombre": "uq_horario_intervalo",
+      "columna": "hora_fin",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "imagen_servicio",
+      "nombre": "ix_imagen_servicio",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "imagen_servicio",
+      "nombre": "ix_imagen_servicio",
+      "columna": "orden",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "imagen_servicio",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "imagen_servicio",
+      "nombre": "uq_imagen_portada",
+      "columna": "servicio_portada",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "incidencia_pago",
+      "nombre": "fk_incidencia_pago",
+      "columna": "id_pago",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "incidencia_pago",
+      "nombre": "fk_incidencia_pago",
+      "columna": "id_contrato",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "incidencia_pago",
+      "nombre": "ix_incidencia_estado",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "incidencia_pago",
+      "nombre": "ix_incidencia_estado",
+      "columna": "creada_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "incidencia_pago",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "integrante",
+      "nombre": "fk_integrante_solista",
+      "columna": "id_solista_vinculado",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "integrante",
+      "nombre": "ix_integrante_servicio",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "integrante",
+      "nombre": "ix_integrante_servicio",
+      "columna": "activo",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "integrante",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "integrante",
+      "nombre": "uq_integrante_vinculo",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "integrante",
+      "nombre": "uq_integrante_vinculo",
+      "columna": "id_solista_vinculado",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "fk_movimiento_verificador",
+      "columna": "id_verificador",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_bancario",
+      "columna": "id_cuenta",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_bancario",
+      "columna": "fecha",
+      "no_unico": 0
+    },
+    {
+      "orden": 3,
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_bancario",
+      "columna": "operacion",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_pago",
+      "columna": "id_pago",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "movimiento_cuenta",
+      "nombre": "uq_movimiento_reembolso",
+      "columna": "id_reembolso",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "notificacion",
+      "nombre": "ix_notificacion_destinatario",
+      "columna": "id_destinatario",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "notificacion",
+      "nombre": "ix_notificacion_destinatario",
+      "columna": "leida_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "notificacion",
+      "nombre": "ix_notificacion_destinatario",
+      "columna": "creada_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "notificacion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_bloqueo",
+      "columna": "id_bloqueo",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_reserva",
+      "columna": "id_reserva",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "fk_ocupacion_retencion",
+      "columna": "id_retencion",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "ix_ocupacion_conflicto",
+      "columna": "id_recurso",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "ocupacion_agenda",
+      "nombre": "ix_ocupacion_conflicto",
+      "columna": "activa",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "ocupacion_agenda",
+      "nombre": "ix_ocupacion_conflicto",
+      "columna": "inicio_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 4,
+      "tabla": "ocupacion_agenda",
+      "nombre": "ix_ocupacion_conflicto",
+      "columna": "fin_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 5,
+      "tabla": "ocupacion_agenda",
+      "nombre": "ix_ocupacion_conflicto",
+      "columna": "vence_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_bloqueo",
+      "columna": "id_recurso",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_bloqueo",
+      "columna": "id_bloqueo",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_reserva",
+      "columna": "id_recurso",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_reserva",
+      "columna": "id_reserva",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_retencion",
+      "columna": "id_recurso",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "ocupacion_agenda",
+      "nombre": "uq_ocupacion_retencion",
+      "columna": "id_retencion",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "fk_pago_contrato",
+      "columna": "id_contrato",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "fk_pago_contrato",
+      "columna": "id_cliente",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "ix_pago_contrato_fecha",
+      "columna": "id_contrato",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "ix_pago_contrato_fecha",
+      "columna": "creado_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "ix_pago_pendiente",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "ix_pago_pendiente",
+      "columna": "creado_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "uq_pago_clave",
+      "columna": "id_contrato",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "uq_pago_clave",
+      "columna": "clave_idempotencia",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "uq_pago_contrato",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "uq_pago_contrato",
+      "columna": "id_contrato",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "uq_pago_proveedor",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "uq_pago_proveedor",
+      "columna": "proveedor",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "pago",
+      "nombre": "uq_pago_referencia",
+      "columna": "proveedor",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "pago",
+      "nombre": "uq_pago_referencia",
+      "columna": "referencia_externa",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_cuenta",
+      "columna": "id_cuenta",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "pago_directo",
+      "nombre": "fk_directo_revisor",
+      "columna": "id_revisor",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "pago_directo",
+      "nombre": "PRIMARY",
+      "columna": "id_pago",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "recuperacion_acceso",
+      "nombre": "ix_recuperacion_usuario",
+      "columna": "id_usuario",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "recuperacion_acceso",
+      "nombre": "ix_recuperacion_usuario",
+      "columna": "vence_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "recuperacion_acceso",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "recuperacion_acceso",
+      "nombre": "uq_recuperacion_token",
+      "columna": "token_hash",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "recurso_agenda",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "recurso_agenda",
+      "nombre": "uq_recurso_musico",
+      "columna": "id_musico",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "recurso_agenda",
+      "nombre": "uq_recurso_servicio",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_pago",
+      "columna": "id_pago",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_pago",
+      "columna": "id_contrato",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_proveedor",
+      "columna": "id_pago",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_proveedor",
+      "columna": "proveedor",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_solicitante",
+      "columna": "id_solicitante",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "fk_reembolso_verificador",
+      "columna": "id_verificador",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "ix_reembolso_pendiente",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "reembolso",
+      "nombre": "ix_reembolso_pendiente",
+      "columna": "solicitado_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "uq_reembolso_clave",
+      "columna": "id_pago",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "reembolso",
+      "nombre": "uq_reembolso_clave",
+      "columna": "clave_idempotencia",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "reembolso",
+      "nombre": "uq_reembolso_externo",
+      "columna": "proveedor",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "reembolso",
+      "nombre": "uq_reembolso_externo",
+      "columna": "referencia_externa",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "repertorio",
+      "nombre": "ix_repertorio_servicio",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "repertorio",
+      "nombre": "ix_repertorio_servicio",
+      "columna": "activo",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "repertorio",
+      "nombre": "ix_repertorio_servicio",
+      "columna": "orden",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "repertorio",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "reserva",
+      "nombre": "fk_reserva_contrato",
+      "columna": "id_contrato",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "reserva",
+      "nombre": "fk_reserva_contrato",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "reserva",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "reserva",
+      "nombre": "uq_reserva_contrato",
+      "columna": "id_contrato",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_contrato",
+      "columna": "id_contrato",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_contrato",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_pago",
+      "columna": "id_pago",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "retencion_agenda",
+      "nombre": "fk_retencion_pago",
+      "columna": "id_contrato",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "retencion_agenda",
+      "nombre": "ix_retencion_vencimiento",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "retencion_agenda",
+      "nombre": "ix_retencion_vencimiento",
+      "columna": "vence_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "retencion_agenda",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "retencion_agenda",
+      "nombre": "uq_retencion_pago",
+      "columna": "id_pago",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "rol",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "rol",
+      "nombre": "uq_rol_codigo",
+      "columna": "codigo",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_genero",
+      "nombre": "ix_genero_busqueda",
+      "columna": "genero",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "servicio_genero",
+      "nombre": "ix_genero_busqueda",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_genero",
+      "nombre": "PRIMARY",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "servicio_genero",
+      "nombre": "PRIMARY",
+      "columna": "genero",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_instrumento",
+      "nombre": "ix_instrumento_busqueda",
+      "columna": "instrumento",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "servicio_instrumento",
+      "nombre": "ix_instrumento_busqueda",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_instrumento",
+      "nombre": "PRIMARY",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "servicio_instrumento",
+      "nombre": "PRIMARY",
+      "columna": "instrumento",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_musical",
+      "nombre": "ix_catalogo",
+      "columna": "estado_publicacion",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "servicio_musical",
+      "nombre": "ix_catalogo",
+      "columna": "tipo",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "servicio_musical",
+      "nombre": "ix_catalogo",
+      "columna": "ciudad",
+      "no_unico": 1
+    },
+    {
+      "orden": 4,
+      "tabla": "servicio_musical",
+      "nombre": "ix_catalogo",
+      "columna": "tarifa_centimos",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_musical",
+      "nombre": "ix_servicio_responsable",
+      "columna": "id_responsable",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "servicio_musical",
+      "nombre": "ix_servicio_responsable",
+      "columna": "estado_publicacion",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_musical",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_musical",
+      "nombre": "uq_servicio_solista",
+      "columna": "id_solista_unico",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "servicio_tipo_evento",
+      "nombre": "PRIMARY",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "servicio_tipo_evento",
+      "nombre": "PRIMARY",
+      "columna": "tipo_evento",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "sesion",
+      "nombre": "fk_sesion_familia_usuario",
+      "columna": "familia",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "sesion",
+      "nombre": "fk_sesion_familia_usuario",
+      "columna": "id_usuario",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "sesion",
+      "nombre": "ix_sesion_familia",
+      "columna": "familia",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "sesion",
+      "nombre": "ix_sesion_usuario",
+      "columna": "id_usuario",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "sesion",
+      "nombre": "ix_sesion_usuario",
+      "columna": "revocada_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "sesion",
+      "nombre": "ix_sesion_usuario",
+      "columna": "vence_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "sesion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "sesion",
+      "nombre": "uq_sesion_refresh",
+      "columna": "refresh_hash",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_cliente",
+      "columna": "id_cliente",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_cliente",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_cliente",
+      "columna": "creada_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_proveedor",
+      "columna": "id_proveedor",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_proveedor",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_proveedor",
+      "columna": "creada_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_servicio",
+      "columna": "id_servicio",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_servicio",
+      "columna": "inicio_evento_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 3,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "ix_solicitud_servicio",
+      "columna": "fin_evento_utc",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_clave",
+      "columna": "id_cliente",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_clave",
+      "columna": "clave_idempotencia",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_contexto",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 2,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_contexto",
+      "columna": "id_servicio",
+      "no_unico": 0
+    },
+    {
+      "orden": 3,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_contexto",
+      "columna": "id_cliente",
+      "no_unico": 0
+    },
+    {
+      "orden": 4,
+      "tabla": "solicitud_cotizacion",
+      "nombre": "uq_solicitud_contexto",
+      "columna": "id_proveedor",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "token_acceso",
+      "nombre": "ix_token_acceso_sesion",
+      "columna": "id_sesion",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "token_acceso",
+      "nombre": "ix_token_acceso_sesion",
+      "columna": "vence_en",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "token_acceso",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "token_acceso",
+      "nombre": "uq_token_acceso_hash",
+      "columna": "token_hash",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "usuario",
+      "nombre": "ix_usuario_rol_estado",
+      "columna": "id_rol",
+      "no_unico": 1
+    },
+    {
+      "orden": 2,
+      "tabla": "usuario",
+      "nombre": "ix_usuario_rol_estado",
+      "columna": "estado",
+      "no_unico": 1
+    },
+    {
+      "orden": 1,
+      "tabla": "usuario",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "usuario",
+      "nombre": "uq_usuario_correo",
+      "columna": "correo_normalizado",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "valoracion",
+      "nombre": "PRIMARY",
+      "columna": "id",
+      "no_unico": 0
+    },
+    {
+      "orden": 1,
+      "tabla": "valoracion",
+      "nombre": "uq_valoracion_contrato",
+      "columna": "id_contrato",
+      "no_unico": 0
+    }
+  ],
+  "checks": [
+    {
+      "nombre": "ck_bloqueo_activo",
+      "expresion": "(`activo` in (0,1))"
+    },
+    {
+      "nombre": "ck_bloqueo_intervalo",
+      "expresion": "(`inicio_utc` < `fin_utc`)"
+    },
+    {
+      "nombre": "ck_cobro_destino",
+      "expresion": "((((`yape` = 0) and (`plin` = 0)) or (`telefono` is not null)) and ((`transferencia` = 0) or (`numero_cuenta` is not null) or (`cci` is not null)))"
+    },
+    {
+      "nombre": "ck_cobro_medios",
+      "expresion": "((`yape` = 1) or (`plin` = 1) or (`transferencia` = 1))"
+    },
+    {
+      "nombre": "ck_comprobante_origen",
+      "expresion": "(((`id_pago` is not null) + (`id_reembolso` is not null)) = 1)"
+    },
+    {
+      "nombre": "ck_contrato_aceptacion",
+      "expresion": "((`condiciones_aceptadas` = 1) and (json_type(`snapshot`) = _utf8mb4\\'OBJECT\\'))"
+    },
+    {
+      "nombre": "ck_contrato_estado",
+      "expresion": "(`estado` in (_utf8mb4\\'PENDIENTE_PAGO\\',_utf8mb4\\'CONFIRMADO\\',_utf8mb4\\'FINALIZADO\\',_utf8mb4\\'CANCELADO\\'))"
+    },
+    {
+      "nombre": "ck_contrato_fechas",
+      "expresion": "(((`estado` not in (_utf8mb4\\'CONFIRMADO\\',_utf8mb4\\'FINALIZADO\\')) or (`confirmado_en` is not null)) and ((`estado` <> _utf8mb4\\'FINALIZADO\\') or ((`finalizado_en` is not null) and (`finalizado_en` >= `fin_evento_utc`))) and ((`estado` <> _utf8mb4\\'CANCELADO\\') or ((`cancelado_en` is not null) and (char_length(trim(coalesce(`motivo_cancelacion`,_utf8mb4\\'\\'))) >= 5))))"
+    },
+    {
+      "nombre": "ck_contrato_intervalo",
+      "expresion": "((`inicio_evento_utc` < `fin_evento_utc`) and (`inicio_ocupacion_utc` <= `inicio_evento_utc`) and (`fin_ocupacion_utc` >= `fin_evento_utc`))"
+    },
+    {
+      "nombre": "ck_contrato_total",
+      "expresion": "(`total_centimos` between 1 and 999999999999)"
+    },
+    {
+      "nombre": "ck_cotizacion_estado",
+      "expresion": "(`estado` in (_ascii\\'BORRADOR\\',_ascii\\'ENVIADA\\',_ascii\\'ACEPTADA\\',_ascii\\'RECHAZADA\\',_ascii\\'CAMBIOS\\',_ascii\\'VENCIDA\\',_ascii\\'SUSTITUIDA\\'))"
+    },
+    {
+      "nombre": "ck_cotizacion_importes",
+      "expresion": "((`subtotal_centimos` between 1 and 999999999999) and (`descuento_centimos` >= 0) and (`descuento_centimos` < `subtotal_centimos`))"
+    },
+    {
+      "nombre": "ck_cotizacion_intervalo",
+      "expresion": "((`inicio_propuesto_utc` < `fin_propuesto_utc`) and (`fin_propuesto_utc` <= (`inicio_propuesto_utc` + interval 24 hour)))"
+    },
+    {
+      "nombre": "ck_cotizacion_version",
+      "expresion": "(`numero_version` > 0)"
+    },
+    {
+      "nombre": "ck_cotizacion_vigencia",
+      "expresion": "(`vigente_hasta_utc` > `creada_en`)"
+    },
+    {
+      "nombre": "ck_detalle_cantidad",
+      "expresion": "((`cantidad` > 0) and (`cantidad` <= 1000000))"
+    },
+    {
+      "nombre": "ck_detalle_orden",
+      "expresion": "(`orden` >= 0)"
+    },
+    {
+      "nombre": "ck_detalle_precio",
+      "expresion": "(`precio_unitario_centimos` between 0 and 999999999999)"
+    },
+    {
+      "nombre": "ck_detalle_total",
+      "expresion": "(`total_centimos` between 0 and 999999999999)"
+    },
+    {
+      "nombre": "ck_evento_pago_estado",
+      "expresion": "(`estado` in (_utf8mb4\\'RECIBIDO\\',_utf8mb4\\'VERIFICANDO\\',_utf8mb4\\'APLICADO\\',_utf8mb4\\'IGNORADO\\',_utf8mb4\\'EN_REVISION\\'))"
+    },
+    {
+      "nombre": "ck_evento_pago_intentos",
+      "expresion": "(`intentos` >= 0)"
+    },
+    {
+      "nombre": "ck_horario_dia",
+      "expresion": "(`dia_semana` between 1 and 7)"
+    },
+    {
+      "nombre": "ck_horario_horas",
+      "expresion": "((`hora_inicio` >= _utf8mb4\\'00:00:00\\') and (`hora_inicio` < `hora_fin`) and (`hora_fin` <= _utf8mb4\\'24:00:00\\'))"
+    },
+    {
+      "nombre": "ck_horario_margen",
+      "expresion": "((`margen_previo_min` between 0 and 1440) and (`margen_posterior_min` between 0 and 1440))"
+    },
+    {
+      "nombre": "ck_imagen_orden",
+      "expresion": "(`orden` >= 0)"
+    },
+    {
+      "nombre": "ck_imagen_portada",
+      "expresion": "(`es_portada` in (0,1))"
+    },
+    {
+      "nombre": "ck_imagen_tamano",
+      "expresion": "(`tamano_bytes` > 0)"
+    },
+    {
+      "nombre": "ck_incidencia_estado",
+      "expresion": "(`estado` in (_utf8mb4\\'ABIERTA\\',_utf8mb4\\'EN_REVISION\\',_utf8mb4\\'RESUELTA\\'))"
+    },
+    {
+      "nombre": "ck_incidencia_resuelta",
+      "expresion": "((`estado` <> _utf8mb4\\'RESUELTA\\') or (`resuelta_en` is not null))"
+    },
+    {
+      "nombre": "ck_integrante_activo",
+      "expresion": "(`activo` in (0,1))"
+    },
+    {
+      "nombre": "ck_integrante_vinculo",
+      "expresion": "(((`id_solista_vinculado` is null) and (`estado_vinculo` = _utf8mb4\\'SIN_VINCULO\\')) or ((`id_solista_vinculado` is not null) and (`estado_vinculo` in (_utf8mb4\\'INVITADO\\',_utf8mb4\\'ACEPTADO\\',_utf8mb4\\'RECHAZADO\\',_utf8mb4\\'RETIRADO\\'))))"
+    },
+    {
+      "nombre": "ck_medicion_accion",
+      "expresion": "(`accion` in (_utf8mb4\\'INICIO\\',_utf8mb4\\'PERFIL\\',_utf8mb4\\'FIN\\'))"
+    },
+    {
+      "nombre": "ck_medicion_perfil",
+      "expresion": "((`accion` <> _utf8mb4\\'PERFIL\\') or (`id_servicio` is not null))"
+    },
+    {
+      "nombre": "ck_movimiento_importe",
+      "expresion": "(`importe_centimos` > 0)"
+    },
+    {
+      "nombre": "ck_movimiento_origen",
+      "expresion": "(((`id_pago` is not null) + (`id_reembolso` is not null)) = 1)"
+    },
+    {
+      "nombre": "ck_ocupacion_activa",
+      "expresion": "(`activa` in (0,1))"
+    },
+    {
+      "nombre": "ck_ocupacion_caducidad",
+      "expresion": "(((`id_retencion` is null) and (`vence_en` is null)) or ((`id_retencion` is not null) and (`vence_en` is not null)))"
+    },
+    {
+      "nombre": "ck_ocupacion_intervalo",
+      "expresion": "(`inicio_utc` < `fin_utc`)"
+    },
+    {
+      "nombre": "ck_ocupacion_origen",
+      "expresion": "((((`id_reserva` is not null) + (`id_bloqueo` is not null)) + (`id_retencion` is not null)) = 1)"
+    },
+    {
+      "nombre": "ck_outbox_estado",
+      "expresion": "(`estado` in (_utf8mb4\\'PENDIENTE\\',_utf8mb4\\'PROCESANDO\\',_utf8mb4\\'ENVIADO\\',_utf8mb4\\'ERROR\\'))"
+    },
+    {
+      "nombre": "ck_outbox_intentos",
+      "expresion": "(`intentos` >= 0)"
+    },
+    {
+      "nombre": "ck_pago_estado",
+      "expresion": "(`estado` in (_utf8mb4\\'PENDIENTE\\',_utf8mb4\\'PROCESANDO\\',_utf8mb4\\'APROBADO\\',_utf8mb4\\'RECHAZADO\\',_utf8mb4\\'CANCELADO\\',_utf8mb4\\'EXPIRADO\\',_utf8mb4\\'REEMBOLSADO\\',_utf8mb4\\'REEMBOLSO_PENDIENTE\\',_utf8mb4\\'EN_REVISION\\'))"
+    },
+    {
+      "nombre": "ck_pago_importe",
+      "expresion": "(`importe_centimos` between 1 and 999999999999)"
+    },
+    {
+      "nombre": "ck_pago_modalidad",
+      "expresion": "(`modalidad` in (_utf8mb4\\'SALDO_COMPLETO\\',_utf8mb4\\'MITAD_SALDO\\'))"
+    },
+    {
+      "nombre": "ck_pago_moneda",
+      "expresion": "(`moneda` = _utf8mb4\\'PEN\\')"
+    },
+    {
+      "nombre": "ck_pago_verificacion",
+      "expresion": "(((`cobrado_en` is null) or ((`verificado_en` is not null) and (`referencia_externa` is not null))) and ((`aplicado_en` is null) or (`cobrado_en` is not null)) and ((`estado` <> _utf8mb4\\'APROBADO\\') or (`aplicado_en` is not null)))"
+    },
+    {
+      "nombre": "ck_recuperacion_vigencia",
+      "expresion": "(`vence_en` > `creada_en`)"
+    },
+    {
+      "nombre": "ck_recurso_origen",
+      "expresion": "(((`id_servicio` is not null) + (`id_musico` is not null)) = 1)"
+    },
+    {
+      "nombre": "ck_reembolso_confirmacion",
+      "expresion": "((`estado` <> _ascii\\'APROBADO\\') or ((`confirmado_en` is not null) and (`referencia_externa` is not null)))"
+    },
+    {
+      "nombre": "ck_reembolso_estado",
+      "expresion": "(`estado` in (_ascii\\'PENDIENTE\\',_ascii\\'PROCESANDO\\',_ascii\\'APROBADO\\',_ascii\\'RECHAZADO\\'))"
+    },
+    {
+      "nombre": "ck_reembolso_importe",
+      "expresion": "(`importe_centimos` between 1 and 999999999999)"
+    },
+    {
+      "nombre": "ck_repertorio_activo",
+      "expresion": "(`activo` in (0,1))"
+    },
+    {
+      "nombre": "ck_repertorio_duracion",
+      "expresion": "((`duracion_segundos` is null) or (`duracion_segundos` > 0))"
+    },
+    {
+      "nombre": "ck_repertorio_orden",
+      "expresion": "(`orden` >= 0)"
+    },
+    {
+      "nombre": "ck_reserva_cancelacion",
+      "expresion": "((`estado` <> _utf8mb4\\'CANCELADA\\') or (`cancelada_en` is not null))"
+    },
+    {
+      "nombre": "ck_reserva_estado",
+      "expresion": "(`estado` in (_utf8mb4\\'CONFIRMADA\\',_utf8mb4\\'CANCELADA\\'))"
+    },
+    {
+      "nombre": "ck_retencion_estado",
+      "expresion": "(`estado` in (_utf8mb4\\'ACTIVA\\',_utf8mb4\\'CONVERTIDA\\',_utf8mb4\\'EXPIRADA\\',_utf8mb4\\'CANCELADA\\'))"
+    },
+    {
+      "nombre": "ck_retencion_intervalo",
+      "expresion": "((`inicio_utc` < `fin_utc`) and (`vence_en` > `creada_en`))"
+    },
+    {
+      "nombre": "ck_rol_codigo",
+      "expresion": "(`codigo` in (_utf8mb4\\'ADMINISTRADOR\\',_utf8mb4\\'CLIENTE\\',_utf8mb4\\'DIRECTOR\\',_utf8mb4\\'SOLISTA\\'))"
+    },
+    {
+      "nombre": "ck_servicio_estado",
+      "expresion": "(`estado_publicacion` in (_ascii\\'BORRADOR\\',_ascii\\'EN_REVISION\\',_ascii\\'OBSERVADO\\',_ascii\\'PUBLICADO\\',_ascii\\'RETIRADO\\'))"
+    },
+    {
+      "nombre": "ck_servicio_nombre",
+      "expresion": "(char_length(trim(`nombre`)) > 0)"
+    },
+    {
+      "nombre": "ck_servicio_tarifa",
+      "expresion": "((`tarifa_centimos` is null) or (`tarifa_centimos` between 0 and 999999999999))"
+    },
+    {
+      "nombre": "ck_servicio_tipo",
+      "expresion": "(`tipo` in (_ascii\\'BANDA\\',_ascii\\'SOLISTA\\'))"
+    },
+    {
+      "nombre": "ck_servicio_version",
+      "expresion": "(`version` >= 0)"
+    },
+    {
+      "nombre": "ck_sesion_vigencia",
+      "expresion": "(`vence_en` > `creada_en`)"
+    },
+    {
+      "nombre": "ck_solicitud_asistentes",
+      "expresion": "((`asistentes` is null) or (`asistentes` > 0))"
+    },
+    {
+      "nombre": "ck_solicitud_estado",
+      "expresion": "(`estado` in (_ascii\\'ENVIADA\\',_ascii\\'EN_REVISION\\',_ascii\\'COTIZACION_RECIBIDA\\',_ascii\\'RECHAZADA\\',_ascii\\'CANCELADA\\',_ascii\\'CONTRATADA\\',_ascii\\'RESERVADA\\'))"
+    },
+    {
+      "nombre": "ck_solicitud_intervalo",
+      "expresion": "((`inicio_evento_utc` < `fin_evento_utc`) and (`fin_evento_utc` <= (`inicio_evento_utc` + interval 24 hour)))"
+    },
+    {
+      "nombre": "ck_token_acceso_vigencia",
+      "expresion": "(`vence_en` > `creado_en`)"
+    },
+    {
+      "nombre": "ck_usuario_estado",
+      "expresion": "(`estado` in (_ascii\\'PENDIENTE_ACTIVACION\\',_ascii\\'ACTIVO\\',_ascii\\'SUSPENDIDO\\',_ascii\\'DESACTIVADO\\'))"
+    },
+    {
+      "nombre": "ck_usuario_nombre",
+      "expresion": "((char_length(trim(`nombres`)) > 0) and (char_length(trim(`apellidos`)) > 0))"
+    },
+    {
+      "nombre": "ck_usuario_privacidad",
+      "expresion": "(((`privacidad_version` is null) and (`privacidad_aceptada_en` is null)) or ((`privacidad_version` is not null) and (`privacidad_aceptada_en` is not null)))"
+    },
+    {
+      "nombre": "ck_usuario_version",
+      "expresion": "(`version` >= 0)"
+    },
+    {
+      "nombre": "ck_valoracion_consentimiento",
+      "expresion": "(`consentimiento_publicacion` in (0,1))"
+    },
+    {
+      "nombre": "ck_valoracion_puntuacion",
+      "expresion": "(`puntuacion` between 1 and 5)"
+    }
+  ],
+  "triggers": [
+    {
+      "tabla": "contrato",
+      "evento": "UPDATE",
+      "nombre": "tr_contrato_actualizar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "contrato",
+      "evento": "DELETE",
+      "nombre": "tr_contrato_eliminar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "contrato",
+      "evento": "INSERT",
+      "nombre": "tr_contrato_insertar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "cotizacion",
+      "evento": "UPDATE",
+      "nombre": "tr_cotizacion_actualizar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "cotizacion",
+      "evento": "DELETE",
+      "nombre": "tr_cotizacion_eliminar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "detalle_cotizacion",
+      "evento": "UPDATE",
+      "nombre": "tr_detalle_actualizar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "detalle_cotizacion",
+      "evento": "DELETE",
+      "nombre": "tr_detalle_eliminar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "detalle_cotizacion",
+      "evento": "INSERT",
+      "nombre": "tr_detalle_insertar",
+      "momento": "BEFORE"
+    },
+    {
+      "tabla": "valoracion",
+      "evento": "INSERT",
+      "nombre": "tr_valoracion_insertar",
+      "momento": "BEFORE"
+    }
+  ],
+  "views": [
+    {
+      "nombre": "v_saldo_contrato",
+      "definicion": "select `c`.`id` AS `id_contrato`,`c`.`total_centimos` AS `total_centimos`,coalesce(`a`.`abonado_centimos`,0) AS `abonado_centimos`,coalesce(`a`.`reembolsado_centimos`,0) AS `reembolsado_centimos`,((`c`.`total_centimos` - coalesce(`a`.`abonado_centimos`,0)) + coalesce(`a`.`reembolsado_centimos`,0)) AS `saldo_centimos` from (`santa_cecilia`.`contrato` `c` left join (select `p`.`id_contrato` AS `id_contrato`,sum(`p`.`importe_centimos`) AS `abonado_centimos`,sum(coalesce(`r`.`importe_centimos`,0)) AS `reembolsado_centimos` from (`santa_cecilia`.`pago` `p` left join (select `santa_cecilia`.`reembolso`.`id_pago` AS `id_pago`,sum(`santa_cecilia`.`reembolso`.`importe_centimos`) AS `importe_centimos` from `santa_cecilia`.`reembolso` where (`santa_cecilia`.`reembolso`.`estado` = 'APROBADO') group by `santa_cecilia`.`reembolso`.`id_pago`) `r` on((`r`.`id_pago` = `p`.`id`))) where (`p`.`aplicado_en` is not null) group by `p`.`id_contrato`) `a` on((`a`.`id_contrato` = `c`.`id`)))"
+    }
+  ],
+  "flyway": [
+    {
+      "script": "V001__modelo_central.sql",
+      "version": "001",
+      "checksum": -2118214438,
+      "correcta": 1
+    },
+    {
+      "script": "V002__roles_del_sistema.sql",
+      "version": "002",
+      "checksum": 1436048544,
+      "correcta": 1
+    },
+    {
+      "script": "V003__inmutabilidad_y_validaciones.sql",
+      "version": "003",
+      "checksum": 1343238345,
+      "correcta": 1
+    },
+    {
+      "script": "V004__consulta_saldos.sql",
+      "version": "004",
+      "checksum": -762081193,
+      "correcta": 1
+    },
+    {
+      "script": "V005__autenticacion_y_consentimiento.sql",
+      "version": "005",
+      "checksum": -1679823310,
+      "correcta": 1
+    },
+    {
+      "script": "V006__flujo_contratacion.sql",
+      "version": "006",
+      "checksum": 371778108,
+      "correcta": 1
+    },
+    {
+      "script": "V007__pagos_directos_conciliados.sql",
+      "version": "007",
+      "checksum": -1039125007,
+      "correcta": 1
+    }
+  ],
+  "observacion": "Metadatos de la instancia local persistente. No incluye filas de usuarios, sesiones, contratos, pagos ni comprobantes."
+}
