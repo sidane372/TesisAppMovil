@@ -1,16 +1,15 @@
-# Control de versiones — corte 03/11/2026
+# Repositorio con control de versiones
 
-El proyecto se incorpora a Git después de la construcción de las etapas 1–7 y las correcciones de conexión y acceso. Este primer corte reúne el trabajo existente; no se reconstruyen commits históricos para las etapas anteriores.
+- Repositorio: https://github.com/sidane372/TesisAppMovil
+- Rama principal: main.
+- Remoto: origin.
+- Primer commit verificado: `3bcb57c7e7af2307ad91ed7c5f3e51f1c3a4908c`.
+- Fecha registrada por Git: `2026-11-03T23:53:32-05:00`. La fecha incluye su desplazamiento horario.
+- Mensaje: feat: incorpora Santa Cecilia Android y backend.
+- Ramas de desarrollo verificadas en este corte: ninguna adicional.
 
-| Elemento | Evidencia / estado |
-|---|---|
-| URL remota | https://github.com/sidane372/TesisAppMovil.git |
-| Remoto local | origin |
-| Rama principal | main |
-| Historial | Consultable con `git log --oneline --decorate` |
-| Archivos versionados | Android Java/XML, backend, migraciones, documentación y herramientas de arranque |
-| Archivos excluidos | Credenciales, datos locales de MySQL, certificados privados, compilaciones y preferencias del equipo |
+El hash de HEAD local se comparó con refs/heads/main en GitHub después del push y coincidió. El commit reúne el desarrollo acumulado de Android, backend, migraciones y documentación. No representa una secuencia histórica de commits por cada etapa. Las fechas de iteraciones anteriores no se deducen de este único commit.
 
-El administrador y la base persistente se preparan localmente mediante INICIAR_SANTA_CECILIA.cmd; sus contraseñas y datos no se distribuyen por GitHub. Se incluye backend/.env.example con marcadores de configuración.
+La integración incluye las correcciones del arranque persistente y del retorno de registro al login. Las evidencias técnicas están en el entregable 11 y en los fuentes de las pruebas del proyecto. El paquete académico se genera después de ese primer corte y todavía puede contener archivos locales no publicados en ese commit.
 
-Las evidencias de las etapas previas describen comprobaciones locales, no versiones históricas de Git. Para registrar cambios posteriores, revisar `git status` y `git diff` antes de crear un commit y enviarlo a origin.
+Se excluyen credenciales, .env, bases locales, comprobantes privados, certificados privados, archivos de compilación y preferencias del equipo. backend/.env.example contiene únicamente marcadores. No compartir el archivo de acceso inicial del administrador con el paquete académico.

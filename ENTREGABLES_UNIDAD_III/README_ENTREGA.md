@@ -1,21 +1,33 @@
-# Unidad III — índice inicial de evidencias
+# Entrega de la Unidad III de Santa Cecilia
 
-Corte: 03/11/2026. El proyecto comprende Etapas 1–5: arquitectura, esquema MySQL, backend, integración Android e interfaz por rol. No acredita el flujo completo de contratación/pagos; el estado vigente y los comandos están en [la guía de integración](../docs/integracion_android.md). Los formatos académicos DOCX/XLSX aún no se generaron. Los documentos de estado siguientes se basan en archivos y resultados disponibles.
+Autores: Galvez Andre Jherson y Briceño Contreras Sidanne Luis.
 
-| Nº | Archivo o carpeta solicitada | Estado | Evidencia disponible | Pendientes |
+Este paquete acompaña la versión funcional integrada de Android, Spring Boot y MySQL. El sistema tiene implementación local y evidencia del flujo principal con datos sintéticos. La entrega documental no equivale a cumplimiento total del backlog ni a despliegue de producción.
+
+Repositorio: https://github.com/sidane372/TesisAppMovil
+
+| Nº | Archivo o carpeta | Estado | Evidencia | Pendiente |
 |---|---|---|---|---|
-| 01 | 01_Plan_Desarrollo.docx | Pendiente de formato académico | ../docs/orden_implementacion.md y ../README.md | Cronograma/fechas y responsables confirmados; generar DOCX revisado |
-| 02 | 02_Backlog_Priorizado.xlsx | Pendiente | ../docs/matriz_trazabilidad.md contiene los 68 RF; ../docs/referencias/requerimientos_extraidos.json | Historias, criterios actualizados, priorización MoSCoW, iteraciones propuestas y XLSX |
-| 03 | 03_Control_Versiones.md | Diagnóstico inicial creado | Inspección: no hay Git en la carpeta | Configurar Git y registrar historial real |
-| 04 | 04_Base_Datos/ | Implementado y verificado localmente | 4 migraciones, 30 tablas, diccionario físico y 31 pruebas MySQL aprobadas | Despliegue, grants/TLS, Flyway/JPA y backend real |
-| 05 | 05_Logica_Negocio_Servicios.md | Backend de identidad/servicios implementado | JAR Spring Boot, Flyway, JPA, seguridad y endpoints funcionales | Contrataciones/pagos y módulos de contenido posteriores |
-| 06 | 06_Interfaces_Funcionales/ | Interfaz nativa implementada | Interfaz por rol y formularios conectados; ../docs/interfaz.md | Completar los módulos de negocio posteriores y formatos académicos |
-| 07 | 07_Modulos_Integrados.md | Registro inicial creado | Compilación/pruebas locales; E2E no ejecutado | Flujo multiusuario completo y sandbox oficial |
-| 08 | 08_Roles_Permisos_Seguridad.md | Autenticación y permisos implementados en backend | bcrypt, sesiones revocables, roles/propiedad y recuperación SMTP | Configuración HTTPS/SMTP del despliegue y módulos posteriores |
-| 09 | 09_Registro_Incidencias.xlsx | Pendiente de formato académico | Advertencias de lint y corrección en 11_Evidencias_Iteraciones/Iteracion_01_Arquitectura.md | Registro XLSX y evidencia de resolución; no inventar errores |
-| 10 | 10_Documentacion_Tecnica.docx | Pendiente de formato académico | ../docs/arquitectura.md, estructura_mvc.md, endpoints_api.md, pagos_arquitectura.md y database/ | Consolidar DOCX y verificar su renderizado |
-| 11 | 11_Evidencias_Iteraciones/ | Iteraciones 01 y 02 documentadas | Código, esquema y resultados reales Android/MySQL | Commits, dispositivo, capturas y próximas iteraciones |
+| 01 | 01_Plan_Desarrollo.docx | Documento generado | Objetivo, equipo, etapas, productos, criterios, riesgos y cronograma editable. | Completar datos académicos y acordar fechas. |
+| 02 | 02_Backlog_Priorizado.xlsx | Libro generado | 68 historias vinculadas a RF y 90 requisitos originales conservados. | Revisar prioridades y cerrar solo lo validado. |
+| 03 | 03_Control_Versiones.md | Repositorio publicado | main y primer commit verificable en GitHub. | Publicar el paquete académico cuando se acuerde. |
+| 04 | 04_Base_Datos/ | Esquema local aplicado | 36 tablas de negocio, Flyway V001–V007, metadatos, SQL y diccionario actuales. | Respaldos y despliegue de producción. |
+| 05 | 05_Logica_Negocio_Servicios.md | Informe actualizado | Controllers, Services, persistencia y reglas centrales. | Funciones parciales detalladas en el backlog. |
+| 06 | 06_Interfaces_Funcionales/ | Capturas reales reunidas | Login, cuatro roles, catálogo, solicitud, cotización, contrato, pagos y calendario. | Preparar datos oficiales y ensayar la exposición. |
+| 07 | 07_Modulos_Integrados.md | Integración local documentada | Flujo principal y comprobaciones sintéticas; sin transferencias reales. | Evaluación formal y recorrido con datos oficiales. |
+| 08 | 08_Roles_Permisos_Seguridad.md | Informe actualizado | Matriz, bcrypt, sesiones, HTTPS y privacidad. | Revisión formal de seguridad y producción. |
+| 09 | 09_Registro_Incidencias.xlsx | Libro generado | Incidencias observadas, solución, responsable de equipo y evidencia. | Advertencias de lint registradas como abiertas. |
+| 10 | 10_Documentacion_Tecnica.docx | Documento generado | Arquitectura, MVC, datos, HTTPS, API, pagos, roles, pruebas y límites. | Completar portada y revisión académica. |
+| 11 | 11_Evidencias_Iteraciones/ | Evidencias reunidas | Iteraciones, resultados JSON, regresión y análisis estático. | No sustituye validación con usuarios ni pruebas productivas. |
 
-No se inventan responsables, fechas históricas, commits, mediciones, encuestas, capturas o transacciones. Se continúa la documentación académica junto con cada etapa implementada; la etapa actual prioriza una base de arquitectura verificable.
+## Orden de revisión
 
-En Etapa 3 se priorizó la construcción del servidor por instrucción del usuario. No se creó un paquete nuevo de pruebas académicas. Los informes anteriores se conservan como evidencia histórica; el alcance actual y el arranque están en ../backend/README.md.
+Leer primero el plan y el backlog; revisar después el repositorio, esquema y módulos; utilizar las capturas y evidencias para la demostración. La guía GUIA_DEMOSTRACION.md explica el arranque y los puntos que deben presentarse.
+
+## Cambios de alcance que deben explicarse
+
+Volley fue reemplazado por HTTPS nativo. Los pagos simulados con tarjeta del documento formal se adaptaron a pagos externos por Yape, Plin y transferencia con comprobante y contraste administrativo. La confirmación no se basa solo en una imagen del pagador. El flujo privado completo no funciona offline; la caché Room conserva únicamente información pública. Las metas RNF todavía requieren validación formal.
+
+Los datos académicos distintos de los nombres de los autores quedan en blanco por indicación del equipo. Las fechas de planificación no se presentan como ejecución histórica. Los resultados y capturas financieras incluidos son sintéticos y no corresponden a dinero recibido ni a un sandbox bancario oficial.
+
+El manifiesto SHA-256 permite identificar los archivos de este corte. El paquete excluye secretos, base persistente y datos privados. Las referencias al repositorio usan sus rutas relativas desde la raíz; las copias SQL del entregable 04 forman una instantánea de entrega.
